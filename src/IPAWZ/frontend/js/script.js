@@ -1,3 +1,5 @@
+console.log("JavaScript carregado!");   
+
 const sidebar = document.getElementById("sidebar");
 const overlay = document.getElementById("overlay");
 
@@ -25,3 +27,12 @@ function closeSidebar(){
     overlay.classList.remove("active");
 
 }
+
+const backTop = document.querySelector(".back-top");
+
+backTop.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
