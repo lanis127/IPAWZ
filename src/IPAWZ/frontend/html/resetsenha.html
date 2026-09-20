@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redefinir Senha</title>
+
+    <link rel="stylesheet" href="../css/signInOut.css">
+</head>
+<body>
+
+    <main class="auth-container">
+
+        <section class="left-panel">
+            <a href="#" class="back-btn" onclick="window.history.back(); return false;">&#10094;</a>
+
+            <h2>
+                Esqueceu sua senha?<br>
+                Recupere-a
+            </h2>
+
+            <img src="../assets/icons/gato-vaso.svg" alt="gato derrubando vaso">
+        </section>
+
+        <section class="right-panel">
+
+            <div class="form-card">
+
+                <h1>Esqueceu a senha?</h1>
+
+                <p class="account-text">
+                    Insira seu e-mail e enviaremos um código para redefinir a senha.
+                </p>
+
+                <br>
+                <br>
+
+                <form action="senha.html">
+                    <input type="email" placeholder="E-mail" required>
+
+                        <button type="submit" class="btn-primary">
+                            Enviar código
+                        </button>
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
