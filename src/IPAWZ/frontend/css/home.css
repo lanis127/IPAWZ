@@ -1,0 +1,340 @@
+/* ===================================
+   CONFIGURAÇÃO GERAL
+=================================== */
+
+.container-home{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+.destaque {
+    font-weight: bold;
+    text-decoration: underline;
+    color: #7A2E1C;
+}
+
+/* ===================================
+   COMO DOAR
+=================================== */
+
+.como-doar{
+
+    background:#FDFBD4;
+
+    padding-top:100px;
+    padding-bottom:100px;
+
+}
+
+.conteudo-doacao{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    gap:100px;
+
+}
+
+.texto-doacao{
+
+    flex:1;
+
+}
+
+.texto-doacao h2{
+
+    color:#7A2E1C;
+
+    font-size:3rem;
+
+    margin-bottom:60px;
+
+}
+
+.passos-doacao h3{
+
+    margin-bottom:25px;
+
+    font-size:1.6rem;
+
+}
+
+.passos-doacao ul{
+
+    list-style:none;
+
+}
+
+.passos-doacao li{
+
+    margin-bottom:20px;
+
+    line-height:1.8;
+
+    font-size:1.1rem;
+
+}
+
+.imagem-doacao{
+
+    flex:1;
+    text-align:center;
+
+}
+
+.imagem-doacao img{
+
+    width:100%;
+    max-width:450px;
+
+}
+
+/* ===================================
+   TIPOS DE DOAÇÃO
+=================================== */
+
+.tipos-doacao{
+
+    background:#FDFBD4;
+
+    padding-top:80px;
+    padding-bottom:120px;
+    
+    border-top:4px solid #7FC9B8;
+
+}
+
+.conteudo-tipos{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:120px;
+
+}
+
+.imagem-tipos{
+
+    flex:1;
+    text-align:center;
+
+}
+
+.imagem-tipos img{
+
+    width:100%;
+    max-width:350px;
+
+}
+
+.texto-tipos{
+
+    flex:1;
+
+}
+
+.texto-tipos h2{
+
+    color:#7A2E1C;
+
+    font-size:3rem;
+
+    margin-bottom:50px;
+
+}
+
+.texto-tipos ol{
+
+    font-size:1.9rem;
+
+    line-height:1.8;
+
+}
+
+/* ===================================
+   ONGS
+=================================== */
+
+.ongs-parceiras{
+
+    background:#1C5F9D;
+
+    padding-top:70px;
+    padding-bottom:60px;
+
+}
+
+.ongs-parceiras h2{
+
+    color:white;
+
+    text-align:center;
+
+    margin-bottom:50px;
+
+    font-size:2.4rem;
+
+}
+
+.carrossel-wrapper{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+.janela-carrossel{
+
+    overflow:hidden;
+
+    width:100%;
+
+}
+
+.trilha-carrossel{
+
+    display:flex;
+
+    gap:20px;
+
+    transition:0.5s ease;
+
+}
+
+.card-ong{
+
+    flex:0 0 calc(25% - 15px);
+
+    background:#FDFBD4;
+
+    border-radius:10px;
+
+    overflow:hidden;
+
+}
+
+.card-ong img{
+
+    width:100%;
+
+    height:170px;
+
+    object-fit:cover;
+
+}
+
+.conteudo-card{
+
+    padding:20px;
+
+    text-align:center;
+
+}
+
+.conteudo-card h3{
+
+    color:#7A2E1C;
+
+    margin-bottom:10px;
+
+}
+
+.seta-carrossel{
+
+    width:45px;
+    height:45px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    font-size:20px;
+
+}
+
+.indicadores-carrossel{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:10px;
+
+    margin-top:25px;
+
+}
+
+.indicador{
+
+    width:12px;
+
+    height:12px;
+
+    border-radius:50%;
+
+    background:#d7d7d7;
+
+    cursor:pointer;
+
+}
+
+.indicador.ativo{
+
+    background:white;
+
+}
+
+/* ===================================
+   RESPONSIVO
+=================================== */
+
+@media(max-width:900px){
+
+    .conteudo-doacao,
+    .conteudo-tipos{
+
+        flex-direction:column;
+        text-align:center;
+
+    }
+
+    .card-ong{
+
+        flex:0 0 calc(50% - 10px);
+
+    }
+
+}
+
+@media(max-width:600px){
+
+    .card-ong{
+
+        flex:0 0 100%;
+
+    }
+
+    .texto-doacao h2,
+    .texto-tipos h2{
+
+        font-size:2rem;
+
+    }
+
+    .texto-tipos ol{
+
+        font-size:1.2rem;
+
+    }
+
+}
