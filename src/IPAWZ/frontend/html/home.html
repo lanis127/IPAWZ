@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPAWZ</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/inicio.css">
+    <link rel="stylesheet" href="../css/home.css">
+
+    <!-- Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+
+
+    <!-- ================= HEADER LOGADO ================= -->
+
+    <header class="header logged-header">
+
+        <div class="logo">
+            <h1>IPAWZ <span>🐾</span></h1>
+        </div>
+
+        <nav class="nav-menu">
+            <a href="home.html" class="destaque"><u>Home</u></a>
+            <a href="#">Adoção</a> <!--Listagem de pet-->
+            <a href="#">Doação</a>
+            <a href="#">Voluntários</a>
+            <a href="#">Perfil</a>
+        </nav>
+
+        <button class="menu-btn" id="openMenu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+    </header>
+
+
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <div class="overlay" id="overlay"></div>
+
+    <aside class="sidebar" id="sidebar">
+
+        <button class="close-btn" id="closeMenu">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <ul>
+
+            <li>
+                <a href="#">Solicitações de adoção</a>
+            </li>
+
+            <li>
+                <a href="#">Acompanhamento de candidaturas</a>
+            </li>
+
+            <li>
+                <a href="#">Cadastrar pets para adoção</a>
+            </li>
+
+            <li class="active">
+                <a href="#">Sobre nós</a>
+            </li>
+
+            <li class="logout">
+                <a href="#">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+
+    <!-- Conteúdo da página -->
+    <main class="content">
+
+        <!-- ================= HERO ================= -->
+        <section class="hero">
+
+            <div class="hero-image">
+                <img src="../assets/img/tela-inicio-ft.png" alt="Pessoa com cachorro">
+            </div>
+
+            <div class="hero-content">
+
+                <h1 class="logo-titulo">
+                    IPAWZ
+                    <img src="../assets/logo/foot-print.png" alt="Pegada">
+                </h1>
+
+                <h2>
+                    Conectando pessoas a causas que transformam vidas animais
+                </h2>
+
+                <p>
+                    Adoção, doação e voluntariado em um único lugar
+                </p>
+
+                <a href="selecaoPfPj.html" class="btn-cadastro">
+                    <strong>Cadastre-se e aproveite</strong>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= COMO DOAR =============== -->
+
+        <section class="como-doar">
+
+            <div class="container-home">
+
+                <div class="conteudo-doacao">
+
+                    <div class="texto-doacao">
+
+                        <h2>Faça uma doação e transforme vidas!</h2>
+
+                        <div class="passos-doacao">
+
+                            <h3>Como doar:</h3>
+
+                            <ul>
+
+                                <li>
+                                    - Escolha a instituição que você queira ajudar
+                                </li>
+
+                                <li>
+                                    - Selecione o tipo de doação que deseja realizar
+                                </li>
+
+                                <li>
+                                    - Confirme a doação e mude vidas
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                    <div class="imagem-doacao">
+
+                        <img src="../assets/img/caridade2.png" alt="Ilustração de doação">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ===================== TIPOS DE DOAÇÃO ===================== -->
+
+        <section class="tipos-doacao">
+
+            <div class="container-home">
+
+                <div class="conteudo-tipos">
+
+                    <div class="imagem-tipos">
+
+                        <img src="../assets/img/caridade.png" alt="Tipos de doação">
+
+                    </div>
+
+                    <div class="texto-tipos">
+
+                        <h2>Tipos de doação</h2>
+
+                        <ol>
+
+                            <li>Doações financeiras;</li>
+
+                            <li>Doações de alimentos;</li>
+
+                            <li>Doações de medicamentos;</li>
+
+                            <li>Doações de itens e acessórios;</li>
+
+                            <li>Doações de itens de higiene e limpeza.</li>
+
+                        </ol>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ================== ONGS PARCEIRAS ======================= -->
+
+        <section class="ongs-parceiras">
+
+            <div class="container-home">
+
+                <h2>Instituições e ONGs parceiras</h2>
+
+                <div class="carrossel-wrapper">
+
+                    <button class="seta-carrossel seta-esquerda" aria-label="Anterior">
+
+                        &#10094;
+
+                    </button>
+
+                    <div class="janela-carrossel">
+
+                        <div class="trilha-carrossel">
+
+                            <!-- CARD 1 -->
+
+                            <article class="card-ong">
+
+                                <img src="../assets/img/ong-sos.png" alt="ONG SOS">
+
+                                <div class="conteudo-card">
+
+                                    <h3>ONG SOS</h3>
+
+                                    <p>
+                                        ONG sem fins lucrativos dedicada à proteção, resgate e defesa do bem-estar de animais abandonados ou vítimas de maus-tratos.
+                                    </p>
+
+                                </div>
+
+                            </article>
+
+                            <!-- CARD 2 -->
+
+                            <article class="card-ong">
+
+                                <img src="../assets/img/sos-pets.png" alt="SOS Pets">
+
+                                <div class="conteudo-card">
+
+                                    <h3>SOS Pets</h3>
+
+                                    <p>
+                                        Organização dedicada ao resgate, recuperação e encaminhamento de cães e gatos abandonados ou vítimas de maus-tratos para a adoção responsável.
+                                    </p>
+
+                                </div>
+
+                            </article>
+
+                            <!-- CARD 3 -->
+
+                            <article class="card-ong">
+
+                                <img src="../assets/img/oba.jpg" alt="OBA">
+
+                                <div class="conteudo-card">
+
+                                    <h3>OBA!</h3>
+
+                                    <p>
+                                        ONG sem fins lucrativos da Grande Florianópolis (SC) focada na proteção, conscientização e bem-estar de animais em situação de vulnerabilidade.
+                                    </p>
+
+                                </div>
+
+                            </article>
+
+                            <!-- CARD 4 -->
+
+                            <article class="card-ong">
+
+                                <img src="../assets/img/ong-azul.png" alt="ONG Azul">
+
+                                <div class="conteudo-card">
+
+                                    <h3>ONG Azul</h3>
+
+                                    <p>
+                                        Organização sem fins lucrativos de São Paulo dedicada ao resgate, cuidado veterinário, abrigo e adoção responsável de cães e gatos em situação de abandono ou maus-tratos
+                                    </p>
+
+                                </div>
+
+                            </article>
+
+                            <!-- CARD 5 -->
+
+                            <article class="card-ong">
+
+                                <img src="../assets/img/cao-sem-dono.jpg" alt="CÃO SEM DONO">
+
+                                <div class="conteudo-card">
+
+                                    <h3>Cão sem dono</h3>
+
+                                    <p>
+                                        ONG sem fins lucrativos fundada em 2005 e oficializada em 2008, dedicada a resgatar, cuidar e promover a adoção de cães abandonados ou vítimas de maus-tratos
+                                    </p>
+
+                                </div>
+
+                            </article>
+
+                            <!-- CARD 6 -->
+
+                            <article class="card-ong">
+
+                                <img src="../assets/img/clube-amg-animais.jpg" alt="CLUBE AMIGO DOS ANIMAIS">
+
+                                <div class="conteudo-card">
+
+                                    <h3>Clube amigo dos animais</h3>
+
+                                    <p>
+                                        ONG sem fins lucrativos fundada em 21 de agosto de 2010, com atuação no município de Araçatuba (SP) e região.
+                                    </p>
+
+                                </div>
+
+                            </article>
+
+                        </div>
+
+                    </div>
+
+                    <button class="seta-carrossel seta-direita" aria-label="Próximo">
+
+                        &#10095;
+
+                    </button>
+
+                </div>
+
+                <!-- Indicadores criados pelo JavaScript -->
+                <div class="indicadores-carrossel"></div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <h2>IPAWZ 🐾</h2>
+
+                <p>
+                    Conectando pessoas a causas
+                    que transformam vidas animais.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>NAVEGAÇÃO</h3>
+
+                <ul>
+                    <li><a href="home.html">Início</a></li>
+                    <li><a href="#">Adoção</a></li>
+                    <li><a href="#">Doação</a></li>
+                    <li><a href="#">Voluntariado</a></li>
+                    <li><a href="#">Instituições</a></li>
+                </ul>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>AJUDA</h3>
+
+                <ul>
+                    <li><a href="#">Termos de uso</a></li>
+                    <li><a href="#">Política de privacidade</a></li>
+                </ul>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>CONTATO</h3>
+
+                <ul>
+                    <li>📧 pets.ipawz@gmail.com</li>
+                    <li>📞 (11) 99999-9999</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                Copyright © 2026 IPAWZ –
+                Todos os direitos reservados
+            </p>
+
+            <button class="back-top">
+                ↑
+            </button>
+
+        </div>
+
+    </footer>
+
+
+    <script src="../js/script.js"></script>
+    <script src="../js/home.js"></script>
+
+</body>
+
+</html>
