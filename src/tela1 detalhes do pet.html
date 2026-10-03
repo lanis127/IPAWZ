@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <!-- CONFIGURAÇÕES DA PÁGINA -->
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>iPawz - Conheça a Nazinha</title>
+
+
+    <style>
+
+        /* =====================================================
+           CORES OFICIAIS DO PROJETO iPAWZ
+           ===================================================== */
+
+        :root {
+
+            --azul: #1C5F9D;
+
+            --verde: #7FC9B8;
+
+            --creme: #FDFBD4;
+
+            --marrom: #7A2E1C;
+
+            --branco: #FFFFFF;
+
+            --preto: #000000;
+
+            --cinza: #D9D9D9;
+
+            --cinza-texto: #777777;
+
+        }
+
+
+        /* =====================================================
+           CONFIGURAÇÕES GERAIS
+           ===================================================== */
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+        }
+
+
+        body {
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            background-color: var(--creme);
+
+            color: var(--marrom);
+
+            min-height: 100vh;
+
+        }
+
+
+        /* =====================================================
+           CABEÇALHO
+           ===================================================== */
+
+        header {
+
+            width: 100%;
+
+            height: 70px;
+
+            background-color: var(--creme);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 0 5%;
+
+            border-bottom: 1px solid #ded8b8;
+
+        }
+
+
+        /* LOGO */
+
+        .logo {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 5px;
+
+            color: var(--marrom);
+
+            font-size: 22px;
+
+            font-weight: bold;
+
+        }
+
+
+        .logo-pata {
+
+            color: var(--marrom);
+
+            font-size: 20px;
+
+        }
+
+
+        /* MENU */
+
+        nav {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 35px;
+
+        }
+
+
+        nav a {
+
+            text-decoration: none;
+
+            color: var(--marrom);
+
+            font-size: 13px;
+
+            transition: 0.3s;
+
+        }
+
+
+        nav a:hover {
+
+            color: var(--azul);
+
+        }
+
+
+        /* ITEM ATIVO */
+
+        nav a.ativo {
+
+            font-weight: bold;
+
+            text-decoration: underline;
+
+            text-decoration-thickness: 2px;
+
+        }
+
+
+        /* BOTÃO MENU */
+
+        .menu-icon {
+
+            font-size: 25px;
+
+            color: var(--marrom);
+
+            cursor: pointer;
+
+        }
+
+
+        /* =====================================================
+           TÍTULO DA PÁGINA
+           ===================================================== */
+
+        .titulo-principal {
+
+            width: 100%;
+
+            height: 60px;
+
+            background-color: var(--azul);
+
+            color: var(--branco);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 27px;
+
+            font-weight: bold;
+
+        }
+
+
+        /* =====================================================
+           ÁREA PRINCIPAL
+           ===================================================== */
+
+        main {
+
+            width: 90%;
+
+            max-width: 1050px;
+
+            margin: 25px auto 45px;
+
+        }
+
+
+        /* =====================================================
+           ÁREA COM FOTO + INFORMAÇÕES
+           ===================================================== */
+
+        .informacoes-pet {
+
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 25px;
+
+        }
+
+
+        /* =====================================================
+           FOTO DA NAZINHA
+           ===================================================== */
+
+        .area-foto {
+
+            width: 330px;
+
+            flex-shrink: 0;
+
+        }
+
+
+        .foto-pet {
+
+            width: 100%;
+
+            height: 270px;
+
+            object-fit: cover;
+
+            border-radius: 8px;
+
+            display: block;
+
+        }
+
+
+        /* =====================================================
+           INFORMAÇÕES DO PET
+           ===================================================== */
+
+        .dados-pet {
+
+            flex: 1;
+
+            padding-top: 5px;
+
+        }
+
+
+        .dados-pet p {
+
+            font-size: 15px;
+
+            line-height: 1.8;
+
+            color: var(--marrom);
+
+        }
+
+
+        .dados-pet strong {
+
+            font-weight: bold;
+
+        }
+
+
+        /* =====================================================
+           HISTÓRICO VETERINÁRIO
+           ===================================================== */
+
+        .historico {
+
+            margin-top: 15px;
+
+        }
+
+
+        .historico-titulo {
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            margin-bottom: 5px;
+
+            color: var(--marrom);
+
+        }
+
+
+        .item-historico {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+            margin-bottom: 8px;
+
+            font-size: 13px;
+
+        }
+
+
+        .item-historico strong {
+
+            min-width: 85px;
+
+        }
+
+
+        /* OPÇÕES SIM/NÃO */
+
+        .opcoes {
+
+            display: flex;
+
+            gap: 15px;
+
+        }
+
+
+        .opcao {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 5px;
+
+            font-size: 12px;
+
+        }
+
+
+        .checkbox {
+
+            width: 12px;
+
+            height: 12px;
+
+            border: 1px solid #aaa;
+
+            background-color: var(--branco);
+
+            border-radius: 2px;
+
+        }
+
+
+        /* =====================================================
+           ANEXO
+           ===================================================== */
+
+        .anexo {
+
+            margin-top: 5px;
+
+            font-size: 13px;
+
+        }
+
+
+        .icone-anexo {
+
+            color: var(--marrom);
+
+            margin-left: 5px;
+
+        }
+
+
+        /* =====================================================
+           DESCRIÇÃO
+           ===================================================== */
+
+        .descricao-area {
+
+            margin-top: 12px;
+
+        }
+
+
+        .descricao-titulo {
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            margin-bottom: 8px;
+
+            margin-left: 5px;
+
+            color: var(--marrom);
+
+        }
+
+
+        .descricao {
+
+            width: 100%;
+
+            min-height: 120px;
+
+            background-color: var(--cinza);
+
+            border-radius: 12px;
+
+            padding: 18px;
+
+            color: #8a6b68;
+
+            font-size: 13px;
+
+            line-height: 1.6;
+
+        }
+
+
+        /* =====================================================
+           BOTÃO DE ADOÇÃO
+           ===================================================== */
+
+        .area-botao {
+
+            display: flex;
+
+            justify-content: center;
+
+            margin-top: 25px;
+
+        }
+
+
+        .botao-adocao {
+
+            width: 190px;
+
+            height: 40px;
+
+            background-color: var(--verde);
+
+            color: var(--branco);
+
+            border: none;
+
+            border-radius: 4px;
+
+            font-size: 12px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+        }
+
+
+        .botao-adocao:hover {
+
+            background-color: var(--azul);
+
+        }
+
+
+        /* =====================================================
+           RODAPÉ
+           ===================================================== */
+
+        footer {
+
+            width: 100%;
+
+            background-color: var(--preto);
+
+            color: var(--branco);
+
+            padding: 25px 5%;
+
+            display: grid;
+
+            grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+
+            gap: 40px;
+
+        }
+
+
+        /* LOGO DO RODAPÉ */
+
+        .footer-logo {
+
+            font-size: 23px;
+
+            font-weight: bold;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .footer-descricao {
+
+            font-size: 11px;
+
+            line-height: 1.5;
+
+            color: var(--branco);
+
+        }
+
+
+        /* TÍTULOS */
+
+        footer h3 {
+
+            font-size: 11px;
+
+            margin-bottom: 10px;
+
+            color: var(--branco);
+
+        }
+
+
+        /* LISTAS */
+
+        footer ul {
+
+            list-style: none;
+
+        }
+
+
+        footer li {
+
+            font-size: 10px;
+
+            margin-bottom: 5px;
+
+        }
+
+
+        /* LINKS */
+
+        footer a {
+
+            color: var(--branco);
+
+            text-decoration: none;
+
+        }
+
+
+        footer a:hover {
+
+            color: var(--verde);
+
+        }
+
+
+        /* CONTATO */
+
+        .contato p {
+
+            font-size: 10px;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        /* =====================================================
+           BOTÃO VOLTAR AO TOPO
+           ===================================================== */
+
+        .topo {
+
+            position: fixed;
+
+            right: 20px;
+
+            bottom: 20px;
+
+            width: 32px;
+
+            height: 32px;
+
+            border-radius: 50%;
+
+            border: none;
+
+            background-color: var(--creme);
+
+            color: var(--marrom);
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVIDADE
+           ===================================================== */
+
+        @media (max-width: 800px) {
+
+            nav {
+
+                gap: 15px;
+
+            }
+
+
+            nav a {
+
+                font-size: 11px;
+
+            }
+
+
+            .informacoes-pet {
+
+                flex-direction: column;
+
+            }
+
+
+            .area-foto {
+
+                width: 100%;
+
+                max-width: 350px;
+
+            }
+
+
+            .foto-pet {
+
+                height: auto;
+
+                max-height: 350px;
+
+            }
+
+
+            footer {
+
+                grid-template-columns: 1fr 1fr;
+
+            }
+
+        }
+
+
+        @media (max-width: 500px) {
+
+            header {
+
+                padding: 0 20px;
+
+            }
+
+
+            nav a {
+
+                display: none;
+
+            }
+
+
+            .titulo-principal {
+
+                font-size: 21px;
+
+            }
+
+
+            main {
+
+                width: 92%;
+
+            }
+
+
+            .descricao {
+
+                font-size: 12px;
+
+            }
+
+
+            footer {
+
+                grid-template-columns: 1fr;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         CABEÇALHO
+         ===================================================== -->
+
+    <header>
+
+        <div class="logo">
+
+            IPAWZ
+
+            <span class="logo-pata">🐾</span>
+
+        </div>
+
+
+        <nav>
+
+            <a href="#">
+                Home
+            </a>
+
+            <a href="#" class="ativo">
+                Adoção
+            </a>
+
+            <a href="#">
+                Doação
+            </a>
+
+            <a href="#">
+                Voluntários
+            </a>
+
+            <a href="#">
+                Perfil
+            </a>
+
+            <span class="menu-icon">
+                ☰
+            </span>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         TÍTULO
+         ===================================================== -->
+
+    <div class="titulo-principal">
+
+        Conheça a Nazinha
+
+    </div>
+
+
+
+    <!-- =====================================================
+         CONTEÚDO PRINCIPAL
+         ===================================================== -->
+
+    <main>
+
+
+        <!-- FOTO E INFORMAÇÕES -->
+
+        <section class="informacoes-pet">
+
+
+            <!-- FOTO -->
+
+            <div class="area-foto">
+
+                <img
+                    src="https://marketplace.canva.com/xHPJk/MAHA8XxHPJk/1/tl/canva-MAHA8XxHPJk.jpg" 
+                    alt="Foto da Nazinha"
+                    class="foto-pet"
+                >
+
+            </div>
+
+
+
+            <!-- DADOS -->
+
+            <div class="dados-pet">
+
+
+                <p>
+
+                    <strong>Nome:</strong>
+                    Nazinha
+
+                </p>
+
+
+                <p>
+
+                    <strong>Idade:</strong>
+                    7 anos
+
+                </p>
+
+
+                <p>
+
+                    <strong>Porte:</strong>
+                    Pequeno
+
+                </p>
+
+
+                <p>
+
+                    <strong>Raça:</strong>
+                    Siamês
+
+                </p>
+
+
+
+                <!-- HISTÓRICO -->
+
+                <div class="historico">
+
+
+                    <div class="historico-titulo">
+
+                        HISTÓRICO VETERINÁRIO
+
+                    </div>
+
+
+
+                    <!-- CASTRAÇÃO -->
+
+                    <div class="item-historico">
+
+                        <strong>
+                            Castração:
+                        </strong>
+
+
+                        <div class="opcoes">
+
+                            <div class="opcao">
+
+                                <span class="checkbox"></span>
+
+                                Sim
+
+                            </div>
+
+
+                            <div class="opcao">
+
+                                <span class="checkbox"></span>
+
+                                Não
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- VACINAS -->
+
+                    <div class="item-historico">
+
+                        <strong>
+                            Vacinas:
+                        </strong>
+
+
+                        <div class="opcoes">
+
+                            <div class="opcao">
+
+                                <span class="checkbox"></span>
+
+                                Sim
+
+                            </div>
+
+
+                            <div class="opcao">
+
+                                <span class="checkbox"></span>
+
+                                Não
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- ANEXO -->
+
+                    <div class="anexo">
+
+                        <strong>
+                            Anexo(s):
+                        </strong>
+
+                        <span class="icone-anexo">
+                            📎
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             DESCRIÇÃO
+             ===================================================== -->
+
+        <section class="descricao-area">
+
+
+            <div class="descricao-titulo">
+
+                Descrição:
+
+            </div>
+
+
+            <div class="descricao">
+
+                Tem a patinha esquerda machucada,
+                foi resgatada vítima de maus tratos.
+                Se alimenta e socializa bem atualmente,
+                muito dócil e calma.
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =====================================================
+             BOTÃO
+             ===================================================== -->
+
+        <div class="area-botao">
+
+            <button
+                class="botao-adocao"
+                onclick="solicitarAdocao()">
+
+                Solicitar adoção
+
+            </button>
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         RODAPÉ
+         ===================================================== -->
+
+    <footer>
+
+
+        <!-- COLUNA 1 -->
+
+        <div>
+
+            <div class="footer-logo">
+
+                IPAWZ 🐾
+
+            </div>
+
+
+            <p class="footer-descricao">
+
+                Conectando pessoas a
+                causas que transformam
+                vidas animais.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- COLUNA 2 -->
+
+        <div>
+
+            <h3>
+                NAVEGAÇÃO
+            </h3>
+
+
+            <ul>
+
+                <li>
+                    • <a href="#">Início</a>
+                </li>
+
+                <li>
+                    • <a href="#">Adoção</a>
+                </li>
+
+                <li>
+                    • <a href="#">Doação</a>
+                </li>
+
+                <li>
+                    • <a href="#">Voluntários</a>
+                </li>
+
+                <li>
+                    • <a href="#">Instituições</a>
+                </li>
+
+                <li>
+                    • <a href="#">Sobre nós</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+
+        <!-- COLUNA 3 -->
+
+        <div>
+
+            <h3>
+                AJUDA
+            </h3>
+
+
+            <ul>
+
+                <li>
+                    • <a href="#">FAQ</a>
+                </li>
+
+                <li>
+                    • <a href="#">Termos de uso</a>
+                </li>
+
+                <li>
+                    • <a href="#">Política de privacidade</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+
+        <!-- COLUNA 4 -->
+
+        <div class="contato">
+
+            <h3>
+                CONTATO
+            </h3>
+
+
+            <p>
+                ✉ pawz@ipawz.com
+            </p>
+
+
+            <p>
+                ☎ (11) 9999-9999
+            </p>
+
+        </div>
+
+
+    </footer>
+
+
+
+    <!-- BOTÃO VOLTAR AO TOPO -->
+
+    <button
+        class="topo"
+        onclick="voltarTopo()">
+
+        ↑
+
+    </button>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script>
+
+
+        /*
+         * Função executada quando o usuário
+         * clica em "Solicitar adoção".
+         */
+
+        function solicitarAdocao() {
+
+            alert(
+                "Sua solicitação de adoção foi iniciada!"
+            );
+
+        }
+
+
+
+        /*
+         * Função para voltar ao início
+         * da página.
+         */
+
+        function voltarTopo() {
+
+            window.scrollTo({
+
+                top: 0,
+
+                behavior: "smooth"
+
+            });
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

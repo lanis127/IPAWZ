@@ -1,0 +1,1460 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>iPawz - Perfil Instituição</title>
+
+
+    <style>
+
+        /* =====================================================
+           CORES OFICIAIS DO iPAWZ
+           ===================================================== */
+
+        :root {
+
+            --azul: #1C5F9D;
+            --verde: #7FC9B8;
+            --creme: #FDFBD4;
+            --marrom: #7A2E1C;
+            --branco: #FFFFFF;
+            --preto: #000000;
+            --cinza: #D9D9D9;
+            --cinza-texto: #777777;
+
+        }
+
+
+        /* =====================================================
+           CONFIGURAÇÕES GERAIS
+           ===================================================== */
+
+        * {
+
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+
+        body {
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            background-color: var(--creme);
+
+            color: var(--marrom);
+
+            min-height: 100vh;
+
+        }
+
+
+        /* =====================================================
+           CABEÇALHO
+           ===================================================== */
+
+        header {
+
+            width: 100%;
+
+            height: 43px;
+
+            background-color: var(--creme);
+
+            border-bottom: 1px solid #ddd8b8;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 0 3.5%;
+
+        }
+
+
+        /* LOGO */
+
+        .logo {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 3px;
+
+            color: var(--marrom);
+
+            font-size: 20px;
+
+            font-weight: bold;
+
+        }
+
+
+        .logo-pata {
+
+            font-size: 17px;
+
+        }
+
+
+        /* =====================================================
+           MENU
+           ===================================================== */
+
+        nav {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 42px;
+
+        }
+
+
+        nav a {
+
+            color: var(--marrom);
+
+            text-decoration: none;
+
+            font-size: 12px;
+
+            padding: 14px 0 10px;
+
+        }
+
+
+        nav a:hover {
+
+            color: var(--azul);
+
+        }
+
+
+        nav a.ativo {
+
+            font-weight: bold;
+
+            border-bottom: 2px solid var(--marrom);
+
+        }
+
+
+        /* MENU HAMBÚRGUER */
+
+        .menu-icon {
+
+            font-size: 23px;
+
+            color: var(--marrom);
+
+            cursor: pointer;
+
+            margin-left: 8px;
+
+        }
+
+
+        /* =====================================================
+           ÁREA PRINCIPAL
+           ===================================================== */
+
+        main {
+
+            width: 100%;
+
+            min-height: calc(100vh - 43px);
+
+            padding: 36px 5.5% 45px;
+
+        }
+
+
+        /* =====================================================
+           CONTAINER DO PERFIL
+           ===================================================== */
+
+        .perfil-container {
+
+            width: 100%;
+
+            max-width: 1180px;
+
+            margin: 0 auto;
+
+            display: grid;
+
+            grid-template-columns: 42% 58%;
+
+            column-gap: 30px;
+
+        }
+
+
+        /* =====================================================
+           COLUNA ESQUERDA
+           ===================================================== */
+
+        .coluna-esquerda {
+
+            padding-top: 0;
+
+        }
+
+
+        /* =====================================================
+           FOTO / ÍCONE DA INSTITUIÇÃO
+           ===================================================== */
+
+        .foto-container {
+
+            width: 118px;
+
+            height: 118px;
+
+            border-radius: 50%;
+
+            background-color: var(--azul);
+
+            margin: 0 auto;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            position: relative;
+
+        }
+
+
+        /* CABEÇA DO ÍCONE */
+
+        .icone-cabeca {
+
+            width: 42px;
+
+            height: 42px;
+
+            background-color: var(--creme);
+
+            border-radius: 50%;
+
+            position: absolute;
+
+            top: 28px;
+
+        }
+
+
+        /* CORPO DO ÍCONE */
+
+        .icone-corpo {
+
+            width: 75px;
+
+            height: 39px;
+
+            background-color: var(--creme);
+
+            border-radius: 50% 50% 45% 45%;
+
+            position: absolute;
+
+            bottom: 10px;
+
+        }
+
+
+        /* NOME DA INSTITUIÇÃO */
+
+        .nome-instituicao {
+
+            text-align: center;
+
+            font-size: 10px;
+
+            margin-top: 9px;
+
+            color: var(--marrom);
+
+        }
+
+
+        /* =====================================================
+           DADOS INSTITUCIONAIS
+           ===================================================== */
+
+        .dados-institucionais {
+
+            margin-top: 25px;
+
+        }
+
+
+        .titulo-secao {
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            margin-bottom: 17px;
+
+            color: var(--marrom);
+
+        }
+
+
+        /* =====================================================
+           CAMPOS
+           ===================================================== */
+
+        .campo {
+
+            display: flex;
+
+            flex-direction: column;
+
+        }
+
+
+        .campo label {
+
+            font-size: 11px;
+
+            color: var(--marrom);
+
+            margin-bottom: 4px;
+
+        }
+
+
+        .campo input,
+
+        .campo select {
+
+            width: 100%;
+
+            height: 25px;
+
+            background-color: var(--creme);
+
+            border: 1px solid #dfd7a7;
+
+            border-radius: 3px;
+
+            padding: 4px 7px;
+
+            color: var(--marrom);
+
+            font-size: 10px;
+
+            outline: none;
+
+        }
+
+
+        .campo input:focus,
+
+        .campo select:focus {
+
+            border: 1.5px solid var(--azul);
+
+        }
+
+
+        /* =====================================================
+           RAZÃO SOCIAL
+           ===================================================== */
+
+        .campo-razao {
+
+            width: 205px;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        /* =====================================================
+           NOME FANTASIA
+           ===================================================== */
+
+        .campo-fantasia {
+
+            width: 205px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        /* =====================================================
+           CNPJ + TELEFONE
+           ===================================================== */
+
+        .linha-cnpj-telefone {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 5px;
+
+            width: 205px;
+
+        }
+
+
+        /* =====================================================
+           COLUNA DIREITA
+           ===================================================== */
+
+        .coluna-direita {
+
+            padding-top: 2px;
+
+        }
+
+
+        /* =====================================================
+           TIPO DE INSTITUIÇÃO
+           ===================================================== */
+
+        .campo-instituicao {
+
+            width: 205px;
+
+        }
+
+
+        /* =====================================================
+           E-MAIL
+           ===================================================== */
+
+        .campo-email {
+
+            width: 205px;
+
+            margin-top: 5px;
+
+        }
+
+
+        /* =====================================================
+           ENDEREÇO
+           ===================================================== */
+
+        .endereco {
+
+            margin-top: 51px;
+
+        }
+
+
+        .endereco-titulo {
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        /* =====================================================
+           RUA + NÚMERO
+           ===================================================== */
+
+        .linha-endereco-1 {
+
+            display: grid;
+
+            grid-template-columns: 1fr 72px;
+
+            gap: 7px;
+
+            width: 100%;
+
+            max-width: 292px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        /* =====================================================
+           BAIRRO + CIDADE
+           ===================================================== */
+
+        .linha-endereco-2 {
+
+            display: grid;
+
+            grid-template-columns: 1fr 115px;
+
+            gap: 7px;
+
+            width: 100%;
+
+            max-width: 292px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        /* =====================================================
+           COMPLEMENTO + CEP + UF
+           ===================================================== */
+
+        .linha-endereco-3 {
+
+            display: grid;
+
+            grid-template-columns: 1fr 72px 45px;
+
+            gap: 7px;
+
+            width: 100%;
+
+        }
+
+
+        /* =====================================================
+           BOTÕES
+           ===================================================== */
+
+        .botoes {
+
+            display: flex;
+
+            justify-content: flex-end;
+
+            gap: 18px;
+
+            margin-top: 50px;
+
+            padding-right: 42px;
+
+        }
+
+
+        button {
+
+            border: none;
+
+            border-radius: 3px;
+
+            height: 28px;
+
+            padding: 0 17px;
+
+            font-size: 10px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            color: var(--branco);
+
+        }
+
+
+        .btn-editar {
+
+            background-color: var(--azul);
+
+        }
+
+
+        .btn-editar:hover {
+
+            background-color: #154d80;
+
+        }
+
+
+        .btn-salvar {
+
+            background-color: var(--verde);
+
+        }
+
+
+        .btn-salvar:hover {
+
+            background-color: #65b6a4;
+
+        }
+
+
+        /* =====================================================
+           MENSAGEM
+           ===================================================== */
+
+        .mensagem {
+
+            text-align: center;
+
+            font-size: 10px;
+
+            margin-top: 10px;
+
+            color: var(--marrom);
+
+            display: none;
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVIDADE
+           ===================================================== */
+
+        @media (max-width: 800px) {
+
+            header {
+
+                padding: 0 20px;
+
+            }
+
+
+            nav {
+
+                gap: 18px;
+
+            }
+
+
+            nav a {
+
+                font-size: 10px;
+
+            }
+
+
+            .perfil-container {
+
+                grid-template-columns: 1fr;
+
+                gap: 40px;
+
+            }
+
+
+            .coluna-esquerda {
+
+                max-width: 350px;
+
+                margin: 0 auto;
+
+            }
+
+
+            .coluna-direita {
+
+                max-width: 400px;
+
+                margin: 0 auto;
+
+                width: 100%;
+
+            }
+
+
+            .endereco {
+
+                margin-top: 40px;
+
+            }
+
+
+            .botoes {
+
+                justify-content: center;
+
+                padding-right: 0;
+
+            }
+
+        }
+
+
+        @media (max-width: 500px) {
+
+            nav a {
+
+                display: none;
+
+            }
+
+
+            .menu-icon {
+
+                display: block;
+
+            }
+
+
+            main {
+
+                padding: 25px 20px 40px;
+
+            }
+
+
+            .campo-razao,
+
+            .campo-fantasia,
+
+            .campo-instituicao,
+
+            .campo-email {
+
+                width: 100%;
+
+            }
+
+
+            .linha-cnpj-telefone {
+
+                width: 100%;
+
+            }
+
+
+            .linha-endereco-1,
+
+            .linha-endereco-2 {
+
+                max-width: 100%;
+
+            }
+
+
+            .linha-endereco-3 {
+
+                grid-template-columns: 1fr 75px 50px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         CABEÇALHO
+         ===================================================== -->
+
+    <header>
+
+        <div class="logo">
+
+            IPAWZ
+
+            <span class="logo-pata">
+                🐾
+            </span>
+
+        </div>
+
+
+        <nav>
+
+            <a href="#">
+                Home
+            </a>
+
+            <a href="#">
+                Adoção
+            </a>
+
+            <a href="#">
+                Doação
+            </a>
+
+            <a href="#">
+                Voluntários
+            </a>
+
+            <a href="#" class="ativo">
+                Perfil
+            </a>
+
+            <span class="menu-icon">
+                ☰
+            </span>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         CONTEÚDO PRINCIPAL
+         ===================================================== -->
+
+    <main>
+
+
+        <div class="perfil-container">
+
+
+            <!-- =================================================
+                 COLUNA ESQUERDA
+                 ================================================= -->
+
+            <section class="coluna-esquerda">
+
+
+                <!-- ÍCONE DO PERFIL -->
+
+                <div class="foto-container">
+
+                    <div class="icone-cabeca"></div>
+
+                    <div class="icone-corpo"></div>
+
+                </div>
+
+
+                <div class="nome-instituicao">
+
+                    Instituição
+
+                </div>
+
+
+
+                <!-- =================================================
+                     DADOS INSTITUCIONAIS
+                     ================================================= -->
+
+                <div class="dados-institucionais">
+
+
+                    <h2 class="titulo-secao">
+
+                        Dados institucionais
+
+                    </h2>
+
+
+
+                    <!-- RAZÃO SOCIAL -->
+
+                    <div class="campo campo-razao">
+
+                        <label for="razaoSocial">
+
+                            Razão social*
+
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="razaoSocial"
+                        >
+
+                    </div>
+
+
+
+                    <!-- NOME FANTASIA -->
+
+                    <div class="campo campo-fantasia">
+
+                        <label for="nomeFantasia">
+
+                            Nome fantasia*
+
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="nomeFantasia"
+                        >
+
+                    </div>
+
+
+
+                    <!-- CNPJ + TELEFONE -->
+
+                    <div class="linha-cnpj-telefone">
+
+
+                        <div class="campo">
+
+                            <label for="cnpj">
+
+                                CNPJ*
+
+                            </label>
+
+
+                            <input
+                                type="text"
+                                id="cnpj"
+                                maxlength="18"
+                            >
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="telefone">
+
+                                Telefone*
+
+                            </label>
+
+
+                            <input
+                                type="tel"
+                                id="telefone"
+                                maxlength="15"
+                            >
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 COLUNA DIREITA
+                 ================================================= -->
+
+            <section class="coluna-direita">
+
+
+                <!-- TIPO DE INSTITUIÇÃO -->
+
+                <div class="campo campo-instituicao">
+
+                    <label for="tipoInstituicao">
+
+                        Tipo de instituição*
+
+                    </label>
+
+
+                    <select id="tipoInstituicao">
+
+                        <option value=""></option>
+
+                        <option value="ong">
+                            ONG
+                        </option>
+
+                        <option value="abrigo">
+                            Abrigo
+                        </option>
+
+                        <option value="associacao">
+                            Associação
+                        </option>
+
+                        <option value="clinica">
+                            Clínica veterinária
+                        </option>
+
+                        <option value="empresa">
+                            Empresa
+                        </option>
+
+                        <option value="outro">
+                            Outro
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- E-MAIL -->
+
+                <div class="campo campo-email">
+
+                    <label for="email">
+
+                        E-mail*
+
+                    </label>
+
+
+                    <input
+                        type="email"
+                        id="email"
+                    >
+
+                </div>
+
+
+
+                <!-- =================================================
+                     ENDEREÇO
+                     ================================================= -->
+
+                <div class="endereco">
+
+
+                    <h2 class="endereco-titulo">
+
+                        Endereço
+
+                    </h2>
+
+
+
+                    <!-- RUA + NÚMERO -->
+
+                    <div class="linha-endereco-1">
+
+
+                        <div class="campo">
+
+                            <label for="rua">
+
+                                Rua*
+
+                            </label>
+
+
+                            <input
+                                type="text"
+                                id="rua"
+                            >
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="numero">
+
+                                Número*
+
+                            </label>
+
+
+                            <input
+                                type="text"
+                                id="numero"
+                            >
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- BAIRRO + CIDADE -->
+
+                    <div class="linha-endereco-2">
+
+
+                        <div class="campo">
+
+                            <label for="bairro">
+
+                                Bairro*
+
+                            </label>
+
+
+                            <input
+                                type="text"
+                                id="bairro"
+                            >
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="cidade">
+
+                                Cidade*
+
+                            </label>
+
+
+                            <input
+                                type="text"
+                                id="cidade"
+                            >
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- COMPLEMENTO + CEP + UF -->
+
+                    <div class="linha-endereco-3">
+
+
+                        <div class="campo">
+
+                            <label for="complemento">
+
+                                Complemento*
+
+                            </label>
+
+
+                            <input
+                                type="text"
+                                id="complemento"
+                            >
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="cep">
+
+                                CEP*
+
+                            </label>
+
+
+                            <input
+                                type="text"
+                                id="cep"
+                                maxlength="9"
+                            >
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="uf">
+
+                                UF*
+
+                            </label>
+
+
+                            <select id="uf">
+
+                                <option value=""></option>
+
+                                <option>AC</option>
+                                <option>AL</option>
+                                <option>AP</option>
+                                <option>AM</option>
+                                <option>BA</option>
+                                <option>CE</option>
+                                <option>DF</option>
+                                <option>ES</option>
+                                <option>GO</option>
+                                <option>MA</option>
+                                <option>MT</option>
+                                <option>MS</option>
+                                <option>MG</option>
+                                <option>PA</option>
+                                <option>PB</option>
+                                <option>PR</option>
+                                <option>PE</option>
+                                <option>PI</option>
+                                <option>RJ</option>
+                                <option>RN</option>
+                                <option>RS</option>
+                                <option>RO</option>
+                                <option>RR</option>
+                                <option>SC</option>
+                                <option>SP</option>
+                                <option>SE</option>
+                                <option>TO</option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         BOTÕES
+                         ================================================= -->
+
+                    <div class="botoes">
+
+
+                        <button
+                            type="button"
+                            class="btn-editar"
+                            onclick="editarPerfil()">
+
+                            Editar perfil
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="btn-salvar"
+                            onclick="salvarInformacoes()">
+
+                            Salvar informações
+
+                        </button>
+
+
+                    </div>
+
+
+                    <div
+                        id="mensagem"
+                        class="mensagem">
+
+                        Informações salvas com sucesso! 🐾
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script>
+
+
+        /* =====================================================
+           EDITAR PERFIL
+           ===================================================== */
+
+        function editarPerfil() {
+
+            const campos =
+                document.querySelectorAll("input, select");
+
+
+            campos.forEach(function(campo) {
+
+                campo.disabled = false;
+
+            });
+
+
+            alert(
+                "Você pode editar as informações da instituição."
+            );
+
+        }
+
+
+
+        /* =====================================================
+           SALVAR INFORMAÇÕES
+           ===================================================== */
+
+        function salvarInformacoes() {
+
+            const razaoSocial =
+                document.getElementById("razaoSocial").value;
+
+            const email =
+                document.getElementById("email").value;
+
+
+            const mensagem =
+                document.getElementById("mensagem");
+
+
+            if (
+                razaoSocial === "" ||
+                email === ""
+            ) {
+
+                alert(
+                    "Preencha a razão social e o e-mail."
+                );
+
+                return;
+
+            }
+
+
+            mensagem.style.display = "block";
+
+
+            setTimeout(function() {
+
+                mensagem.style.display = "none";
+
+            }, 3000);
+
+        }
+
+
+
+        /* =====================================================
+           MÁSCARA CNPJ
+           ===================================================== */
+
+        document
+            .getElementById("cnpj")
+            .addEventListener("input", function() {
+
+                let valor = this.value
+                    .replace(/\D/g, "")
+                    .slice(0, 14);
+
+
+                if (valor.length > 12) {
+
+                    valor = valor.replace(
+                        /^(\d{2})(\d{3})(\d{3})(\d{4})(\d{0,2}).*/,
+                        "$1.$2.$3/$4-$5"
+                    );
+
+                } else if (valor.length > 8) {
+
+                    valor = valor.replace(
+                        /^(\d{2})(\d{3})(\d{3})(\d{0,4}).*/,
+                        "$1.$2.$3/$4"
+                    );
+
+                } else if (valor.length > 5) {
+
+                    valor = valor.replace(
+                        /^(\d{2})(\d{3})(\d{0,3}).*/,
+                        "$1.$2.$3"
+                    );
+
+                } else if (valor.length > 2) {
+
+                    valor = valor.replace(
+                        /^(\d{2})(\d{0,3}).*/,
+                        "$1.$2"
+                    );
+
+                }
+
+
+                this.value = valor;
+
+            });
+
+
+
+        /* =====================================================
+           MÁSCARA TELEFONE
+           ===================================================== */
+
+        document
+            .getElementById("telefone")
+            .addEventListener("input", function() {
+
+                let valor = this.value
+                    .replace(/\D/g, "")
+                    .slice(0, 11);
+
+
+                if (valor.length > 6) {
+
+                    valor = valor.replace(
+                        /^(\d{2})(\d{5})(\d{0,4}).*/,
+                        "($1) $2-$3"
+                    );
+
+                } else if (valor.length > 2) {
+
+                    valor = valor.replace(
+                        /^(\d{2})(\d{0,5}).*/,
+                        "($1) $2"
+                    );
+
+                }
+
+
+                this.value = valor;
+
+            });
+
+
+
+        /* =====================================================
+           MÁSCARA CEP
+           ===================================================== */
+
+        document
+            .getElementById("cep")
+            .addEventListener("input", function() {
+
+                let valor = this.value
+                    .replace(/\D/g, "")
+                    .slice(0, 8);
+
+
+                if (valor.length > 5) {
+
+                    valor =
+                        valor.substring(0, 5)
+                        + "-"
+                        + valor.substring(5);
+
+                }
+
+
+                this.value = valor;
+
+            });
+
+    </script>
+
+
+</body>
+
+</html>
