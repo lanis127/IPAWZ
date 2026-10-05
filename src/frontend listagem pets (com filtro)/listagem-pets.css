@@ -1,0 +1,447 @@
+/* ===================================================== */
+/* AJUSTES DO HEADER */
+/* ===================================================== */
+
+.header {
+    background-color: #FFFFCF;
+}
+
+.nav-menu a.pagina-ativa {
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+
+/* ===================================================== */
+/* TÍTULO + BOTÃO DE FILTRO */
+/* ===================================================== */
+
+.titulo-com-filtro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+
+.pagina-adocao h1 {
+    margin: 0;
+    text-align: center;
+    color: #803522;
+    font-size: 32px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 800;
+}
+
+
+/* ===================================================== */
+/* BOTÃO / ÍCONE DO FILTRO */
+/* ===================================================== */
+
+.botao-filtro {
+    width: 34px;
+    height: 34px;
+    padding: 3px;
+    border: none;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.botao-filtro img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.botao-filtro:hover {
+    transform: translateY(-3px) scale(1.05);
+}
+
+
+/* ===================================================== */
+/* TEXTO ABAIXO DO TÍTULO */
+/* ===================================================== */
+
+.texto-introducao {
+    margin-top: 25px;
+    margin-bottom: 50px;
+    text-align: center;
+    color: #803522;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+}
+
+
+/* LINK "AQUI" */
+
+.texto-introducao a {
+    color: #176A7A;
+    font-weight: 700;
+}
+
+
+/* ===================================================== */
+/* GRADE DOS PETS */
+/* ===================================================== */
+
+.lista-pets {
+    width: 100%;
+    max-width: 1160px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 50px;
+    row-gap: 26px;
+}
+
+
+/* ===================================================== */
+/* CARD DE CADA PET */
+/* ===================================================== */
+
+.card-pet {
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card-pet:hover {
+    transform: scale(1.05);
+}
+
+
+/* ===================================================== */
+/* FOTO DO PET */
+/* ===================================================== */
+
+.card-pet img {
+    width: 100%;
+    height: 300px;
+    display: block;
+    object-fit: cover;
+    border-radius: 9px 9px 0 0;
+}
+
+
+/* ===================================================== */
+/* NOME + IDADE */
+/* ===================================================== */
+
+.nome-pet {
+    width: 100%;
+    min-height: 41px;
+    background-color: #7CC7BE;
+    color: #FFFFCF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 19px;
+    font-weight: 800;
+}
+
+
+/* ===================================================== */
+/* "CONHEÇA MAIS" */
+/* ===================================================== */
+
+.conheca-mais {
+    display: inline-block;
+    margin-top: 10px;
+    color: #803522;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    font-style: italic;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.conheca-mais:hover {
+    transform: translateY(-5px);
+}
+
+
+/* ===================================================== */
+/* MENSAGEM QUANDO NENHUM PET É ENCONTRADO */
+/* ===================================================== */
+
+.mensagem-sem-pets {
+    margin: 60px auto;
+    text-align: center;
+    color: #803522;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+
+/* ===================================================== */
+/* PAINEL DE FILTRO */
+/* ===================================================== */
+
+.filtro-overlay {
+    position: fixed;
+    inset: 0;
+    background: transparent;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+    z-index: 1100;
+}
+
+.filtro-overlay.ativo {
+    opacity: 1;
+    visibility: visible;
+}
+
+.painel-filtro {
+    position: fixed;
+    top: 80px;
+    right: 0;
+    width: 350px;
+    max-width: calc(100vw - 20px);
+    height: calc(100vh - 80px);
+    padding: 25px 28px 30px;
+    overflow-y: auto;
+    background-color: #FFFFCF;
+    border: 1px solid #8C4B3B;
+    box-shadow: -3px 3px 8px rgba(0, 0, 0, 0.25);
+    transform: translateX(105%);
+    transition: transform 0.35s ease;
+    z-index: 1101;
+}
+
+.painel-filtro.aberto {
+    transform: translateX(0);
+}
+
+
+/* ===================================================== */
+/* CABEÇALHO DO FILTRO */
+/* ===================================================== */
+
+.cabecalho-filtro {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 28px;
+}
+
+.cabecalho-filtro h2 {
+    margin: 0;
+    color: #803522;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.fechar-filtro {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: transparent;
+    color: #222;
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.fechar-filtro:hover {
+    color: #803522;
+}
+
+
+/* ===================================================== */
+/* CATEGORIAS DO FILTRO */
+/* ===================================================== */
+
+.painel-filtro fieldset {
+    margin: 0 0 27px;
+    padding: 0;
+    border: none;
+}
+
+.painel-filtro legend {
+    margin-bottom: 11px;
+    color: #803522;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.opcoes-filtro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 18px;
+    row-gap: 9px;
+}
+
+.opcoes-filtro label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #8C4B3B;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.opcoes-filtro input[type="radio"] {
+    width: 13px;
+    height: 13px;
+    margin: 0;
+    accent-color: #8C8C8C;
+    cursor: pointer;
+}
+
+
+/* ===================================================== */
+/* BOTÃO "FILTRAR PETS" */
+/* ===================================================== */
+
+.botoes-filtro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+
+.botao-filtrar {
+    display: block;
+    width: 145px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 2px;
+    background-color: #176A7A;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: 0.2s ease;
+}
+
+.botao-filtrar:hover {
+    transform: translateY(-2px);
+}
+
+
+.botao-limpar {
+    border: none;
+    background: transparent;
+    color: #803522;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.botao-limpar:hover {
+    color: #176A7A;
+}
+
+
+/* ===================================================== */
+/* PAGINAÇÃO */
+/* ===================================================== */
+
+.paginacao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 58px;
+    margin-bottom: 50px;
+}
+
+.paginacao button {
+    border: none;
+    background: transparent;
+    padding: 2px 4px;
+    color: #888;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.paginacao .numero-pagina.ativa {
+    color: #803522;
+    font-weight: 800;
+    text-decoration: underline;
+}
+
+.paginacao .seta-paginacao {
+    font-size: 30px;
+    line-height: 1;
+    color: #555;
+}
+
+.paginacao button:hover {
+    color: #803522;
+}
+
+
+/* ===================================================== */
+/* RESPONSIVIDADE */
+/* ===================================================== */
+
+@media (max-width: 900px) {
+
+    .lista-pets {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .painel-filtro {
+        width: 340px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .pagina-adocao {
+        padding: 30px 20px;
+    }
+
+    .titulo-com-filtro {
+        gap: 6px;
+    }
+
+    .pagina-adocao h1 {
+        font-size: 25px;
+    }
+
+    .botao-filtro {
+        width: 28px;
+        height: 28px;
+    }
+
+    .lista-pets {
+        grid-template-columns: 1fr;
+    }
+
+    .painel-filtro {
+        top: 0;
+        width: min(350px, calc(100vw - 10px));
+        max-width: none;
+        height: 100vh;
+        padding: 22px 24px 28px;
+    }
+
+}

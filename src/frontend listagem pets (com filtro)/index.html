@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Listagem de Pets - IPAWZ</title>
+
+    <!-- CSS geral do sistema -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- CSS específico da tela de listagem -->
+    <link rel="stylesheet" href="listagem-pets.css">
+
+</head>
+
+<body>
+
+    <header class="header logged-header">
+
+        <div class="logo">
+            <h1>IPAWZ <span>🐾</span></h1>
+        </div>
+
+        <nav class="nav-menu">
+            <a href="#">Home</a>
+            <a href="#" class="pagina-ativa">Adoção</a>
+            <a href="#">Doação</a>
+            <a href="#">Voluntários</a>
+            <a href="#">Perfil</a>
+        </nav>
+
+        <button class="menu-btn" id="openMenu" type="button" aria-label="Abrir menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+    </header>
+
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <div class="overlay" id="overlay"></div>
+
+    <aside class="sidebar" id="sidebar">
+
+        <button class="close-btn" id="closeMenu" type="button" aria-label="Fechar menu">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <ul>
+            <li><a href="#">Solicitações de adoção</a></li>
+            <li><a href="#">Acompanhamento de candidaturas</a></li>
+            <li><a href="#">Cadastrar pets para adoção</a></li>
+            <li class="active"><a href="#">Sobre nós</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li class="logout">
+                <a href="#">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
+                </a>
+            </li>
+        </ul>
+
+    </aside>
+
+
+    <!-- ===================================================== -->
+    <!-- CONTEÚDO DA LISTAGEM DE PETS -->
+    <!-- ===================================================== -->
+
+    <main class="pagina-adocao">
+
+        <div class="titulo-com-filtro">
+
+            <h1>APAIXONE-SE PELOS NOSSOS FOFINHOS!</h1>
+
+            <!-- Ícone clicável que abre o filtro -->
+            <button
+                class="botao-filtro"
+                id="abrirFiltro"
+                type="button"
+                aria-label="Abrir filtros"
+                aria-expanded="false"
+            >
+                <img src="img/filtro.png" alt="Filtrar pets">
+            </button>
+
+        </div>
+
+        <p class="texto-introducao">
+            Escolha aqui seu novo amiguinho para compartilhar a vida
+            ou cadastre um pet para adoção clicando
+            <a href="#">AQUI.</a>
+        </p>
+
+
+        <!-- ================================================= -->
+        <!-- LISTA DE PETS                                     -->
+        <!-- Os cards serão criados pelo JavaScript.           -->
+        <!-- ================================================= -->
+
+        <section class="lista-pets" id="listaPets"></section>
+
+        <p class="mensagem-sem-pets" id="mensagemSemPets" hidden>
+            Nenhum pet encontrado com esses filtros.
+        </p>
+
+
+        <!-- ================================================= -->
+        <!-- PAGINAÇÃO                                         -->
+        <!-- ================================================= -->
+
+        <nav class="paginacao" aria-label="Paginação dos pets">
+
+            <button class="seta-paginacao" id="paginaAnterior" type="button" aria-label="Página anterior">‹</button>
+
+            <button class="numero-pagina ativa" data-pagina="1" type="button">1</button>
+            <button class="numero-pagina" data-pagina="2" type="button">2</button>
+            <button class="numero-pagina" data-pagina="3" type="button">3</button>
+            <button class="numero-pagina" data-pagina="4" type="button">4</button>
+            <button class="numero-pagina" data-pagina="5" type="button">5</button>
+
+            <button class="seta-paginacao" id="paginaProxima" type="button" aria-label="Próxima página">›</button>
+
+        </nav>
+
+    </main>
+
+
+    <!-- ===================================================== -->
+    <!-- PAINEL DE FILTRO                                     -->
+    <!-- ===================================================== -->
+
+    <div class="filtro-overlay" id="filtroOverlay"></div>
+
+    <aside class="painel-filtro" id="painelFiltro" aria-hidden="true">
+
+        <div class="cabecalho-filtro">
+            <h2>Encontre seu match</h2>
+
+            <button class="fechar-filtro" id="fecharFiltro" type="button" aria-label="Fechar filtro">
+                ×
+            </button>
+        </div>
+
+        <form id="formFiltro">
+
+            <!-- ESPÉCIE -->
+            <fieldset>
+                <legend>Espécie</legend>
+
+                <div class="opcoes-filtro">
+                    <label><input type="radio" name="especie" value="cachorro" checked> Cachorro</label>
+                    <label><input type="radio" name="especie" value="passaro"> Pássaro</label>
+                    <label><input type="radio" name="especie" value="gato"> Gato</label>
+                    <label><input type="radio" name="especie" value="outros"> Outros</label>
+                </div>
+            </fieldset>
+
+
+            <!-- SEXO -->
+            <fieldset>
+                <legend>Sexo</legend>
+
+                <div class="opcoes-filtro">
+                    <label><input type="radio" name="sexo" value="femea" checked> Fêmea</label>
+                    <label><input type="radio" name="sexo" value="macho"> Macho</label>
+                    <label><input type="radio" name="sexo" value="indiferente"> Indiferente</label>
+                </div>
+            </fieldset>
+
+
+            <!-- FAIXA ETÁRIA -->
+            <fieldset>
+                <legend>Faixa etária</legend>
+
+                <div class="opcoes-filtro">
+                    <label><input type="radio" name="faixaEtaria" value="filhote" checked> Filhote</label>
+                    <label><input type="radio" name="faixaEtaria" value="adulto"> Adulto</label>
+                    <label><input type="radio" name="faixaEtaria" value="jovem"> Jovem</label>
+                    <label><input type="radio" name="faixaEtaria" value="idoso"> Idoso</label>
+                    <label><input type="radio" name="faixaEtaria" value="indiferente"> Indiferente</label>
+                </div>
+            </fieldset>
+
+
+            <!-- PORTE -->
+            <fieldset>
+                <legend>Porte</legend>
+
+                <div class="opcoes-filtro">
+                    <label><input type="radio" name="porte" value="pequeno" checked> Pequeno</label>
+                    <label><input type="radio" name="porte" value="medio"> Médio</label>
+                    <label><input type="radio" name="porte" value="grande"> Grande</label>
+                    <label><input type="radio" name="porte" value="indiferente"> Indiferente</label>
+                </div>
+            </fieldset>
+
+
+            <!-- TEMPERAMENTO -->
+            <fieldset>
+                <legend>Temperamento</legend>
+
+                <div class="opcoes-filtro">
+                    <label><input type="radio" name="temperamento" value="calmo" checked> Calmo</label>
+                    <label><input type="radio" name="temperamento" value="brincalhao"> Brincalhão</label>
+                    <label><input type="radio" name="temperamento" value="sociavel"> Sociável</label>
+                    <label><input type="radio" name="temperamento" value="independente"> Independente</label>
+                </div>
+            </fieldset>
+
+        <div class="botoes-filtro">
+
+            <button class="botao-filtrar" type="submit">
+                Filtrar Pets
+            </button>
+
+           <button class="botao-limpar" id="limparFiltros" type="button">
+                Remover filtros
+           </button>
+
+        </div>
+
+        </form>
+
+    </aside>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+                <h2>IPAWZ 🐾</h2>
+                <p>Conectando pessoas a causas que transformam vidas animais.</p>
+            </div>
+
+            <div class="footer-column">
+                <h3>NAVEGAÇÃO</h3>
+                <ul>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Adoção</a></li>
+                    <li><a href="#">Doação</a></li>
+                    <li><a href="#">Voluntariado</a></li>
+                    <li><a href="#">Instituições</a></li>
+                    <li><a href="#">Sobre nós</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>AJUDA</h3>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Termos de uso</a></li>
+                    <li><a href="#">Política de privacidade</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>CONTATO</h3>
+                <ul>
+                    <li>📧 ipawz.pets@gmail.com</li>
+                    <li>📞 (11) 99999-9999</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>Copyright © 2026 IPAWZ – Todos os direitos reservados</p>
+            <button class="back-top" type="button">↑</button>
+        </div>
+
+    </footer>
+
+
+    <!-- JavaScript da página -->
+    <script src="js/listagem-pets.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+</html>
