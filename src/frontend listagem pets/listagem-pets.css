@@ -1,0 +1,331 @@
+/* ===================================================== */
+/* AJUSTES DO HEADER */
+/* ===================================================== */
+
+.header {
+    background-color: #FFFFCF;
+}
+
+.nav-menu a.pagina-ativa {
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+
+/* ===================================================== */
+/* TÍTULO */
+/* ===================================================== */
+
+.pagina-adocao h1 {
+
+    margin: 0;
+
+    text-align: center;
+
+    color: #803522;
+
+    font-size: 32px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-weight: 800;
+
+}
+
+
+/* ===================================================== */
+/* TEXTO ABAIXO DO TÍTULO */
+/* ===================================================== */
+
+.texto-introducao {
+
+    margin-top: 25px;
+
+    margin-bottom: 50px;
+
+    text-align: center;
+
+    color: #803522;
+
+    font-size: 18px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-weight: 600;
+
+}
+
+
+/* LINK "AQUI" */
+
+.texto-introducao a {
+
+    color: #176A7A;
+
+    font-weight: 700;
+
+}
+
+
+/* ===================================================== */
+/* GRADE DOS PETS */
+/* ===================================================== */
+
+.lista-pets {
+
+    width: 100%;
+
+    max-width: 1160px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    column-gap: 50px;
+
+    row-gap: 26px;
+
+}
+
+
+/* ===================================================== */
+/* CARD DE CADA PET */
+/* ===================================================== */
+
+.card-pet {
+
+    width: 100%;
+
+    text-align: center;
+
+    transition: 0.3s;
+
+}
+
+.card-pet:hover {
+    transform: scale(1.05);
+}
+
+
+/* ===================================================== */
+/* FOTO DO PET */
+/* ===================================================== */
+
+.card-pet img {
+
+    width: 100%;
+
+    height: 300px;
+
+    display: block;
+
+    object-fit: cover;
+
+    border-radius: 9px 9px 0 0;
+
+}
+
+
+/* ===================================================== */
+/* NOME + IDADE */
+/* ===================================================== */
+
+.nome-pet {
+
+    width: 100%;
+
+    min-height: 41px;
+
+    background-color: #7CC7BE;
+
+    color: #FFFFCF;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 7px 5px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 19px;
+
+    font-weight: 800;
+
+}
+
+
+/* ===================================================== */
+/* "CONHEÇA MAIS" */
+/* ===================================================== */
+
+.conheca-mais {
+
+    display: inline-block;
+
+    margin-top: 10px;
+
+    color: #803522;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+    font-style: italic;
+
+    text-decoration: underline;
+
+    cursor: pointer;
+
+    transition: transform 0.2s ease;
+
+}
+
+
+/* ===================================================== */
+/* EFEITO AO PASSAR O MOUSE */
+/* ===================================================== */
+
+.conheca-mais:hover {
+
+    transform: translateY(-5px);
+
+}
+
+
+/* ===================================================== */
+/* PAGINAÇÃO */
+/* ===================================================== */
+
+.paginacao {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-top: 58px;
+
+    margin-bottom: 50px;
+
+}
+
+.pagina-adocao h1{
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+
+
+/* ===================================================== */
+/* BOTÕES DA PAGINAÇÃO */
+/* ===================================================== */
+
+.paginacao button {
+
+    border: none;
+
+    background: transparent;
+
+    padding: 2px 4px;
+
+    color: #888;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+}
+
+
+/* ===================================================== */
+/* PÁGINA ATUAL */
+/* ===================================================== */
+
+.paginacao .numero-pagina.ativa {
+
+    color: #803522;
+
+    font-weight: 800;
+
+    text-decoration: underline;
+
+}
+
+
+/* ===================================================== */
+/* SETAS */
+/* ===================================================== */
+
+.paginacao .seta-paginacao {
+
+    font-size: 30px;
+
+    line-height: 1;
+
+    color: #555;
+
+}
+
+
+/* ===================================================== */
+/* HOVER DA PAGINAÇÃO */
+/* ===================================================== */
+
+.paginacao button:hover {
+
+    color: #803522;
+
+}
+
+
+/* ===================================================== */
+/* RESPONSIVIDADE */
+/* ===================================================== */
+
+/* Quando a tela fica menor, os cards passam para 2 colunas */
+
+@media (max-width: 900px) {
+
+    .lista-pets {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+}
+
+
+/* Em telas muito pequenas, fica uma coluna */
+
+@media (max-width: 600px) {
+
+    .pagina-adocao {
+
+        padding: 30px 20px;
+
+    }
+
+    .lista-pets {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .pagina-adocao h1 {
+
+        font-size: 25px;
+
+    }
+
+}

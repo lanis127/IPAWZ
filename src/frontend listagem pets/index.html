@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Listagem de Pets - IPAWZ</title>
+
+    <!-- CSS geral do sistema -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- CSS específico da tela de listagem -->
+    <link rel="stylesheet" href="listagem-pets.css">
+
+</head>
+
+<body>
+
+   <header class="header logged-header">
+
+    <div class="logo">
+    <h1>IPAWZ <span>🐾</span></h1>
+</div>
+
+    <nav class="nav-menu">
+
+        <a href="#">Home</a>
+        <a href="#" class="pagina-ativa">Adoção</a>
+        <a href="#">Doação</a>
+        <a href="#">Voluntários</a>
+        <a href="#">Perfil</a>
+
+    </nav>
+
+    <button class="menu-btn" id="openMenu">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+    </header>
+
+
+<!-- ================= SIDEBAR ================= -->
+
+    <div class="overlay" id="overlay"></div>
+
+    <aside class="sidebar" id="sidebar">
+
+        <button class="close-btn" id="closeMenu">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <ul>
+
+            <li>
+                <a href="#">Solicitações de adoção</a>
+            </li>
+
+            <li>
+                <a href="#">Acompanhamento de candidaturas</a>
+            </li>
+
+            <li>
+                <a href="#">Cadastrar pets para adoção</a>
+            </li>
+
+            <li class="active">
+                <a href="#">Sobre nós</a>
+            </li>
+
+            <li>
+                <a href="#">FAQ</a>
+            </li>
+
+            <li class="logout">
+                <a href="#">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+<!-- ===================================================== -->
+<!-- CONTEÚDO DA LISTAGEM DE PETS -->
+<!-- ===================================================== -->
+
+<main class="pagina-adocao">
+
+    <h1>APAIXONE-SE PELOS NOSSOS FOFINHOS!</h1>
+
+    <p class="texto-introducao">
+        Escolha aqui seu novo amiguinho para compartilhar a vida
+        ou cadastre um pet para adoção clicando
+        <a href="#">AQUI.</a>
+    </p>
+
+
+    <!-- ================================================= -->
+    <!-- LISTA DE PETS -->
+    <!-- ================================================= -->
+
+    <section class="lista-pets">
+
+
+        <!-- DUKE -->
+        <article class="card-pet" onclick="window.location.href='#'" style="cursor: pointer;">
+
+            <img
+                src="img/duke.jpg"
+                alt="Duke, cachorro de 6 anos"
+            >
+
+            <div class="nome-pet">
+                DUKE, 6 ANOS
+            </div>
+
+            <a href="#" class="conheca-mais">
+                CONHEÇA MAIS
+            </a>
+
+        </article>
+
+
+        <!-- ZOE -->
+        <article class="card-pet">
+
+            <img
+                src="img/zoe.jpg"
+                alt="Zoe, cachorro de 2 anos"
+            >
+
+            <div class="nome-pet">
+                ZOE, 2 ANOS
+            </div>
+
+            <a href="#" class="conheca-mais">
+                CONHEÇA MAIS
+            </a>
+
+        </article>
+
+
+        <!-- NALA 3 MESES -->
+        <article class="card-pet">
+
+            <img
+                src="img/nala.jpg"
+                alt="Nala, gata de 3 meses"
+            >
+
+            <div class="nome-pet">
+                NALA, 3 MESES
+            </div>
+
+            <a href="#" class="conheca-mais">
+                CONHEÇA MAIS
+            </a>
+
+        </article>
+
+
+        <!-- SALÉM -->
+        <article class="card-pet">
+
+            <img
+                src="img/salem.jpg"
+                alt="Salém, gato de 5 anos"
+            >
+
+            <div class="nome-pet">
+                SALÉM, 5 ANOS
+            </div>
+
+            <a href="#" class="conheca-mais">
+                CONHEÇA MAIS
+            </a>
+
+        </article>
+
+
+        <!-- NAZINHA -->
+        <article class="card-pet">
+
+            <img
+                src="img/nazinha.jpg"
+                alt="Nazinha, gata de 7 anos"
+            >
+
+            <div class="nome-pet">
+                NAZINHA, 7 ANOS
+            </div>
+
+            <a href="#" class="conheca-mais">
+                CONHEÇA MAIS
+            </a>
+
+        </article>
+
+
+        <!-- PIPOCA -->
+        <article class="card-pet">
+
+            <img
+                src="img/pipoca.jpg"
+                alt="Pipoca, cachorro de 4 anos"
+            >
+
+            <div class="nome-pet">
+                PIPOCA, 4 ANOS
+            </div>
+
+            <a href="#" class="conheca-mais">
+                CONHEÇA MAIS
+            </a>
+
+        </article>
+
+
+        <!-- LORO -->
+        <article class="card-pet">
+
+            <img
+                src="img/loro.jpg"
+                alt="Loro, ave de 2 anos"
+            >
+
+            <div class="nome-pet">
+                LORO, 2 ANOS
+            </div>
+
+            <a href="#" class="conheca-mais">
+                CONHEÇA MAIS
+            </a>
+
+        </article>
+
+
+        <!-- MARLEY -->
+        <article class="card-pet">
+
+            <img
+                src="img/marley.jpg"
+                alt="Marley, cachorro de 4 meses"
+            >
+
+            <div class="nome-pet">
+                MARLEY, 4 MESES
+            </div>
+
+            <a href="#" class="conheca-mais">
+                CONHEÇA MAIS
+            </a>
+
+        </article>
+
+
+        <!-- NALA 3 ANOS -->
+        <article class="card-pet">
+
+            <img
+                src="img/nala2.jpg"
+                alt="Nala, gata de 3 anos"
+            >
+
+            <div class="nome-pet">
+                NALA, 3 ANOS
+            </div>
+
+            <a href="#" class="conheca-mais">
+                CONHEÇA MAIS
+            </a>
+
+        </article>
+
+    </section>
+
+
+    <!-- ================================================= -->
+    <!-- PAGINAÇÃO -->
+    <!-- ================================================= -->
+
+    <nav class="paginacao">
+
+        <button
+            class="seta-paginacao"
+            id="paginaAnterior"
+            aria-label="Página anterior"
+        >
+            ‹
+        </button>
+
+
+        <button
+            class="numero-pagina ativa"
+            data-pagina="1"
+        >
+            1
+        </button>
+
+
+        <button
+            class="numero-pagina"
+            data-pagina="2"
+        >
+            2
+        </button>
+
+
+        <button
+            class="numero-pagina"
+            data-pagina="3"
+        >
+            3
+        </button>
+
+
+        <button
+            class="numero-pagina"
+            data-pagina="4"
+        >
+            4
+        </button>
+
+
+        <button
+            class="numero-pagina"
+            data-pagina="5"
+        >
+            5
+        </button>
+
+
+        <button
+            class="seta-paginacao"
+            id="paginaProxima"
+            aria-label="Próxima página"
+        >
+            ›
+        </button>
+
+    </nav>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <h2>IPAWZ 🐾</h2>
+
+                <p>
+                    Conectando pessoas a causas
+                    que transformam vidas animais.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>NAVEGAÇÃO</h3>
+
+                <ul>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Adoção</a></li>
+                    <li><a href="#">Doação</a></li>
+                    <li><a href="#">Voluntariado</a></li>
+                    <li><a href="#">Instituições</a></li>
+                    <li><a href="#">Sobre nós</a></li>
+                </ul>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>AJUDA</h3>
+
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Termos de uso</a></li>
+                    <li><a href="#">Política de privacidade</a></li>
+                </ul>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>CONTATO</h3>
+
+                <ul>
+                    <li>📧 ipawz.pets@gmail.com</li>
+                    <li>📞 (11) 99999-9999</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                Copyright © 2026 IPAWZ –
+                Todos os direitos reservados
+            </p>
+
+            <button class="back-top">
+                ↑
+            </button>
+
+        </div>
+
+    </footer>
+
+
+<!-- JavaScript da página -->
+<script src="js/listagem-pets.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>
