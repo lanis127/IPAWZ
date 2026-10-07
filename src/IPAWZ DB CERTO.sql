@@ -1,0 +1,111 @@
+CREATE DATABASE ipawz;
+USE ipawz;
+CREATE TABLE usuario(
+id_usuario INT AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(150) NOT NULL,
+cpf CHAR(10) NOT NULL UNIQUE,
+data_nascimento DATE NOT NULL,
+email VARCHAR(150) NOT NULL UNIQUE,
+senha_hash VARCHAR(255) NOT NULL,
+telefone VARCHAR(20) NOT NULL,
+cep CHAR(8) NULL,
+logradouro VARCHAR(200) NULL,
+numero VARCHAR(10) NULL,
+complemento VARCHAR(100) NULL,
+bairro VARCHAR(100) NULL,
+cidade VARCHAR(100) NULL,
+estado CHAR(2) NULL,
+data_cadastro datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+status BOOLEAN NOT NULL DEFAULT TRUE
+);
+
+CREATE TABLE perfil (
+id_perfil INT PRIMARY KEY AUTO_INCREMENT,
+nome VARCHAR(50) NOT NULL UNIQUE,
+descricao VARCHAR(255) NULL
+);
+
+CREATE TABLE instituicao(
+id_instituicao INT PRIMARY KEY AUTO_INCREMENT,
+id_responsavel INT NOT NULL UNIQUE,
+razao_social VARCHAR(150) NULL,
+nome_fantasia VARCHAR(150) NOT NULL,
+cnpj CHAR(14) UNIQUE NULL,
+email VARCHAR(150) NOT NULL,
+telefone VARCHAR(20) NOT NULL,
+descricao TEXT NULL,
+cep CHAR(8) NULL,
+logradouro VARCHAR(200) NULL,
+numero VARCHAR(10) NULL,
+complemento VARCHAR(100) NULL,
+bairro VARCHAR(100) NULL,
+cidade VARCHAR(100) NULL,
+estado CHAR(2) NULL,
+data_cadastro DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+status BOOLEAN NOT NULL DEFAULT TRUE
+);
+
+CREATE TABLE pet(
+id_pet INT PRIMARY KEY AUTO_INCREMENT,
+id_instituicao INT NOT NULL,
+nome VARCHAR(100) NOT NULL,
+especie VARCHAR(50) NOT NULL,
+raca VARCHAR(100) NULL,
+idade INT NULL,
+sexo VARCHAR(20) NOT NULL,
+porte VARCHAR(20) NULL,
+descricao TEXT NULL,
+foto_url VARCHAR(255) NULL,
+status VARCHAR(30) NOT NULL DEFAULT 'Disponível',
+data_cadastro DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP 
+);
+
+CREATE TABLE adocao(
+id_adocao INT PRIMARY KEY AUTO_INCREMENT, 
+id_usuario INT NOT NULL,
+id_pet INT NOT NULL,
+data_solicitacao DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+status VARCHAR(30) NOT NULL DEFAULT 'Pendente',
+formulario BOOLEAN NOT NULL DEFAULT TRUE,
+data_atualizacao DATETIME NULL
+);
+
+CREATE TABLE voluntariado(
+id_voluntariado INT PRIMARY KEY AUTO_INCREMENT,
+id_instituicao INT NOT NULL,
+titulo VARCHAR(150) NOT NULL,
+descricao TEXT NOT NULL,
+requisitos TEXT NULL, 
+local VARCHAR(200) NULL, 
+data_inicio DATE NULL, 
+data_fim DATE NULL, 
+quantidade_vagas INT NULL,
+status VARCHAR(30) NOT NULL DEFAULT 'Aberta'
+);
+
+CREATE TABLE candidatura_voluntariado(
+id_candidatura INT PRIMARY KEY AUTO_INCREMENT,
+id_usuario INT NOT NULL, 
+id_voluntariado INT NOT NULL,
+observacoes VARCHAR (200) NULL
+);
+
+CREATE TABLE doacao(
+id_doacao INT PRIMARY KEY AUTO_INCREMENT,
+id_usuario INT NOT NULL, 
+id_instituicao INT NOT NULL, 
+tipo_doacao INT NOT NULL, 
+valor DECIMAL(10,2)  NULL,
+descricao TEXT NULL, 
+data_doacao DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+status VARCHAR(30) NOT NULL DEFAULT 'Registrada'
+);
+
+CREATE TABLE tipo_doacao(
+id_tipo_doacao INT PRIMARY KEY AUTO_INCREMENT,
+nome VARCHAR(50) NOT NULL UNIQUE, 
+descricao VARCHAR(255) NULL
+);
+
+SELECT * FROM ipawz;
