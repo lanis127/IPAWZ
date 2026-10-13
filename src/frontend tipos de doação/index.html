@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos de Doação - IPAWZ</title>
+
+    <!-- Estilos compartilhados: header, sidebar e footer -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Estilos específicos da tela de doação -->
+    <link rel="stylesheet" href="css/tipos-doacao.css">
+
+    <!-- Ícones do Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+    <!-- =========================================================
+         INSERIR HEADER AQUI -->
+
+         <header class="header logged-header">
+
+        <div class="logo">
+            <h1>IPAWZ <span>🐾</span></h1>
+        </div>
+
+        <nav class="nav-menu">
+            <a href="#">Home</a>
+            <a href="#">Adoção</a>
+            <a href="#" class="pagina-ativa">Doação</a>
+            <a href="#">Voluntários</a>
+            <a href="#">Perfil</a>
+        </nav>
+
+        <button class="menu-btn" id="openMenu" type="button" aria-label="Abrir menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+    </header>
+
+    <div class="layout">
+        <!-- =====================================================
+             INSERIR SIDEBAR AQUI, SE/QUANDO ESTA TELA UTILIZÁ-LA
+             Ela deve ficar ao lado do conteúdo principal.-->
+
+             <div class="overlay" id="overlay"></div>
+
+    <aside class="sidebar" id="sidebar">
+
+        <button class="close-btn" id="closeMenu" type="button" aria-label="Fechar menu">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <ul>
+            <li><a href="#">Solicitações de adoção</a></li>
+            <li><a href="#">Acompanhamento de candidaturas</a></li>
+            <li><a href="#">Cadastrar pets para adoção</a></li>
+            <li class="active"><a href="#">Sobre nós</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li class="logout">
+                <a href="#">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
+                </a>
+            </li>
+        </ul>
+
+    </aside>
+
+        <main class="conteudo-principal">
+            <section class="secao-doacao" aria-labelledby="titulo-pagina">
+                <h1 id="titulo-pagina">Selecione o tipo de doação</h1>
+
+                <div class="grade-doacoes">
+                    <button class="card-doacao" type="button" data-tipo="financeira">
+                        <span class="titulo-card">DOAÇÕES FINANCEIRAS</span>
+                        <span>Apoio financeiro voluntário e gratuito por meio de</span>
+                        <span>transferência bancária, PIX, cartão de débito ou crédito.</span>
+                    </button>
+
+                    <button class="card-doacao" type="button" data-tipo="alimentos">
+                        <span class="titulo-card">DOAÇÕES DE ALIMENTOS</span>
+                        <span>Excedentes ou mantimentos próprios para</span>
+                        <span>consumo dos pets. Ex: ração, sachê, petiscos, etc.</span>
+                    </button>
+
+                    <button class="card-doacao" type="button" data-tipo="medicamentos">
+                        <span class="titulo-card">MEDICAMENTOS E SAÚDE</span>
+                        <span>Remédios e insumos veterinários dentro do prazo</span>
+                        <span>de validade, tais como antiparasitários, etc.</span>
+                    </button>
+
+                    <button class="card-doacao" type="button" data-tipo="acessorios">
+                        <span class="titulo-card">ITENS E ACESSÓRIOS</span>
+                        <span>Produtos novos ou seminovos. Ex: caminhas,</span>
+                        <span>cobertores, guias, coleiras, peitorais, focinheiras, etc.</span>
+                    </button>
+
+                    <button class="card-doacao card-centralizado" type="button" data-tipo="higiene">
+                        <span class="titulo-card">HIGIENE E LIMPEZA</span>
+                        <span>Itens para manter os animais limpos e prevenir infecções.</span>
+                        <span>Ex. tapetes higiênicos, shampoo, condicionador, etc.</span>
+                    </button>
+                </div>
+
+                <!-- O formulário aparece aqui quando a pessoa seleciona um tipo de doação. -->
+                <section id="area-formulario" class="area-formulario" aria-live="polite" hidden>
+                    <div class="cabecalho-formulario">
+                        <div>
+                            <p class="etiqueta">PRÓXIMA ETAPA</p>
+                            <h2 id="titulo-formulario">Registrar doação</h2>
+                            <p id="descricao-formulario">Preencha as informações abaixo.</p>
+                        </div>
+                        <button id="fechar-formulario" class="botao-fechar" type="button" aria-label="Fechar formulário">×</button>
+                    </div>
+
+                    <form id="form-doacao">
+                        <div class="campos-comuns">
+                            <div class="campo">
+                                <label for="nome">Seu nome</label>
+                                <input id="nome" name="nome" type="text" placeholder="Digite seu nome" required>
+                            </div>
+                            <div class="campo">
+                                <label for="email">E-mail para contato</label>
+                                <input id="email" name="email" type="email" placeholder="voce@exemplo.com" required>
+                            </div>
+                            <div class="campo campo-largo">
+                                <label for="telefone">Telefone (opcional)</label>
+                                <input id="telefone" name="telefone" type="tel" placeholder="(11) 99999-9999">
+                            </div>
+                        </div>
+
+                        <div id="campos-especificos" class="campos-especificos"></div>
+
+                        <div class="campo campo-largo">
+                            <label for="observacoes">Observações (opcional)</label>
+                            <textarea id="observacoes" name="observacoes" rows="3" placeholder="Inclua alguma informação importante sobre sua doação."></textarea>
+                        </div>
+
+                        <p class="aviso-formulario">Este formulário é apenas a interface visual. Para registrar ou enviar os dados, será necessário conectar o formulário ao backend do IPAWZ.</p>
+
+                        <div class="acoes-formulario">
+                            <button class="botao-secundario" id="cancelar-formulario" type="button">Cancelar</button>
+                            <button class="botao-enviar" type="submit">Continuar doação</button>
+                        </div>
+                        <p id="mensagem-formulario" class="mensagem-formulario" role="status"></p>
+                    </form>
+                </section>
+            </section>
+        </main>
+    </div>
+
+    <!-- =========================================================
+         INSERIR FOOTER AQUI -->
+
+         <footer>
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+                <h2>IPAWZ 🐾</h2>
+                <p>Conectando pessoas a causas que transformam vidas animais.</p>
+            </div>
+
+            <div class="footer-column">
+                <h3>NAVEGAÇÃO</h3>
+                <ul>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Adoção</a></li>
+                    <li><a href="#">Doação</a></li>
+                    <li><a href="#">Voluntariado</a></li>
+                    <li><a href="#">Instituições</a></li>
+                    <li><a href="#">Sobre nós</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>AJUDA</h3>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Termos de uso</a></li>
+                    <li><a href="#">Política de privacidade</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>CONTATO</h3>
+                <ul>
+                    <li>📧 ipawz.pets@gmail.com</li>
+                    <li>📞 (11) 99999-9999</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>Copyright © 2026 IPAWZ – Todos os direitos reservados</p>
+            <button class="back-top" type="button">↑</button>
+        </div>
+
+    </footer>
+
+    <script src="js/tipos-doacao.js"></script>
+</body>
+</html>
