@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Candidaturas Voluntariado | IPAWZ</title>
+
+  <!-- CSS COMPARTILHADO:
+       Copie a versão mais recente do style.css para a pasta css deste projeto. -->
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- CSS EXCLUSIVO DESTA TELA -->
+  <link rel="stylesheet" href="../css/candidaturas-voluntariado.css">
+
+  
+  <!-- Fonte Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/candidaturas-voluntariado.css">
+
+</head>
+<body>
+  <!-- =========================================================
+       HEADER: insira aqui a header compartilhada do IPAWZ.
+       Destaque o item "Voluntários" como ativo (negrito/sublinhado),
+       seguindo o mesmo padrão usado nas outras telas.-->
+
+       <header class="header logged-header">
+
+        <div class="logo">
+            <h1>IPAWZ <span>🐾</span></h1>
+        </div>
+
+        <nav class="nav-menu">
+            <a href="#">Home</a>
+            <a href="#">Adoção</a>
+            <a href="#">Doação</a>
+            <a href="#" class="pagina-ativa">Voluntários</a>
+            <a href="#">Perfil</a>
+        </nav>
+       
+        <button class="menu-btn" id="openMenu" type="button"
+                aria-label="Abrir menu" aria-expanded="false">
+            <span class="hamburger-icon" aria-hidden="true"></span>
+        </button>
+
+    </header>
+
+  <!-- =========================================================
+       SIDEBAR: insira aqui a sidebar compartilhada, se esta tela usar.-->
+
+       <div class="overlay" id="overlay"></div>
+
+    <aside class="sidebar" id="sidebar">
+
+        <button class="close-btn" id="closeMenu" type="button" aria-label="Fechar menu">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <ul>
+            <li><a href="#">Solicitações de adoção</a></li>
+            <li><a href="#">Acompanhamento de candidaturas</a></li>
+            <li><a href="#">Cadastrar pets para adoção</a></li>
+            <li class="active"><a href="#">Sobre nós</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li class="logout">
+                <a href="#">
+                    <span aria-hidden="true">&times;</span>
+                    Logout
+                </a>
+            </li>
+        </ul>
+
+    </aside>
+
+  <main class="candidaturas-page">
+    <div class="page-heading">
+      <h1>Candidaturas Voluntariado</h1>
+      <button class="open-filter-button" id="openFilter" type="button"
+              aria-label="Abrir filtros" aria-controls="filterPanel" aria-expanded="false">
+        <!-- Ícone de filtro em SVG para não depender de bibliotecas externas -->
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M3 4h18l-7.2 8.2V20l-3.6-1.9v-5.9L3 4z"></path>
+        </svg>
+      </button>
+    </div>
+
+    <p class="results-message" id="resultsMessage" aria-live="polite"></p>
+    <section class="applications-list" id="applicationsList" aria-label="Lista de candidaturas">
+      <!-- Os cartões são criados pelo JavaScript a partir da lista de candidaturas. -->
+    </section>
+  </main>
+
+  <!-- PAINEL DE FILTRO SOBREPOSTO À LISTAGEM -->
+  <div class="filter-backdrop" id="filterBackdrop" hidden></div>
+  <aside class="filter-panel" id="filterPanel" aria-label="Filtrar candidaturas" aria-hidden="true">
+    <button class="close-filter-button" id="closeFilter" type="button" aria-label="Fechar filtros">×</button>
+
+    <h2>
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M3 4h18l-7.2 8.2V20l-3.6-1.9v-5.9L3 4z"></path>
+      </svg>
+      FILTRAR POR STATUS
+    </h2>
+
+    <form id="filterForm">
+      <label class="status-option">
+        <input type="radio" name="status" value="aceita">
+        <span class="status-icon accepted-icon" aria-hidden="true">✓</span>
+        <span>Aceitas</span>
+      </label>
+
+      <label class="status-option">
+        <input type="radio" name="status" value="aguardando">
+        <span class="status-icon waiting-icon" aria-hidden="true">◌</span>
+        <span>Aguardando<br>resposta</span>
+      </label>
+
+      <label class="status-option">
+        <input type="radio" name="status" value="negada">
+        <span class="status-icon rejected-icon" aria-hidden="true">×</span>
+        <span>Negadas</span>
+      </label>
+
+      <button class="apply-filter-button" type="submit">Filtrar Candidaturas</button>
+      <button class="clear-filter-button" id="clearFilters" type="button">Remover filtros</button>
+    </form>
+  </aside>
+
+  <!-- =========================================================
+       FOOTER: insira aqui o footer compartilhado do IPAWZ.-->
+
+       <footer>
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+                <h2>IPAWZ 🐾</h2>
+                <p>Conectando pessoas a causas que transformam vidas animais.</p>
+            </div>
+
+            <div class="footer-column">
+                <h3>NAVEGAÇÃO</h3>
+                <ul>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Adoção</a></li>
+                    <li><a href="#">Doação</a></li>
+                    <li><a href="#">Voluntariado</a></li>
+                    <li><a href="#">Instituições</a></li>
+                    <li><a href="#">Sobre nós</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>AJUDA</h3>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Termos de uso</a></li>
+                    <li><a href="#">Política de privacidade</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>CONTATO</h3>
+                <ul>
+                    <li>📧 ipawz.pets@gmail.com</li>
+                    <li>📞 (11) 99999-9999</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>Copyright © 2026 IPAWZ – Todos os direitos reservados</p>
+            <button class="back-top" type="button">↑</button>
+        </div>
+
+    </footer>
+
+  <script src="../js/candidaturas-voluntariado.js"></script>
+</body>
+</html>

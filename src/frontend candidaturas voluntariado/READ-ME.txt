@@ -1,0 +1,31 @@
+IPAWZ - Candidaturas Voluntariado
+
+ESTRUTURA
+- html/candidaturas-voluntariado.html
+- css/candidaturas-voluntariado.css
+- js/candidaturas-voluntariado.js
+- css/style.css (você deve copiar para cá a versão mais recente compartilhada)
+
+COMO ABRIR
+Abra html/candidaturas-voluntariado.html no navegador.
+
+IMPORTANTE SOBRE O STYLE.CSS
+O HTML procura o arquivo compartilhado em ../css/style.css. Copie a versão mais recente do style.css para a pasta css deste projeto. O CSS exclusivo desta tela está em candidaturas-voluntariado.css.
+
+HEADER, SIDEBAR E FOOTER
+Há comentários no HTML mostrando onde inserir os componentes compartilhados. Na header, deixe "Voluntários" ativo, usando o mesmo padrão das outras páginas.
+
+COMO EDITAR AS CANDIDATURAS
+Abra js/candidaturas-voluntariado.js e edite a lista chamada "candidaturas". Cada objeto representa um cartão.
+status pode ser:
+- "aceita"
+- "aguardando"
+- "negada"
+
+Para adicionar outra vaga, copie um objeto da lista e altere id, data, vaga, instituicao, status e etapa. Use um id único.
+
+FILTRO
+O filtro permite selecionar um status por vez. "Remover filtros" limpa a seleção e mostra todas as candidaturas novamente.
+
+VER DETALHES
+O link está visualmente pronto, mas ainda não navega. Quando a tela de detalhes for criada, altere o href="#" gerado em criarCartao() para o caminho do novo HTML. O listener atual impede a navegação enquanto o recurso não estiver pronto.
