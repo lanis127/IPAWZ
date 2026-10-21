@@ -1,0 +1,159 @@
+/* ==========================================
+   PÁGINA DE ERRO 404
+   ========================================== */
+
+/* Área principal da página */
+.pagina-erro {
+    background-color: #FDFBD4;
+    color: #7A2E1C;
+
+    width: 100%;
+    min-height: 460px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    box-sizing: border-box;
+
+    /* Espaçamento superior após o header */
+    padding: 100px 24px 80px;
+
+    /* Evita que estilos globais de alinhamento interfiram */
+    text-align: center;
+}
+
+
+/* ==========================================
+   TÍTULO PRINCIPAL
+   ========================================== */
+
+.pagina-erro .titulo-erro {
+    color: #7A2E1C;
+
+    font-family: inherit;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.4;
+
+    max-width: 650px;
+    width: 100%;
+
+    margin: 0 0 35px;
+    padding: 0;
+}
+
+
+/* ==========================================
+   IMAGEM CENTRAL
+   ========================================== */
+
+.pagina-erro .imagem-erro-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Imagem um pouco maior */
+    width: 500px;
+    height: 333px;
+
+    flex-shrink: 0;
+
+    margin: 0 0 55px;
+    padding: 0;
+}
+
+.pagina-erro .imagem-erro {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+
+/* ==========================================
+   TEXTO EXPLICATIVO
+   ========================================== */
+
+.pagina-erro .descricao-erro {
+    color: #7A2E1C;
+
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.4;
+
+    max-width: 620px;
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ==========================================
+   RESPONSIVIDADE — TABLETS
+   ========================================== */
+
+@media (max-width: 768px) {
+
+    .pagina-erro {
+        padding: 50px 24px 35px;
+    }
+
+    .pagina-erro .titulo-erro {
+        font-size: 22px;
+        max-width: 580px;
+    }
+
+    .pagina-erro .imagem-erro-container {
+        width: 280px;
+        height: 187px;
+
+        margin-bottom: 25px;
+    }
+
+    .pagina-erro .descricao-erro {
+        font-size: 15px;
+        max-width: 560px;
+    }
+}
+
+
+/* ==========================================
+   RESPONSIVIDADE — CELULARES
+   ========================================== */
+
+@media (max-width: 480px) {
+
+    .pagina-erro {
+        padding: 40px 20px 30px;
+        min-height: 0;
+    }
+
+    .pagina-erro .titulo-erro {
+        font-size: 20px;
+        line-height: 1.4;
+
+        margin-bottom: 25px;
+    }
+
+    .pagina-erro .imagem-erro-container {
+        width: 250px;
+        height: 167px;
+
+        margin-bottom: 25px;
+    }
+
+    .pagina-erro .descricao-erro {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    /* Remove as quebras fixas de linha no celular */
+    .pagina-erro .quebra-desktop {
+        display: none;
+    }
+}
