@@ -32,15 +32,18 @@
     color: #7A2E1C;
 
     font-family: inherit;
-    font-size: 24px;
+    font-size: 34px; /* Tamanho maior */
     font-weight: 800;
-    line-height: 1.4;
+    line-height: 1.35;
 
-    max-width: 650px;
-    width: 100%;
+    /* Aumenta o espaço horizontal para o texto */
+    max-width: 850px;
+    width: 100%;    
 
     margin: 0 0 35px;
-    padding: 0;
+    padding: 10px;
+
+    text-align: center;
 }
 
 
@@ -54,8 +57,8 @@
     align-items: center;
 
     /* Imagem um pouco maior */
-    width: 500px;
-    height: 333px;
+    width: 600px;
+    height: 400px;
 
     flex-shrink: 0;
 
@@ -81,15 +84,15 @@
     color: #7A2E1C;
 
     font-family: inherit;
-    font-size: 16px;
+    font-size: 22px;
     font-weight: 600;
     line-height: 1.4;
 
-    max-width: 620px;
+    max-width: 720px;
     width: 100%;
 
     margin: 0;
-    padding: 0;
+    padding: 0 0 40px;
 }
 
 
