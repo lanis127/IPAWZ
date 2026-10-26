@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>iPawz - Solicitações de Adoção</title>
+
+<style>
+:root {
+    --azul: #1C5F9D;
+    --verde: #7FC9B8;
+    --creme: #FDFBD4;
+    --marrom: #7A2E1C;
+    --branco: #FFFFFF;
+    --preto: #000000;
+    --cinza: #D9D9D9;
+    --cinza-texto: #777777;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--creme);
+    color: var(--preto);
+}
+
+button, input, select {
+    font: inherit;
+}
+
+button, a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* CABEÇALHO */
+
+.cabecalho {
+    height: 44px;
+    padding: 0 2.5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    background-color: var(--creme);
+    border-bottom: 1px solid #e5dfb8;
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    color: var(--marrom);
+    font-size: 20px;
+    font-weight: 900;
+    white-space: nowrap;
+}
+
+.navegacao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(15px, 4vw, 45px);
+}
+
+.navegacao a {
+    font-size: 10px;
+    color: var(--marrom);
+    white-space: nowrap;
+}
+
+.navegacao a.ativo {
+    font-weight: bold;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.navegacao a:hover {
+    opacity: 0.7;
+}
+
+.botao-menu {
+    border: none;
+    background: transparent;
+    color: var(--marrom);
+    font-size: 25px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.menu-lateral {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 230px;
+    padding: 18px;
+    flex-direction: column;
+    gap: 16px;
+    background-color: #ECE8C8;
+    border: 1px solid #e5dfb8;
+    box-shadow: 0 5px 12px #00000020;
+}
+
+.menu-lateral.aberto {
+    display: flex;
+}
+
+.menu-lateral a {
+    color: var(--marrom);
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* CONTEÚDO PRINCIPAL */
+
+.principal {
+    min-height: 315px;
+    padding: 32px 4.7% 32px;
+    background-color: var(--creme);
+}
+
+.titulo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
+.titulo-area h1 {
+    color: var(--marrom);
+    font-size: clamp(18px, 2.5vw, 22px);
+    font-weight: 900;
+}
+
+.botao-filtro {
+    width: 26px;
+    height: 28px;
+    border: none;
+    background: transparent;
+    color: var(--marrom);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.botao-filtro svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+.filtros {
+    display: none;
+    margin: -18px 0 20px;
+    padding: 15px;
+    border: 1px solid var(--verde);
+    border-radius: 8px;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.filtros.aberto {
+    display: flex;
+}
+
+.filtros label {
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--marrom);
+}
+
+.filtros select {
+    min-width: 150px;
+    padding: 8px;
+    border: 1px solid var(--verde);
+    border-radius: 5px;
+    background: var(--branco);
+    color: var(--marrom);
+}
+
+.botao-limpar {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    background: var(--verde);
+    color: var(--preto);
+    cursor: pointer;
+}
+
+/* CARTÃO DA SOLICITAÇÃO */
+
+.cartao-solicitacao {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    border: 2px solid var(--verde);
+    background-color: var(--creme);
+}
+
+.informacoes {
+    min-height: 36px;
+    padding: 9px 10px;
+    display: grid;
+    grid-template-columns: 1.25fr 0.65fr 1.15fr;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--verde);
+    color: var(--marrom);
+    font-size: clamp(10px, 1.5vw, 13px);
+    font-weight: 900;
+}
+
+.informacoes p {
+    overflow-wrap: anywhere;
+}
+
+.detalhes-container {
+    padding: 20px 15px 15px;
+    text-align: center;
+}
+
+.botao-detalhes {
+    border: none;
+    background: transparent;
+    color: var(--marrom);
+    font-size: 9px;
+    font-weight: 900;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    cursor: pointer;
+}
+
+.botao-detalhes:hover {
+    color: var(--azul);
+}
+
+/* LINHA DO PROGRESSO */
+
+.progresso {
+    width: 100%;
+    padding: 25px 3% 20px;
+}
+
+.linha-progresso {
+    position: relative;
+    height: 18px;
+    margin: 0 8% 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.linha-progresso::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 2px;
+    background-color: var(--verde);
+    transform: translateY(-50%);
+}
+
+.etapa-ponto {
+    position: relative;
+    z-index: 1;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color: var(--verde);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.etapa-ponto.aprovado {
+    width: 19px;
+    height: 19px;
+    color: var(--branco);
+    font-size: 12px;
+    background-color: var(--verde);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.etapas-texto {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    text-align: center;
+}
+
+.etapa {
+    border: none;
+    background: transparent;
+    color: var(--marrom);
+    font-size: clamp(10px, 1.5vw, 13px);
+    line-height: 1.45;
+    cursor: pointer;
+}
+
+.etapa:hover {
+    text-decoration: underline;
+}
+
+.etapa strong {
+    display: block;
+    font-weight: normal;
+}
+
+.etapa small {
+    display: none;
+    margin-top: 5px;
+    font-size: 10px;
+    line-height: 1.4;
+}
+
+.etapa.selecionada small {
+    display: block;
+}
+
+/* JANELAS */
+
+.fundo-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #00000080;
+}
+
+.fundo-modal.aberto {
+    display: flex;
+}
+
+.modal {
+    width: 100%;
+    max-width: 430px;
+    max-height: 85vh;
+    overflow-y: auto;
+    position: relative;
+    padding: 25px;
+    border-radius: 12px;
+    background-color: var(--creme);
+    color: var(--preto);
+}
+
+.modal h2 {
+    margin: 0 25px 18px 0;
+    color: var(--marrom);
+    font-size: 20px;
+}
+
+.modal p {
+    margin-bottom: 12px;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.modal strong {
+    color: var(--marrom);
+}
+
+.fechar-modal {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    border: none;
+    background: transparent;
+    color: var(--marrom);
+    font-size: 27px;
+    cursor: pointer;
+}
+
+.botao-modal {
+    width: 100%;
+    margin-top: 8px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--verde);
+    color: var(--marrom);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* RODAPÉ */
+
+.rodape {
+    padding: 16px 3.5% 10px;
+    background-color: var(--preto);
+    color: var(--creme);
+}
+
+.rodape-conteudo {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 0.9fr 1.2fr;
+    gap: 25px;
+}
+
+.rodape-logo {
+    margin-bottom: 7px;
+    font-size: 21px;
+    font-weight: 900;
+    color: var(--creme);
+}
+
+.rodape-logo span {
+    color: var(--marrom);
+}
+
+.rodape-descricao {
+    max-width: 190px;
+    font-size: 10px;
+    line-height: 1.45;
+}
+
+.rodape h2:not(.rodape-logo) {
+    margin-bottom: 6px;
+    font-size: 9px;
+    font-weight: 900;
+}
+
+.rodape ul {
+    list-style: none;
+}
+
+.rodape li,
+.rodape p {
+    margin-bottom: 3px;
+    font-size: 8px;
+    line-height: 1.45;
+}
+
+.rodape a:hover {
+    text-decoration: underline;
+}
+
+.copyright {
+    max-width: 1200px;
+    margin: 8px auto 0;
+    text-align: right;
+    font-size: 8px;
+}
+
+.botao-topo {
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    z-index: 20;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    background: var(--creme);
+    color: var(--preto);
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 600px) {
+    .cabecalho {
+        padding: 0 12px;
+        gap: 10px;
+    }
+
+    .logo {
+        font-size: 17px;
+    }
+
+    .navegacao {
+        gap: 12px;
+    }
+
+    .navegacao a {
+        font-size: 9px;
+    }
+
+    .principal {
+        padding: 30px 18px;
+    }
+
+    .titulo-area {
+        margin-bottom: 25px;
+    }
+
+    .informacoes {
+        grid-template-columns: 1fr 0.8fr;
+        font-size: 10px;
+    }
+
+    .informacoes p:last-child {
+        grid-column: 1 / -1;
+    }
+
+    .progresso {
+        padding: 25px 8px 20px;
+    }
+
+    .etapa {
+        font-size: 10px;
+    }
+
+    .rodape-conteudo {
+        grid-template-columns: 1fr 1fr;
+        gap: 22px 15px;
+    }
+
+    .copyright {
+        text-align: center;
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 400px) {
+    .cabecalho {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 10px 12px;
+    }
+
+    .navegacao {
+        order: 3;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .navegacao a {
+        font-size: 10px;
+    }
+
+    .menu-lateral {
+        top: 100%;
+    }
+
+    .etapa {
+        font-size: 9px;
+    }
+
+    .etapas-texto {
+        gap: 2px;
+    }
+
+    .rodape {
+        padding: 18px 15px 12px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="cabecalho">
+    <a href="index.html" class="logo">IPAWZ 🐾</a>
+
+    <nav class="navegacao">
+        <a href="index.html">Home</a>
+        <a href="adocao.html" class="ativo">Adoção</a>
+        <a href="doacao.html">Doação</a>
+        <a href="voluntariado.html">Voluntários</a>
+        <a href="perfil.html">Perfil</a>
+    </nav>
+
+    <button class="botao-menu" id="botaoMenu"
+        aria-label="Abrir menu" aria-expanded="false">☰</button>
+
+    <nav class="menu-lateral" id="menuLateral">
+        <a href="index.html">Início</a>
+        <a href="adocao.html">Adoção</a>
+        <a href="doacao.html">Doação</a>
+        <a href="voluntariado.html">Voluntariado</a>
+        <a href="instituicoes.html">Instituições</a>
+        <a href="perfil.html">Perfil</a>
+    </nav>
+</header>
+
+<main class="principal">
+
+    <div class="titulo-area">
+        <h1>Solicitações de Adoção</h1>
+
+        <button class="botao-filtro" id="botaoFiltro"
+            aria-label="Filtrar solicitações"
+            aria-expanded="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 4h18l-7 9v6l-4 2v-8L3 4z"/>
+            </svg>
+        </button>
+    </div>
+
+    <div class="filtros" id="filtros">
+        <label for="filtroStatus">Status da solicitação:</label>
+
+        <select id="filtroStatus">
+            <option value="todos">Todos os status</option>
+            <option value="enviada">Solicitação enviada</option>
+            <option value="recebida">Solicitação recebida</option>
+            <option value="analise">Formulário em análise</option>
+            <option value="aprovada">Adoção aprovada</option>
+        </select>
+
+        <button class="botao-limpar" id="limparFiltro">
+            Limpar filtro
+        </button>
+    </div>
+
+    <section class="cartao-solicitacao" id="cartaoSolicitacao">
+
+        <div class="informacoes">
+            <p>Data Solicitação: 30/10/2026</p>
+            <p>Pet: Ninoca</p>
+            <p>Instituição: Centro Amor e Petz</p>
+        </div>
+
+        <div class="detalhes-container">
+            <button class="botao-detalhes" id="botaoDetalhes">
+                VER DETALHES
+            </button>
+        </div>
+
+        <div class="progresso">
+
+            <div class="linha-progresso">
+                <button class="etapa-ponto" data-etapa="0"
+                    aria-label="Solicitação enviada"></button>
+
+                <button class="etapa-ponto" data-etapa="1"
+                    aria-label="Solicitação recebida"></button>
+
+                <button class="etapa-ponto" data-etapa="2"
+                    aria-label="Formulário em análise"></button>
+
+                <button class="etapa-ponto aprovado" data-etapa="3"
+                    aria-label="Adoção aprovada">✓</button>
+            </div>
+
+            <div class="etapas-texto">
+
+                <button class="etapa" data-etapa="0">
+                    <strong>Solicitação</strong>
+                    <strong>Enviada</strong>
+                    <small>Pedido encaminhado à instituição.</small>
+                </button>
+
+                <button class="etapa" data-etapa="1">
+                    <strong>Solicitação</strong>
+                    <strong>Recebida</strong>
+                    <small>A instituição recebeu o pedido.</small>
+                </button>
+
+                <button class="etapa" data-etapa="2">
+                    <strong>Formulário</strong>
+                    <strong>em Análise</strong>
+                    <small>Os dados estão sendo analisados.</small>
+                </button>
+
+                <button class="etapa" data-etapa="3">
+                    <strong>Adoção</strong>
+                    <strong>Aprovada!</strong>
+                    <small>A solicitação foi aprovada.</small>
+                </button>
+
+            </div>
+        </div>
+    </section>
+
+    <p id="mensagemFiltro" style="display:none; margin-top:15px; color:#7A2E1C; font-size:13px;">
+        Nenhuma solicitação corresponde ao filtro selecionado.
+    </p>
+
+</main>
+
+<footer class="rodape">
+    <div class="rodape-conteudo">
+
+        <section>
+            <h2 class="rodape-logo">IPAWZ 🐾</h2>
+            <p class="rodape-descricao">
+                Conectando pessoas a causas que transformam vidas animais.
+            </p>
+        </section>
+
+        <section>
+            <h2>NAVEGAÇÃO</h2>
+            <ul>
+                <li><a href="index.html">• Início</a></li>
+                <li><a href="adocao.html">• Adoção</a></li>
+                <li><a href="doacao.html">• Doação</a></li>
+                <li><a href="voluntariado.html">• Voluntariado</a></li>
+                <li><a href="instituicoes.html">• Instituições</a></li>
+                <li><a href="sobre.html">• Sobre nós</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>AJUDA</h2>
+            <ul>
+                <li><a href="faq.html">• FAQ</a></li>
+                <li><a href="termos.html">• Termos de uso</a></li>
+                <li><a href="privacidade.html">• Política de privacidade</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>CONTATO</h2>
+            <p>📩 ipawz.pets@gmail.com</p>
+            <p>🟢 (11) 99999-9999</p>
+        </section>
+
+    </div>
+
+    <p class="copyright">
+        Copyright © 2026 IPAWZ - Todos os direitos reservados
+    </p>
+</footer>
+
+<button class="botao-topo" id="botaoTopo"
+    aria-label="Voltar ao topo">↑</button>
+
+<div class="fundo-modal" id="fundoModal">
+    <section class="modal" role="dialog" aria-modal="true"
+        aria-labelledby="tituloModal">
+
+        <button class="fechar-modal" id="fecharModal"
+            aria-label="Fechar">×</button>
+
+        <h2 id="tituloModal">Detalhes da solicitação</h2>
+
+        <p><strong>Data:</strong> 30/10/2026</p>
+        <p><strong>Pet:</strong> Ninoca</p>
+        <p><strong>Instituição:</strong> Centro Amor e Petz</p>
+        <p><strong>Status:</strong> Adoção aprovada</p>
+        <p>
+            <strong>Informação:</strong>
+            A solicitação de adoção está aprovada. Entre em contato com a
+            instituição para obter informações sobre os próximos passos.
+        </p>
+
+        <button class="botao-modal" id="botaoFecharModal">
+            Fechar detalhes
+        </button>
+    </section>
+</div>
+
+<script>
+const botaoMenu = document.getElementById("botaoMenu");
+const menuLateral = document.getElementById("menuLateral");
+
+botaoMenu.addEventListener("click", function () {
+    const aberto = menuLateral.classList.toggle("aberto");
+
+    botaoMenu.setAttribute("aria-expanded", aberto);
+    botaoMenu.setAttribute(
+        "aria-label",
+        aberto ? "Fechar menu" : "Abrir menu"
+    );
+});
+
+/* ABRIR E FECHAR O FILTRO */
+
+const botaoFiltro = document.getElementById("botaoFiltro");
+const filtros = document.getElementById("filtros");
+
+botaoFiltro.addEventListener("click", function () {
+    const aberto = filtros.classList.toggle("aberto");
+    botaoFiltro.setAttribute("aria-expanded", aberto);
+});
+
+/* FILTRAR PELO STATUS */
+
+const filtroStatus = document.getElementById("filtroStatus");
+const cartaoSolicitacao = document.getElementById("cartaoSolicitacao");
+const mensagemFiltro = document.getElementById("mensagemFiltro");
+
+filtroStatus.addEventListener("change", function () {
+    const statusSelecionado = filtroStatus.value;
+
+    // Esta tela contém uma solicitação com status aprovado.
+    const corresponde =
+        statusSelecionado === "todos" ||
+        statusSelecionado === "aprovada";
+
+    cartaoSolicitacao.style.display = corresponde ? "block" : "none";
+    mensagemFiltro.style.display = corresponde ? "none" : "block";
+});
+
+document.getElementById("limparFiltro").addEventListener("click", function () {
+    filtroStatus.value = "todos";
+    cartaoSolicitacao.style.display = "block";
+    mensagemFiltro.style.display = "none";
+});
+
+/* VER DETALHES */
+
+const fundoModal = document.getElementById("fundoModal");
+
+document.getElementById("botaoDetalhes").addEventListener("click", function () {
+    fundoModal.classList.add("aberto");
+});
+
+function fecharModal() {
+    fundoModal.classList.remove("aberto");
+}
+
+document.getElementById("fecharModal").addEventListener("click", fecharModal);
+
+document.getElementById("botaoFecharModal")
+    .addEventListener("click", fecharModal);
+
+fundoModal.addEventListener("click", function (evento) {
+    if (evento.target === fundoModal) {
+        fecharModal();
+    }
+});
+
+/* DETALHES DAS ETAPAS DO PROGRESSO */
+
+const etapas = document.querySelectorAll(".etapa");
+const pontos = document.querySelectorAll(".etapa-ponto");
+
+function selecionarEtapa(indice) {
+    etapas.forEach(function (etapa, i) {
+        etapa.classList.toggle("selecionada", i === indice);
+    });
+}
+
+etapas.forEach(function (etapa, indice) {
+    etapa.addEventListener("click", function () {
+        selecionarEtapa(indice);
+    });
+});
+
+pontos.forEach(function (ponto, indice) {
+    ponto.addEventListener("click", function () {
+        selecionarEtapa(indice);
+    });
+});
+
+/* VOLTAR AO TOPO */
+
+document.getElementById("botaoTopo").addEventListener("click", function () {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
+
+/* TECLA ESC FECHA JANELAS E MENU */
+
+document.addEventListener("keydown", function (evento) {
+    if (evento.key === "Escape") {
+        fecharModal();
+        filtros.classList.remove("aberto");
+        menuLateral.classList.remove("aberto");
+        botaoMenu.setAttribute("aria-expanded", "false");
+        botaoFiltro.setAttribute("aria-expanded", "false");
+    }
+});
+</script>
+
+</body>
+</html>
+```
+

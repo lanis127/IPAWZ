@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>iPawz - Voluntariado</title>
+
+<style>
+
+:root {
+
+    --azul: #1C5F9D;
+
+    --verde: #7FC9B8;
+
+    --creme: #FDFBD4;
+
+    --marrom: #7A2E1C;
+
+    --branco: #FFFFFF;
+
+    --preto: #000000;
+
+}
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+body {
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: var(--creme);
+
+    color: var(--preto);
+
+}
+
+a {
+
+    color: inherit;
+
+    text-decoration: none;
+
+}
+
+button {
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+}
+
+/* CABEÇALHO */
+
+.cabecalho {
+
+    min-height: 72px;
+
+    padding: 0 3%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    background: var(--creme);
+
+    border-bottom: 1px solid #e9e4bd;
+
+    position: relative;
+
+    z-index: 10;
+
+}
+
+.logo {
+
+    color: var(--marrom);
+
+    font-size: 25px;
+
+    font-weight: 900;
+
+    white-space: nowrap;
+
+}
+
+.navegacao {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: clamp(18px, 5vw, 65px);
+
+}
+
+.navegacao a {
+
+    color: var(--marrom);
+
+    font-size: 13px;
+
+    white-space: nowrap;
+
+}
+
+.navegacao a:hover {
+
+    opacity: 0.7;
+
+}
+
+.navegacao .ativo {
+
+    font-weight: bold;
+
+    text-decoration: underline;
+
+    text-underline-offset: 4px;
+
+}
+
+.botao-menu {
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--marrom);
+
+    font-size: 31px;
+
+}
+
+.menu-lateral {
+
+    display: none;
+
+    position: absolute;
+
+    top: 72px;
+
+    right: 0;
+
+    width: 280px;
+
+    padding: 25px;
+
+    background: #ECE8C8;
+
+    border: 1px solid #e0d9ae;
+
+    border-radius: 0 0 0 15px;
+
+    box-shadow: 0 5px 15px #00000018;
+
+    flex-direction: column;
+
+    gap: 20px;
+
+    z-index: 20;
+
+}
+
+.menu-lateral.aberto {
+
+    display: flex;
+
+}
+
+.menu-lateral a {
+
+    color: var(--marrom);
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+}
+
+/* CONTEÚDO */
+
+.principal {
+
+    width: 100%;
+
+    padding: 39px 20px 46px;
+
+    background: var(--creme);
+
+}
+
+.titulo-principal {
+
+    margin-bottom: 39px;
+
+    text-align: center;
+
+    color: var(--marrom);
+
+    font-size: clamp(22px, 2.7vw, 27px);
+
+    font-weight: 900;
+
+}
+
+.lista-vagas {
+
+    width: 100%;
+
+    max-width: 655px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 26px;
+
+}
+
+/* CARTÕES */
+
+.vaga {
+
+    min-height: 112px;
+
+    padding: 18px 19px 14px;
+
+    background: #BFE2C5;
+
+    border-radius: 19px;
+
+    display: grid;
+
+    grid-template-columns: minmax(0, 1.45fr) minmax(135px, 0.8fr);
+
+    column-gap: 14px;
+
+    row-gap: 8px;
+
+    align-items: center;
+
+}
+
+.vaga-principal {
+
+    min-width: 0;
+
+}
+
+.vaga h2 {
+
+    margin-bottom: 10px;
+
+    color: var(--marrom);
+
+    font-size: clamp(15px, 2vw, 19px);
+
+    line-height: 1.2;
+
+    font-weight: 900;
+
+    text-transform: uppercase;
+
+}
+
+.instituicao {
+
+    margin-bottom: 12px;
+
+    color: var(--preto);
+
+    font-size: 11px;
+
+    line-height: 1.4;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+}
+
+.localizacao {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #655B43;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+}
+
+.icone-local {
+
+    font-size: 15px;
+
+}
+
+.vaga-secundaria {
+
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    padding: 3px 0;
+
+}
+
+.periodo {
+
+    color: var(--preto);
+
+    font-size: 13px;
+
+    font-style: italic;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+}
+
+.data {
+
+    color: var(--preto);
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    white-space: nowrap;
+
+}
+
+.mais-infos {
+
+    align-self: flex-end;
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--preto);
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    text-transform: uppercase;
+
+    text-decoration: underline;
+
+    text-underline-offset: 3px;
+
+}
+
+.mais-infos:hover {
+
+    color: var(--marrom);
+
+}
+
+/* RODAPÉ */
+
+.rodape {
+
+    min-height: 170px;
+
+    padding: 20px 3% 12px;
+
+    background: var(--preto);
+
+    color: var(--branco);
+
+}
+
+.rodape-conteudo {
+
+    display: grid;
+
+    grid-template-columns: 1.5fr 1fr 0.9fr 1.2fr;
+
+    gap: 30px;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+}
+
+.rodape-logo {
+
+    margin-bottom: 10px;
+
+    color: var(--creme);
+
+    font-size: 25px;
+
+    font-weight: 900;
+
+}
+
+.rodape-descricao {
+
+    max-width: 190px;
+
+    color: var(--creme);
+
+    font-size: 13px;
+
+    line-height: 1.4;
+
+}
+
+.rodape h3 {
+
+    margin-bottom: 8px;
+
+    color: var(--creme);
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    text-transform: uppercase;
+
+}
+
+.rodape ul {
+
+    list-style: none;
+
+}
+
+.rodape li,
+
+.rodape p {
+
+    margin-bottom: 4px;
+
+    color: var(--creme);
+
+    font-size: 10px;
+
+    line-height: 1.4;
+
+}
+
+.rodape a:hover {
+
+    text-decoration: underline;
+
+}
+
+.copyright {
+
+    max-width: 1200px;
+
+    margin: 10px auto 0;
+
+    text-align: right;
+
+    color: var(--creme);
+
+    font-size: 11px;
+
+}
+
+/* BOTÃO VOLTAR AO TOPO */
+
+.botao-topo {
+
+    position: fixed;
+
+    right: 18px;
+
+    bottom: 18px;
+
+    width: 36px;
+
+    height: 36px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: var(--creme);
+
+    color: var(--preto);
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    box-shadow: 0 2px 6px #00000033;
+
+    z-index: 30;
+
+}
+
+/* JANELA DE INFORMAÇÕES */
+
+.modal-fundo {
+
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    padding: 20px;
+
+    background: #00000099;
+
+    z-index: 100;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+.modal-fundo.aberto {
+
+    display: flex;
+
+}
+
+.modal {
+
+    width: 100%;
+
+    max-width: 450px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background: var(--creme);
+
+    border-radius: 18px;
+
+    padding: 25px;
+
+    position: relative;
+
+}
+
+.modal h2 {
+
+    color: var(--marrom);
+
+    font-size: 22px;
+
+    margin: 0 30px 18px 0;
+
+}
+
+.modal p {
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin-bottom: 12px;
+
+}
+
+.fechar-modal {
+
+    position: absolute;
+
+    top: 12px;
+
+    right: 15px;
+
+    width: 34px;
+
+    height: 34px;
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--marrom);
+
+    font-size: 27px;
+
+}
+
+.botao-inscricao {
+
+    width: 100%;
+
+    margin-top: 8px;
+
+    padding: 12px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: var(--marrom);
+
+    color: var(--branco);
+
+    font-weight: bold;
+
+}
+
+.mensagem-inscricao {
+
+    display: none;
+
+    margin-top: 12px;
+
+    padding: 10px;
+
+    border-radius: 8px;
+
+    background: var(--verde);
+
+    color: var(--preto);
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+}
+
+.mensagem-inscricao.visivel {
+
+    display: block;
+
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 700px) {
+
+    .cabecalho {
+
+        min-height: 65px;
+
+        padding: 0 18px;
+
+    }
+
+    .navegacao {
+
+        gap: 13px;
+
+    }
+
+    .navegacao a {
+
+        font-size: 11px;
+
+    }
+
+    .logo {
+
+        font-size: 20px;
+
+    }
+
+    .rodape-conteudo {
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 25px;
+
+    }
+
+    .copyright {
+
+        text-align: center;
+
+        margin-top: 20px;
+
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .cabecalho {
+
+        flex-wrap: wrap;
+
+        gap: 10px;
+
+        padding: 12px 15px;
+
+    }
+
+    .navegacao {
+
+        order: 3;
+
+        width: 100%;
+
+        justify-content: space-between;
+
+        gap: 8px;
+
+    }
+
+    .navegacao a {
+
+        font-size: 11px;
+
+    }
+
+    .menu-lateral {
+
+        top: 100%;
+
+        right: 0;
+
+        width: 240px;
+
+    }
+
+    .principal {
+
+        padding: 30px 14px 35px;
+
+    }
+
+    .titulo-principal {
+
+        font-size: 22px;
+
+        margin-bottom: 28px;
+
+    }
+
+    .lista-vagas {
+
+        gap: 18px;
+
+    }
+
+    .vaga {
+
+        grid-template-columns: minmax(0, 1fr) 115px;
+
+        gap: 10px;
+
+        padding: 15px 12px;
+
+        border-radius: 16px;
+
+    }
+
+    .vaga h2 {
+
+        font-size: 14px;
+
+    }
+
+    .instituicao {
+
+        font-size: 9px;
+
+    }
+
+    .localizacao {
+
+        font-size: 9px;
+
+    }
+
+    .periodo {
+
+        font-size: 10px;
+
+    }
+
+    .data {
+
+        font-size: 12px;
+
+    }
+
+    .mais-infos {
+
+        font-size: 10px;
+
+    }
+
+    .rodape {
+
+        padding: 22px 18px;
+
+    }
+
+    .rodape-conteudo {
+
+        gap: 22px 15px;
+
+    }
+
+    .rodape-logo {
+
+        font-size: 22px;
+
+    }
+
+    .rodape-descricao {
+
+        font-size: 12px;
+
+    }
+
+    .rodape li,
+
+    .rodape p {
+
+        overflow-wrap: anywhere;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header class="cabecalho">
+
+    <a href="index.html" class="logo">IPAWZ 🐾</a>
+
+    <nav class="navegacao" aria-label="Navegação principal">
+
+        <a href="index.html">Home</a>
+
+        <a href="adocao.html">Adoção</a>
+
+        <a href="doacao.html">Doação</a>
+
+        <a href="voluntariado.html" class="ativo">Voluntários</a>
+
+        <a href="perfil.html">Perfil</a>
+
+    </nav>
+
+    <button class="botao-menu"
+
+        id="botaoMenu"
+
+        aria-label="Abrir menu"
+
+        aria-expanded="false">☰</button>
+
+    <nav class="menu-lateral" id="menuLateral">
+
+        <a href="index.html">Início</a>
+
+        <a href="adocao.html">Adoção</a>
+
+        <a href="doacao.html">Doação</a>
+
+        <a href="voluntariado.html">Voluntariado</a>
+
+        <a href="instituicoes.html">Instituições</a>
+
+        <a href="perfil.html">Perfil</a>
+
+    </nav>
+
+</header>
+
+<main class="principal">
+
+    <h1 class="titulo-principal">VAGAS DE VOLUNTARIADO</h1>
+
+    <section class="lista-vagas" aria-label="Vagas disponíveis">
+
+        <article class="vaga">
+
+            <div class="vaga-principal">
+
+                <h2>Cuidados diretos com animais</h2>
+
+                <p class="instituicao">INSTITUIÇÃO: PETZ MANIA</p>
+
+                <p class="localizacao">
+
+                    <span class="icone-local">📍</span>
+
+                    OSASCO, SP
+
+                </p>
+
+            </div>
+
+            <div class="vaga-secundaria">
+
+                <span class="periodo">MEIO-PERÍODO</span>
+
+                <button class="mais-infos" data-vaga="0">MAIS INFOS</button>
+
+                <time class="data" datetime="2027-07-23">23/07/2027</time>
+
+            </div>
+
+        </article>
+
+        <article class="vaga">
+
+            <div class="vaga-principal">
+
+                <h2>Apoio logístico e administrativo</h2>
+
+                <p class="instituicao">INSTITUIÇÃO: CENTRO AMOR E PETS</p>
+
+                <p class="localizacao">
+
+                    <span class="icone-local">📍</span>
+
+                    COTIA, SP
+
+                </p>
+
+            </div>
+
+            <div class="vaga-secundaria">
+
+                <span class="periodo">MEIO-PERÍODO</span>
+
+                <button class="mais-infos" data-vaga="1">MAIS INFOS</button>
+
+                <time class="data" datetime="2027-04-17">17/04/2027</time>
+
+            </div>
+
+        </article>
+
+        <article class="vaga">
+
+            <div class="vaga-principal">
+
+                <h2>Recepcionista</h2>
+
+                <p class="instituicao">INSTITUIÇÃO: XXX XXXXXXX</p>
+
+                <p class="localizacao">
+
+                    <span class="icone-local">📍</span>
+
+                    BARUERI, SP
+
+                </p>
+
+            </div>
+
+            <div class="vaga-secundaria">
+
+                <span class="periodo">MEIO-PERÍODO</span>
+
+                <button class="mais-infos" data-vaga="2">MAIS INFOS</button>
+
+                <time class="data" datetime="2027-03-05">05/03/2027</time>
+
+            </div>
+
+        </article>
+
+    </section>
+
+</main>
+
+<footer class="rodape">
+
+    <div class="rodape-conteudo">
+
+        <section>
+
+            <h2 class="rodape-logo">IPAWZ 🐾</h2>
+
+            <p class="rodape-descricao">
+
+                Conectando pessoas a causas que transformam vidas animais.
+
+            </p>
+
+        </section>
+
+        <section>
+
+            <h3>NAVEGAÇÃO</h3>
+
+            <ul>
+
+                <li><a href="index.html">• Início</a></li>
+
+                <li><a href="adocao.html">• Adoção</a></li>
+
+                <li><a href="doacao.html">• Doação</a></li>
+
+                <li><a href="voluntariado.html">• Voluntariado</a></li>
+
+                <li><a href="instituicoes.html">• Instituições</a></li>
+
+                <li><a href="sobre.html">• Sobre nós</a></li>
+
+            </ul>
+
+        </section>
+
+        <section>
+
+            <h3>AJUDA</h3>
+
+            <ul>
+
+                <li><a href="faq.html">• FAQ</a></li>
+
+                <li><a href="termos.html">• Termos de uso</a></li>
+
+                <li><a href="privacidade.html">• Política de privacidade</a></li>
+
+            </ul>
+
+        </section>
+
+        <section>
+
+            <h3>CONTATO</h3>
+
+            <p>📩 ipawz.pets@gmail.com</p>
+
+            <p>🟢 (11) 99999-9999</p>
+
+        </section>
+
+    </div>
+
+    <p class="copyright">
+
+        Copyright © 2026 IPAWZ - Todos os direitos reservados
+
+    </p>
+
+</footer>
+
+<button class="botao-topo" id="botaoTopo"
+
+    aria-label="Voltar ao topo">↑</button>
+
+<div class="modal-fundo" id="modalFundo">
+
+    <section class="modal" role="dialog"
+
+        aria-modal="true" aria-labelledby="modalTitulo">
+
+        <button class="fechar-modal" id="fecharModal"
+
+            aria-label="Fechar">×</button>
+
+        <h2 id="modalTitulo">Informações da vaga</h2>
+
+        <div id="detalhesVaga"></div>
+
+        <button class="botao-inscricao" id="botaoInscricao">
+
+            Tenho interesse nesta vaga
+
+        </button>
+
+        <p class="mensagem-inscricao" id="mensagemInscricao"
+
+            role="status"></p>
+
+    </section>
+
+</div>
+
+<script>
+
+const vagas = [
+
+    {
+
+        titulo: "Cuidados diretos com animais",
+
+        instituicao: "Petz Mania",
+
+        cidade: "Osasco, SP",
+
+        periodo: "Meio-período",
+
+        data: "23/07/2027",
+
+        descricao: "Auxilie nos cuidados diários dos animais, incluindo alimentação, organização dos espaços e atenção ao bem-estar dos pets."
+
+    },
+
+    {
+
+        titulo: "Apoio logístico e administrativo",
+
+        instituicao: "Centro Amor e Pets",
+
+        cidade: "Cotia, SP",
+
+        periodo: "Meio-período",
+
+        data: "17/04/2027",
+
+        descricao: "Ajude a instituição na organização de documentos, no atendimento e no apoio às atividades administrativas."
+
+    },
+
+    {
+
+        titulo: "Recepcionista",
+
+        instituicao: "XXX XXXXXXX",
+
+        cidade: "Barueri, SP",
+
+        periodo: "Meio-período",
+
+        data: "05/03/2027",
+
+        descricao: "Ajude na recepção de visitantes, no atendimento inicial e na orientação de pessoas que procuram a instituição."
+
+    }
+
+];
+
+const botaoMenu = document.getElementById("botaoMenu");
+
+const menuLateral = document.getElementById("menuLateral");
+
+const modalFundo = document.getElementById("modalFundo");
+
+const modalTitulo = document.getElementById("modalTitulo");
+
+const detalhesVaga = document.getElementById("detalhesVaga");
+
+const mensagemInscricao = document.getElementById("mensagemInscricao");
+
+let vagaSelecionada = null;
+
+botaoMenu.addEventListener("click", function () {
+
+    const aberto = menuLateral.classList.toggle("aberto");
+
+    botaoMenu.setAttribute("aria-expanded", aberto);
+
+    botaoMenu.setAttribute(
+
+        "aria-label",
+
+        aberto ? "Fechar menu" : "Abrir menu"
+
+    );
+
+});
+
+document.querySelectorAll(".mais-infos").forEach(function (botao) {
+
+    botao.addEventListener("click", function () {
+
+        vagaSelecionada = vagas[Number(botao.dataset.vaga)];
+
+        modalTitulo.textContent = vagaSelecionada.titulo;
+
+        detalhesVaga.innerHTML = `
+
+            <p><strong>Instituição:</strong> ${vagaSelecionada.instituicao}</p>
+
+            <p><strong>Localização:</strong> ${vagaSelecionada.cidade}</p>
+
+            <p><strong>Período:</strong> ${vagaSelecionada.periodo}</p>
+
+            <p><strong>Data:</strong> ${vagaSelecionada.data}</p>
+
+            <p><strong>Descrição:</strong> ${vagaSelecionada.descricao}</p>
+
+        `;
+
+        mensagemInscricao.classList.remove("visivel");
+
+        mensagemInscricao.textContent = "";
+
+        modalFundo.classList.add("aberto");
+
+    });
+
+});
+
+function fecharModal() {
+
+    modalFundo.classList.remove("aberto");
+
+}
+
+document.getElementById("fecharModal")
+
+    .addEventListener("click", fecharModal);
+
+modalFundo.addEventListener("click", function (evento) {
+
+    if (evento.target === modalFundo) {
+
+        fecharModal();
+
+    }
+
+});
+
+document.addEventListener("keydown", function (evento) {
+
+    if (evento.key === "Escape") {
+
+        fecharModal();
+
+        menuLateral.classList.remove("aberto");
+
+        botaoMenu.setAttribute("aria-expanded", "false");
+
+    }
+
+});
+
+document.getElementById("botaoInscricao")
+
+    .addEventListener("click", function () {
+
+        if (!vagaSelecionada) return;
+
+        mensagemInscricao.textContent =
+
+            "Você demonstrou interesse em \"" +
+
+            vagaSelecionada.titulo +
+
+            "\". Para concluir sua inscrição, entre em contato com a instituição.";
+
+        mensagemInscricao.classList.add("visivel");
+
+    });
+
+document.getElementById("botaoTopo")
+
+    .addEventListener("click", function () {
+
+        window.scrollTo({
+
+            top: 0,
+
+            behavior: "smooth"
+
+        });
+
+    });
+
+</script>
+
+</body>
+
+</html>
