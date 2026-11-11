@@ -1,0 +1,249 @@
+/* =====================================================
+   DETALHES DA VAGA DE VOLUNTARIADO
+   Os estilos gerais (header, sidebar, footer e reset) vêm de style.css.
+===================================================== */
+
+.vacancy-page {
+    min-height: auto;
+    padding-bottom: 42px;
+    color: #8C4B3B;
+}
+
+.vacancy-heading {
+    padding: 28px 24px 20px;
+    text-align: center;
+}
+
+.vacancy-heading h1 {
+    color: #803522;
+    font-size: clamp(1.25rem, 2.4vw, 1.8rem);
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+.vacancy-image-area {
+    width: 100%;
+    height: 390px;
+    padding: 0;
+    background: transparent;
+    overflow: hidden;
+}
+
+.vacancy-image-area img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+.vacancy-info {
+    width: min(1120px, 88%);
+    min-height: 125px;
+    margin: 30px auto 0;
+    padding: 20px 24px;
+    display: grid;
+    grid-template-columns: 1.35fr 1fr .85fr 1.15fr;
+    align-items: stretch;
+    background: #BFE2C7;
+    border-radius: 18px;
+}
+
+.info-item {
+    min-width: 0;
+    padding: 0 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 9px;
+    border-right: 1px solid rgba(255, 255, 255, .8);
+}
+
+.info-item:first-child {
+    padding-left: 4px;
+}
+
+.info-item:last-child {
+    border-right: none;
+    padding-right: 4px;
+}
+
+.info-item h2 {
+    color: #803522;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+.info-item p {
+    color: #713C30;
+    font-size: .88rem;
+    font-weight: 400;
+    line-height: 1.55;
+    overflow-wrap: anywhere;
+}
+
+.location-icon {
+    margin-right: 5px;
+    font-size: 1.05rem;
+}
+
+.vacancy-description {
+    width: min(1120px, 88%);
+    margin: 48px auto 0;
+}
+
+.vacancy-description h2 {
+    margin-bottom: 18px;
+    color: #803522;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.description-text {
+    color: #713C30;
+    font-size: .98rem;
+    line-height: 1.9;
+}
+
+.description-text p + p {
+    margin-top: 13px;
+}
+
+.vacancy-action {
+    width: min(1120px, 88%);
+    margin: 34px auto 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.btn-candidatar {
+    min-width: 210px;
+    min-height: 56px;
+    padding: 14px 34px;
+    border: none;
+    border-radius: 10px;
+    background: #2169A3;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
+    transition: background .2s ease, transform .2s ease;
+}
+
+.btn-candidatar:hover {
+    background: #185786;
+    transform: translateY(-2px);
+}
+
+.btn-candidatar:focus-visible {
+    outline: 3px solid #8C4B3B;
+    outline-offset: 3px;
+}
+
+.application-message {
+    max-width: 520px;
+    margin-top: 14px;
+    padding: 12px 18px;
+    border-radius: 10px;
+    background: #BFE2C7;
+    color: #713C30;
+    font-size: .9rem;
+    line-height: 1.6;
+}
+
+/* Ajustes para tablets */
+@media (max-width: 900px) {
+    .vacancy-image-area img {
+        height: 280px;
+    }
+
+    .vacancy-info {
+        width: 90%;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: 18px;
+    }
+
+    .info-item:nth-child(2) {
+        border-right: none;
+    }
+
+    .info-item:nth-child(3) {
+        border-right: 1px solid rgba(255, 255, 255, .8);
+    }
+
+    .info-item:nth-child(4) {
+        border-right: none;
+    }
+}
+
+/* Ajustes para celulares */
+@media (max-width: 600px) {
+    .vacancy-heading {
+        padding: 24px 18px 18px;
+    }
+
+    .vacancy-image-area {
+        min-height: 190px;
+        padding: 10px 4%;
+    }
+
+    .vacancy-image-area img {
+        height: 210px;
+    }
+
+    .vacancy-info {
+        width: 90%;
+        margin-top: 22px;
+        padding: 20px 16px;
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .info-item,
+    .info-item:first-child,
+    .info-item:last-child,
+    .info-item:nth-child(3) {
+        padding: 13px 2px;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, .8);
+    }
+
+    .info-item:last-child {
+        border-bottom: none;
+    }
+
+    .info-item h2 {
+        font-size: .98rem;
+    }
+
+    .info-item p {
+        font-size: .88rem;
+    }
+
+    .vacancy-description {
+        width: 88%;
+        margin-top: 34px;
+    }
+
+    .vacancy-description h2 {
+        font-size: 1.12rem;
+    }
+
+    .description-text {
+        font-size: .9rem;
+        line-height: 1.8;
+    }
+
+    .vacancy-action {
+        width: 88%;
+        margin-top: 28px;
+    }
+
+    .btn-candidatar {
+        width: min(100%, 260px);
+    }
+}

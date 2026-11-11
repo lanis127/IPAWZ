@@ -26,6 +26,10 @@ body{
     border-bottom:1px solid #cfc8a6;
 }
 
+.destaque {
+    font-weight: bold;
+}
+
 .logo h1{
     color:#8C4B3B;
     font-size:2rem;

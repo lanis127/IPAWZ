@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes da vaga | IPAWZ</title>
+
+    <!-- Fonte utilizada no restante do projeto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Carregue primeiro o CSS compartilhado e depois o CSS desta página -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/detalhes-vaga-voluntariado.css">
+    <link rel="stylesheet" href="../css/header-compartilhado.css">
+</head>
+<body>
+
+    <!-- =====================================================
+         HEADER: INSIRA AQUI O MESMO HTML DA HEADER DAS OUTRAS TELAS.
+    === -->
+    <header class="header logged-header">
+
+        <div class="logo">
+            <h1>IPAWZ <span>🐾</span></h1>
+        </div>
+
+        <nav class="nav-menu">
+            <a href="home.html">Home</a>
+            <a href="listagem.html">Adoção</a> <!--Listagem de pet-->
+            <a href="doacao.html">Doação</a>
+            <a href="CRIAR TELA FRONT-END VAGAS DE VOLUNTARIADO.html" class="destaque"><u>Voluntários</u></a>
+            <a href="tela pessoa fisica.html">Perfil</a>
+        </nav>
+       
+        <button class="menu-btn" id="openMenu" type="button"
+                aria-label="Abrir menu" aria-expanded="false">
+            <span class="hamburger-icon" aria-hidden="true"></span>
+        </button>
+
+    </header>
+
+    <main class="content vacancy-page">
+        <!-- Título principal da oportunidade -->
+        <section class="vacancy-heading">
+            <h1 id="titulo-vaga">CUIDADOS DIRETOS COM ANIMAIS</h1>
+        </section>
+
+        <!-- Imagem do local da oportunidade -->
+        <section class="vacancy-image-area" aria-label="Local da oportunidade">
+            <img id="imagem-vaga" src="../assets/img/vaga-voluntariado.jpg"
+            alt="Espaço de convivência dos animais da instituição">
+        </section>
+
+        <!-- Informações resumidas da vaga -->
+        <section class="vacancy-info" aria-label="Informações da vaga">
+            <article class="info-item">
+                <h2>Tipo de voluntariado</h2>
+                <p id="tipo-vaga">Passeios e socialização - Meio período</p>
+            </article>
+
+            <article class="info-item">
+                <h2>Localização</h2>
+                <p id="localizacao-vaga"><span class="location-icon" aria-hidden="true">⌖</span> Osasco, SP</p>
+            </article>
+
+            <article class="info-item">
+                <h2>Data</h2>
+                <p id="data-vaga">17/04/2027</p>
+            </article>
+
+            <article class="info-item">
+                <h2>Instituição / ONG</h2>
+                <p id="instituicao-vaga">Petz Mania</p>
+            </article>
+        </section>
+
+        <!-- Descrição completa da oportunidade -->
+        <section class="vacancy-description">
+            <h2>Descrição da vaga</h2>
+            <div id="descricao-vaga" class="description-text">
+                <p>Estamos em busca de pessoas que gostem de animais e queiram contribuir com o bem-estar dos cães acolhidos pela instituição.</p>
+                <p>O voluntário ajudará nos passeios, nas atividades de socialização e nos momentos de interação com os animais. Também poderá apoiar a equipe na organização dos espaços utilizados durante as atividades.</p>
+                <p>Não é necessário ter experiência anterior, mas é importante ter responsabilidade, paciência, atenção às orientações da equipe e carinho no contato com os animais.</p>
+            </div>
+        </section>
+
+        <!-- Botão de candidatura: futuramente, a ação será substituída pela abertura do formulário -->
+        <section class="vacancy-action">
+            <button type="button" id="btn-candidatar" class="btn-candidatar">
+                Candidate-se
+            </button>
+            <p id="mensagem-candidatura" class="application-message" role="status" aria-live="polite" hidden>
+                O formulário de candidatura para esta vaga estará disponível em breve. Fique de olho!
+            </p>
+        </section>
+    </main>
+
+    <!-- =====================================================
+         SIDEBAR E OVERLAY: INSIRA AQUI O HTML DA SIDEBAR E DO OVERLAY
+         UTILIZADOS NAS OUTRAS PÁGINAS
+    ====================================================== -->
+    <div class="overlay" id="overlay"></div>
+
+    <aside class="sidebar" id="sidebar">
+
+        <button class="close-btn" id="closeMenu" type="button" aria-label="Fechar menu">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <ul>
+            <li><a href="#">Solicitações de adoção</a></li>
+            <li><a href="#">Acompanhamento de candidaturas</a></li>
+            <li><a href="#">Cadastrar pets para adoção</a></li>
+            <li class="active"><a href="#">Sobre nós</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li class="logout">
+                <a href="#">
+                    <span aria-hidden="true">&times;</span>
+                    Logout
+                </a>
+            </li>
+        </ul>
+
+    </aside>
+
+    <!-- =====================================================
+         FOOTER: INSIRA AQUI O MESMO HTML DO FOOTER DAS OUTRAS TELAS.
+    ====================================================== -->
+    <footer>
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+                <h2>IPAWZ 🐾</h2>
+                <p>Conectando pessoas a causas que transformam vidas animais.</p>
+            </div>
+
+            <div class="footer-column">
+                <h3>NAVEGAÇÃO</h3>
+                <ul>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Adoção</a></li>
+                    <li><a href="#">Doação</a></li>
+                    <li><a href="#">Voluntariado</a></li>
+                    <li><a href="#">Instituições</a></li>
+                    <li><a href="#">Sobre nós</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>AJUDA</h3>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Termos de uso</a></li>
+                    <li><a href="#">Política de privacidade</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>CONTATO</h3>
+                <ul>
+                    <li>📧 ipawz.pets@gmail.com</li>
+                    <li>📞 (11) 99999-9999</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>Copyright © 2026 IPAWZ – Todos os direitos reservados</p>
+            <button class="back-top" type="button">↑</button>
+        </div>
+
+    </footer>
+
+    <script src="js/detalhes-vaga-voluntariado.js"></script>
+</body>
+</html>

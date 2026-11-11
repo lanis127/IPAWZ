@@ -1,0 +1,531 @@
+/* =========================================================
+   CSS EXCLUSIVO DA TELA DE CANDIDATURAS DE VOLUNTARIADO
+   As cores abaixo seguem o protótipo. O style.css compartilhado
+   continua sendo carregado separadamente pelo HTML.
+   ========================================================= */
+
+:root {
+  --cv-creme: #ffffcf;
+  --cv-fundo: #ece8c8;
+  --cv-marrom: #803522;
+  --cv-marrom-escuro: #5b1313;
+  --cv-verde: #7cc7be;
+  --cv-azul: #176a7a;
+  --cv-branco: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--cv-creme);
+  color: var(--cv-marrom);
+  font-family: inherit;
+}
+
+.candidaturas-page {
+  width: calc(100% - 46px);
+  max-width: 1500px;
+  margin: 34px auto 60px;
+}
+
+.page-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.page-heading h1 {
+  margin: 0;
+  color: var(--cv-marrom);
+  font-size: clamp(1.55rem, 2.3vw, 2rem);
+  font-weight: 800;
+}
+
+.open-filter-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  padding: 4px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.open-filter-button svg {
+  width: 29px;
+  height: 29px;
+  fill: var(--cv-marrom-escuro);
+}
+
+.results-message {
+  min-height: 0;
+  margin: -14px 0 16px;
+  font-size: 0.92rem;
+}
+
+.results-message:empty {
+  display: none;
+}
+
+.applications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.application-card {
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  border: 2px solid var(--cv-verde);
+  background: var(--cv-creme);
+}
+
+.application-topline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 26px;
+  min-height: 48px;
+  padding: 12px 18px;
+  background: var(--cv-verde);
+  color: var(--cv-marrom-escuro);
+  font-size: 0.98rem;
+  font-weight: 800;
+}
+
+.application-topline span {
+  overflow-wrap: anywhere;
+}
+
+.application-content {
+  padding: 26px 28px 18px;
+}
+
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(var(--step-count), minmax(0, 1fr));
+  align-items: start;
+  gap: 0;
+  margin: 0 4px 18px;
+}
+
+.timeline-step {
+  position: relative;
+  min-width: 0;
+  text-align: center;
+  color: var(--cv-marrom-escuro);
+  font-size: 0.72rem;
+  line-height: 1.35;
+}
+
+.timeline-step:not(:last-child)::after {
+  position: absolute;
+  z-index: 0;
+  top: 7px;
+  left: calc(50% + 7px);
+  width: calc(100% - 14px);
+  height: 3px;
+  background: #d5d5bd;
+  content: "";
+}
+
+.timeline-step.is-complete:not(:last-child)::after {
+  background: var(--cv-verde);
+}
+
+.timeline-dot {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  margin: 0 auto 13px;
+  border-radius: 50%;
+  background: #d5d5bd;
+  color: var(--cv-branco);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.timeline-step.is-complete .timeline-dot {
+  background: var(--cv-verde);
+}
+
+.timeline-step.is-current .timeline-dot {
+  width: 18px;
+  height: 18px;
+  margin-top: -2px;
+  margin-bottom: 11px;
+  background: var(--cv-verde);
+  box-shadow: 0 0 0 3px var(--cv-creme);
+}
+
+.timeline-step.is-final .timeline-dot {
+  width: 22px;
+  height: 22px;
+  margin-top: -4px;
+  margin-bottom: 9px;
+  background: var(--cv-verde);
+  font-size: 16px;
+}
+
+.timeline-label {
+  display: block;
+  max-width: 130px;
+  margin: 0 auto;
+}
+
+.application-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-top: 2px;
+}
+
+.details-link {
+  color: var(--cv-marrom-escuro);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.details-link:hover,
+.details-link:focus-visible {
+  color: var(--cv-azul);
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background: rgba(255, 255, 207, 0.78);
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+
+/* Painel lateral: fica por cima dos cartões, como no protótipo. */
+.filter-backdrop {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  background: rgba(35, 25, 16, 0.08);
+}
+
+.filter-backdrop[hidden] {
+  display: none;
+}
+
+.filter-panel {
+  position: fixed;
+  z-index: 1001;
+  top: 68px;
+  right: 0;
+  width: min(360px, calc(100vw - 24px));
+  max-height: calc(100vh - 84px);
+  overflow-y: auto;
+  padding: 52px 26px 28px;
+  border: 2px solid var(--cv-marrom);
+  border-right: 0;
+  border-radius: 6px 0 0 6px;
+  background: var(--cv-creme);
+  box-shadow: 0 4px 12px rgba(70, 35, 20, 0.16);
+  transform: translateX(105%);
+  visibility: hidden;
+  transition: transform 0.22s ease, visibility 0.22s ease;
+}
+
+.filter-panel.is-open {
+  transform: translateX(0);
+  visibility: visible;
+}
+
+.close-filter-button {
+  position: absolute;
+  top: 6px;
+  right: 12px;
+  border: 0;
+  padding: 0 4px;
+  background: transparent;
+  color: var(--cv-marrom-escuro);
+  font-size: 2.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.filter-panel h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 36px;
+  color: var(--cv-marrom);
+  font-size: 1.12rem;
+  font-weight: 900;
+}
+
+.filter-panel h2 svg {
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
+  fill: var(--cv-marrom-escuro);
+}
+
+.status-option {
+  display: grid;
+  grid-template-columns: 20px 52px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 36px;
+  color: var(--cv-marrom);
+  font-size: 1.12rem;
+  font-weight: 800;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.status-option input {
+  width: 15px;
+  height: 15px;
+  margin: 0;
+  accent-color: var(--cv-azul);
+  cursor: pointer;
+}
+
+.status-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 4px solid var(--cv-azul);
+  border-radius: 50%;
+  background: var(--cv-azul);
+  color: var(--cv-creme);
+  font-size: 2rem;
+  font-weight: 900;
+  line-height: 1;
+  box-shadow: inset 0 0 0 2px var(--cv-creme);
+}
+
+.waiting-icon {
+  border: 0;
+  background: transparent;
+  color: #5d9ac3;
+  font-size: 3.2rem;
+  box-shadow: none;
+  animation: none;
+}
+
+.apply-filter-button,
+.clear-filter-button {
+  display: block;
+  width: 100%;
+  max-width: 220px;
+  margin: 0 auto;
+  padding: 12px 14px;
+  border: 0;
+  border-radius: 4px;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.apply-filter-button {
+  background: #176aaf;
+  color: var(--cv-branco);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
+}
+
+.apply-filter-button:hover {
+  background: #12578f;
+}
+
+.clear-filter-button {
+  margin-top: 14px;
+  border: 1px solid var(--cv-marrom);
+  background: transparent;
+  color: var(--cv-marrom);
+}
+
+.clear-filter-button:hover {
+  background: rgba(124, 199, 190, 0.22);
+}
+
+@media (max-width: 650px) {
+  .candidaturas-page {
+    width: calc(100% - 28px);
+    margin-top: 24px;
+  }
+
+  .application-topline {
+    gap: 8px 22px;
+    min-height: 42px;
+    padding: 10px 16px;
+    font-size: .96rem;
+}
+
+  .application-content {
+    padding: 22px 10px 14px;
+  }
+
+  .timeline-step {
+    font-size: 0.62rem;
+  }
+
+  .timeline-dot {
+    width: 11px;
+    height: 11px;
+  }
+
+  .timeline-step:not(:last-child)::after {
+    top: 5px;
+    left: calc(50% + 5px);
+    width: calc(100% - 10px);
+    height: 2px;
+  }
+
+  .timeline-step.is-current .timeline-dot {
+    width: 15px;
+    height: 15px;
+    margin-top: -2px;
+    margin-bottom: 10px;
+  }
+
+  .timeline-step.is-final .timeline-dot {
+    width: 18px;
+    height: 18px;
+    margin-top: -3px;
+    margin-bottom: 8px;
+  }
+
+  .timeline-label {
+    max-width: 82px;
+  }
+
+  .filter-panel {
+    top: 12px;
+    max-height: calc(100vh - 24px);
+    padding: 50px 20px 24px;
+  }
+}
+
+
+/* =========================================================
+   AJUSTES DE PROPORÇÃO E CENTRALIZAÇÃO
+   ========================================================= */
+
+/* Área principal mais compacta */
+.candidaturas-page {
+    width: calc(100% - 40px);
+    max-width: 1160px;
+    margin: 30px auto 45px;
+}
+
+/* Título centralizado, como na Listagem de Pets */
+.page-heading {
+    justify-content: flex-start;
+    gap: 10px;
+    margin-bottom: 22px;
+}
+
+.page-heading h1 {
+    font-size: clamp(1.4rem, 2.2vw, 2rem);
+    text-align: left;
+}
+
+/* Menos espaço entre os cartões */
+.applications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+
+/* Cabeçalho de cada candidatura */
+.application-topline {
+    gap: 8px 22px;
+    min-height: 42px;
+    padding: 9px 16px;
+    font-size: 0.88rem;
+}
+
+/* Conteúdo interno mais compacto */
+.application-content {
+    padding: 42px 24px 24px;
+}
+
+.timeline {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto 28px;
+}
+
+/* Textos da linha do tempo */
+.timeline-step {
+    font-size: 0.70rem;
+    line-height: 1.4;
+}
+
+.timeline-dot {
+    margin-bottom: 9px;
+}
+
+.timeline-label {
+    max-width: 125px;
+}
+
+/* Link de detalhes */
+.application-footer {
+    padding-top: 4px;
+}
+
+.details-link {
+    font-size: 0.75rem;
+}
+
+/* Mantém os campos e botões do filtro na fonte do projeto */
+.candidaturas-page,
+.filter-panel,
+.filter-panel button,
+.filter-panel input {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Adaptação para telas menores */
+@media (max-width: 650px) {
+    .candidaturas-page {
+        width: calc(100% - 28px);
+        margin-top: 24px;
+    }
+
+    .page-heading {
+        gap: 6px;
+        margin-bottom: 18px;
+    }
+
+    .page-heading h1 {
+        font-size: 1.35rem;
+    }
+
+    .applications-list {
+        gap: 18px;
+    }
+
+    .application-content {
+    padding: 32px 10px 18px;
+    }
+}
+

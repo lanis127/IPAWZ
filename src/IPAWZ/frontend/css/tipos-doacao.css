@@ -1,0 +1,314 @@
+:root {
+    --amarelo-claro: #FFFFCF;
+    --fundo: #ECE8C8;
+    --verde-agua: #7CC7BE;
+    --marrom: #803522;
+    --marrom-escuro: #5B1313;
+    --azul-link: #176A7A;
+    --texto: #4A3028;
+    --branco: #FFFFFF;
+    --borda: rgba(128, 53, 34, 0.18);
+    --sombra: 0 8px 24px rgba(91, 19, 19, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--amarelo-claro);
+    color: var(--texto);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.layout {
+    width: 100%;
+    min-height: calc(100vh - 1px);
+    display: flex;
+}
+
+/* A sidebar poderá ser adicionada ao lado do main quando for necessário. */
+.conteudo-principal {
+    width: 100%;
+    flex: 1;
+    min-width: 0;
+}
+
+.secao-doacao {
+    width: min(100%, 1100px);
+    margin: 0 auto;
+    padding: 46px 32px 52px;
+}
+
+.secao-doacao h1 {
+    margin: 0 0 40px;
+    color: var(--marrom);
+    font-size: clamp(1.55rem, 2.5vw, 2rem);
+    line-height: 1.25;
+    font-weight: 800;
+    text-align: center;
+}
+
+.grade-doacoes {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px 27px;
+}
+
+.card-doacao {
+    min-height: 94px;
+    padding: 16px 14px;
+    border: 2px solid transparent;
+    border-radius: 7px;
+    background: var(--verde-agua);
+    color: var(--branco);
+    font: inherit;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.42;
+    transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+}
+
+.card-doacao:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--sombra);
+}
+
+.card-doacao:focus-visible,
+.card-doacao.selecionado {
+    outline: none;
+    border-color: var(--marrom);
+    box-shadow: 0 0 0 3px rgba(128, 53, 34, 0.14);
+}
+
+.titulo-card {
+    margin-bottom: 2px;
+    font-size: 1.12rem;
+    font-weight: 800;
+}
+
+.card-centralizado {
+    grid-column: 1 / -1;
+    justify-self: center;
+}
+
+.area-formulario {
+    margin-top: 44px;
+    padding: 28px;
+    background: #fffef0;
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    box-shadow: var(--sombra);
+    scroll-margin-top: 24px;
+}
+
+.area-formulario[hidden] {
+    display: none;
+}
+
+.cabecalho-formulario {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 24px;
+}
+
+.cabecalho-formulario h2 {
+    margin: 3px 0 7px;
+    color: var(--marrom);
+    font-size: 1.5rem;
+}
+
+.cabecalho-formulario p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.etiqueta {
+    color: var(--azul-link);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+}
+
+.botao-fechar {
+    width: 36px;
+    height: 36px;
+    flex: 0 0 auto;
+    border: 0;
+    border-radius: 50%;
+    background: #f1ead8;
+    color: var(--marrom);
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+.campos-comuns,
+.campos-especificos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.campos-especificos {
+    margin-top: 18px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    min-width: 0;
+}
+
+.campo-largo {
+    grid-column: 1 / -1;
+}
+
+.campo label {
+    color: var(--marrom);
+    font-size: 0.92rem;
+    font-weight: 700;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+    width: 100%;
+    padding: 12px 13px;
+    border: 1px solid #d7cbb4;
+    border-radius: 7px;
+    background: var(--branco);
+    color: var(--texto);
+    font: inherit;
+}
+
+.campo textarea {
+    resize: vertical;
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+    outline: 2px solid rgba(23, 106, 122, 0.25);
+    border-color: var(--azul-link);
+}
+
+.aviso-formulario {
+    margin: 20px 0 0;
+    padding: 12px 14px;
+    border-left: 4px solid var(--verde-agua);
+    background: #f2f8ed;
+    font-size: 0.88rem;
+    line-height: 1.5;
+}
+
+.acoes-formulario {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.botao-secundario,
+.botao-enviar {
+    padding: 12px 18px;
+    border-radius: 7px;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.botao-secundario {
+    border: 1px solid var(--marrom);
+    background: transparent;
+    color: var(--marrom);
+}
+
+.botao-enviar {
+    border: 0;
+    background: var(--verde-agua);
+    color: #173c37;
+}
+
+.botao-enviar:hover {
+    filter: brightness(0.96);
+}
+
+.mensagem-formulario {
+    margin: 14px 0 0;
+    color: var(--azul-link);
+    font-weight: 700;
+}
+
+.voltar-topo {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    width: 42px;
+    height: 42px;
+    border: 0;
+    border-radius: 50%;
+    background: var(--amarelo-claro);
+    color: #111;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.14);
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+@media (max-width: 700px) {
+    .secao-doacao {
+        padding: 34px 18px 40px;
+    }
+
+    .secao-doacao h1 {
+        margin-bottom: 28px;
+    }
+
+    .grade-doacoes {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .card-centralizado {
+        grid-column: auto;
+        width: 100%;
+    }
+
+    .card-doacao {
+        min-height: 100px;
+    }
+
+    .area-formulario {
+        margin-top: 30px;
+        padding: 20px 16px;
+    }
+
+    .campos-comuns,
+    .campos-especificos {
+        grid-template-columns: 1fr;
+    }
+
+    .campo-largo {
+        grid-column: auto;
+    }
+
+    .acoes-formulario {
+        flex-direction: column-reverse;
+    }
+
+    .acoes-formulario button {
+        width: 100%;
+    }
+}
