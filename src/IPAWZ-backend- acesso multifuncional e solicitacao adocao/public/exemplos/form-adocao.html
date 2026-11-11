@@ -1,0 +1,27 @@
+<!-- Exemplo mínimo para adaptar ao formulário real de solicitação de adoção. -->
+<form id="form-adocao">
+  <label for="idPet">Pet</label>
+  <input id="idPet" name="idPet" type="number" min="1" required>
+  <label for="mensagem">Conte um pouco sobre o lar que oferecerá</label>
+  <textarea id="mensagem" name="mensagem" maxlength="3000"></textarea>
+  <button type="submit">Enviar solicitação</button>
+  <p id="retorno" role="status"></p>
+</form>
+<script src="../js/api.js"></script>
+<script>
+document.getElementById('form-adocao').addEventListener('submit', async (event) => {
+  event.preventDefault();
+  const retorno = document.getElementById('retorno');
+  try {
+    const form = event.currentTarget;
+    const result = await ipawzSolicitarAdocao(
+      form.elements.idPet.value,
+      form.elements.mensagem.value
+    );
+    retorno.textContent = result.mensagem;
+    form.reset();
+  } catch (error) {
+    retorno.textContent = error.message;
+  }
+});
+</script>
