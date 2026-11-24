@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validação da conta | IPAWZ</title>
+    <link rel="stylesheet" href="../css/validacao.css">
+    <link rel="stylesheet" href="../css/layout.css">
+</head>
+<body data-pagina="perfil" data-protegida="pf">
+
+    <div id="ipz-header"></div>
+
+    <section class="titulo-validacao">
+        <h1>Falta pouco! Valide sua conta</h1>
+        <p>Para adotar ou ser voluntário, precisamos confirmar sua identidade. Você só preenche isso uma vez: os dados ficam salvos para as próximas adoções e candidaturas.</p>
+    </section>
+
+    <main class="validacao-page">
+        <ol class="etapas" aria-label="Etapas do cadastro">
+            <li class="feita"><span class="numero">✓</span> Cadastro</li>
+            <li class="feita"><span class="numero">✓</span> Tipo de perfil</li>
+            <li class="atual"><span class="numero">3</span> Validação</li>
+        </ol>
+
+        <div class="situacao" id="situacao" hidden></div>
+
+        <form id="form-validacao" novalidate>
+            <div class="grade-validacao">
+                <section class="cartao">
+                    <h2>Dados pessoais</h2>
+                    <p class="ajuda">Confira se o CPF está correto: ele precisa ser o mesmo do documento da foto.</p>
+                    <div class="campos">
+                        <div class="campo">
+                            <label for="cpf">CPF*</label>
+                            <input id="cpf" name="cpf" inputmode="numeric" placeholder="000.000.000-00" required>
+                        </div>
+                        <fieldset class="campo">
+                            <legend>Você já teve experiência com animais?*</legend>
+                            <div class="opcoes-sim-nao">
+                                <label><input type="radio" name="experienciaAnimais" value="sim" required> Sim</label>
+                                <label><input type="radio" name="experienciaAnimais" value="nao"> Não</label>
+                            </div>
+                        </fieldset>
+                        <div class="campo" id="campo-experiencia" hidden>
+                            <label for="experienciaDescricao">Conte um pouco sobre essa experiência*</label>
+                            <textarea id="experienciaDescricao" name="experienciaDescricao" rows="4" maxlength="800" placeholder="Ex.: tive dois cães por 10 anos, já fui lar temporário..."></textarea>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="cartao">
+                    <h2>Endereço</h2>
+                    <p class="ajuda">Digite o CEP para preencher o resto automaticamente.</p>
+                    <div class="campos">
+                        <div class="campo c2">
+                            <label for="cep">CEP*</label>
+                            <input id="cep" name="cep" inputmode="numeric" placeholder="00000-000" required>
+                        </div>
+                        <div class="campo c4">
+                            <label for="rua">Rua*</label>
+                            <input id="rua" name="rua" required>
+                        </div>
+                        <div class="campo c2">
+                            <label for="numero">Número*</label>
+                            <input id="numero" name="numero" required>
+                        </div>
+                        <div class="campo c4">
+                            <label for="complemento">Complemento</label>
+                            <input id="complemento" name="complemento" placeholder="Apto, bloco... (opcional)">
+                        </div>
+                        <div class="campo c3">
+                            <label for="bairro">Bairro*</label>
+                            <input id="bairro" name="bairro" required>
+                        </div>
+                        <div class="campo c2">
+                            <label for="cidade">Cidade*</label>
+                            <input id="cidade" name="cidade" required>
+                        </div>
+                        <div class="campo c1">
+                            <label for="estado">UF*</label>
+                            <select id="estado" name="estado" required>
+                                <option value=""></option>
+                                <option value="AC">AC</option>
+                                <option value="AL">AL</option>
+                                <option value="AP">AP</option>
+                                <option value="AM">AM</option>
+                                <option value="BA">BA</option>
+                                <option value="CE">CE</option>
+                                <option value="DF">DF</option>
+                                <option value="ES">ES</option>
+                                <option value="GO">GO</option>
+                                <option value="MA">MA</option>
+                                <option value="MT">MT</option>
+                                <option value="MS">MS</option>
+                                <option value="MG">MG</option>
+                                <option value="PA">PA</option>
+                                <option value="PB">PB</option>
+                                <option value="PR">PR</option>
+                                <option value="PE">PE</option>
+                                <option value="PI">PI</option>
+                                <option value="RJ">RJ</option>
+                                <option value="RN">RN</option>
+                                <option value="RS">RS</option>
+                                <option value="RO">RO</option>
+                                <option value="RR">RR</option>
+                                <option value="SC">SC</option>
+                                <option value="SP">SP</option>
+                                <option value="SE">SE</option>
+                                <option value="TO">TO</option>
+                            </select>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="cartao cartao-largo">
+                    <h2>Foto segurando seu documento</h2>
+                    <p class="ajuda">Tire uma selfie segurando seu RG ou CNH ao lado do rosto.</p>
+                    <div class="selfie">
+                        <label class="campo-arquivo" data-tipos="imagem" data-max-mb="8" data-campo="selfieDocumento">
+                        <input type="file" name="selfieDocumento">
+                        <span class="arquivo-icone"></span>
+                        <span class="arquivo-texto">
+                            <strong>Selfie com documento*</strong>
+                            <span>JPG, PNG ou WEBP, até 8 MB</span>
+                            <span class="arquivo-status">Clique ou arraste o arquivo aqui</span>
+                        </span>
+                    </label>
+                        <ul class="dicas">
+                            <li>Seu rosto e o documento precisam aparecer inteiros na foto.</li>
+                            <li>Os dados do documento devem estar legíveis (sem reflexo ou dedo na frente).</li>
+                            <li>Use um lugar bem iluminado e sem óculos escuros ou boné.</li>
+                            <li>O documento deve ser o mesmo do CPF informado.</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+
+            <p class="privacidade"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7FC9B8" stroke-width="2" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span>Seus documentos ficam em uma área privada e são usados apenas para confirmar sua identidade. As instituições veem só o nome, o contato, o endereço e a experiência com animais quando você faz um pedido.</span></p>
+            <p class="mensagem-form" id="mensagem" role="alert"></p>
+
+            <div class="acoes-validacao">
+                <a class="botao-secundario-validacao" href="selecao-tipo-usuario.html">Trocar tipo de perfil</a>
+                <button class="botao-enviar-validacao" type="submit" id="botao-enviar">Enviar validação</button>
+            </div>
+        </form>
+    </main>
+
+    <div id="ipz-footer"></div>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/layout.js"></script>
+    <script src="../js/campo-arquivo.js"></script>
+    <script src="../js/validacao-comum.js"></script>
+    <script src="../js/validacao-pf.js"></script>
+</body>
+</html>

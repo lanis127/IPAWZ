@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>iPawz - Perfil Instituição</title>
+
+    <link rel="stylesheet" href="../css/perfil-pj.css">
+    <link rel="stylesheet" href="../css/layout.css">
+</head>
+
+<body data-pagina="perfil" data-protegida="pj" data-tipo-perfil="pj">
+
+    <div id="ipz-header"></div>
+
+    <!-- =====================================================
+         CONTEÚDO PRINCIPAL
+         ===================================================== -->
+
+    <main>
+
+        <div class="perfil-container">
+
+            <!-- =================================================
+                 COLUNA ESQUERDA
+                 ================================================= -->
+
+            <section class="coluna-esquerda">
+
+                <!-- ÍCONE DO PERFIL -->
+
+                <label class="foto-container" for="fotoPerfil" title="Clique para trocar a foto">
+                    <input type="file" id="fotoPerfil" accept="image/png, image/jpeg, image/webp" hidden>
+                    <img id="imagemPerfil" alt="Foto do perfil" hidden>
+                    <span class="icone-cabeca"></span>
+                    <span class="icone-corpo"></span>
+                </label>
+
+                <div class="nome-instituicao" id="nomeExibicao"></div>
+
+                <!-- =================================================
+                     DADOS INSTITUCIONAIS
+                     ================================================= -->
+
+                <div class="dados-institucionais">
+
+                    <h2 class="titulo-secao">
+
+                        Dados institucionais
+
+                    </h2>
+
+                    <!-- RAZÃO SOCIAL -->
+
+                    <div class="campo campo-razao">
+
+                        <label for="razaoSocial">
+
+                            Razão social*
+
+                        </label>
+
+                        <input
+                            type="text"
+                            id="razaoSocial"
+                        >
+
+                    </div>
+
+                    <!-- NOME FANTASIA -->
+
+                    <div class="campo campo-fantasia">
+
+                        <label for="nomeFantasia">
+
+                            Nome fantasia*
+
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nomeFantasia"
+                        >
+
+                    </div>
+
+                    <!-- CNPJ + TELEFONE -->
+
+                    <div class="linha-cnpj-telefone">
+
+                        <div class="campo">
+
+                            <label for="cnpj">
+
+                                CNPJ*
+
+                            </label>
+
+                            <input
+                                type="text"
+                                id="cnpj"
+                                maxlength="18"
+                            >
+
+                        </div>
+
+                        <div class="campo">
+
+                            <label for="telefone">
+
+                                Telefone*
+
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="telefone"
+                                maxlength="15"
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- =================================================
+                 COLUNA DIREITA
+                 ================================================= -->
+
+            <section class="coluna-direita">
+
+                <!-- TIPO DE INSTITUIÇÃO -->
+
+                <div class="campo campo-instituicao">
+
+                    <label for="tipoInstituicao">
+
+                        Tipo de instituição*
+
+                    </label>
+
+                    <select id="tipoInstituicao">
+                        <option value=""></option>
+                        <option>ONG</option>
+                        <option>Abrigo</option>
+                        <option>Instituto</option>
+                        <option>Associação</option>
+                        <option>Fundação</option>
+                        <option>Clínica veterinária</option>
+                        <option>Outro</option>
+                    </select>
+
+                </div>
+
+                <!-- E-MAIL -->
+
+                <div class="campo campo-email">
+
+                    <label for="email">
+
+                        E-mail*
+
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                    >
+
+                </div>
+
+                <!-- =================================================
+                     ENDEREÇO
+                     ================================================= -->
+
+                <div class="endereco">
+
+                    <h2 class="endereco-titulo">
+
+                        Endereço
+
+                    </h2>
+
+                    <!-- RUA + NÚMERO -->
+
+                    <div class="linha-endereco-1">
+
+                        <div class="campo">
+
+                            <label for="rua">
+
+                                Rua*
+
+                            </label>
+
+                            <input
+                                type="text"
+                                id="rua"
+                            >
+
+                        </div>
+
+                        <div class="campo">
+
+                            <label for="numero">
+
+                                Número*
+
+                            </label>
+
+                            <input
+                                type="text"
+                                id="numero"
+                            >
+
+                        </div>
+
+                    </div>
+
+                    <!-- BAIRRO + CIDADE -->
+
+                    <div class="linha-endereco-2">
+
+                        <div class="campo">
+
+                            <label for="bairro">
+
+                                Bairro*
+
+                            </label>
+
+                            <input
+                                type="text"
+                                id="bairro"
+                            >
+
+                        </div>
+
+                        <div class="campo">
+
+                            <label for="cidade">
+
+                                Cidade*
+
+                            </label>
+
+                            <input
+                                type="text"
+                                id="cidade"
+                            >
+
+                        </div>
+
+                    </div>
+
+                    <!-- COMPLEMENTO + CEP + UF -->
+
+                    <div class="linha-endereco-3">
+
+                        <div class="campo">
+
+                            <label for="complemento">
+
+                                Complemento
+
+                            </label>
+
+                            <input
+                                type="text"
+                                id="complemento"
+                            >
+
+                        </div>
+
+                        <div class="campo">
+
+                            <label for="cep">
+
+                                CEP*
+
+                            </label>
+
+                            <input
+                                type="text"
+                                id="cep"
+                                maxlength="9"
+                            >
+
+                        </div>
+
+                        <div class="campo">
+
+                            <label for="uf">
+
+                                UF*
+
+                            </label>
+
+                            <select id="uf">
+
+                                <option value=""></option>
+
+                                <option>AC</option>
+                                <option>AL</option>
+                                <option>AP</option>
+                                <option>AM</option>
+                                <option>BA</option>
+                                <option>CE</option>
+                                <option>DF</option>
+                                <option>ES</option>
+                                <option>GO</option>
+                                <option>MA</option>
+                                <option>MT</option>
+                                <option>MS</option>
+                                <option>MG</option>
+                                <option>PA</option>
+                                <option>PB</option>
+                                <option>PR</option>
+                                <option>PE</option>
+                                <option>PI</option>
+                                <option>RJ</option>
+                                <option>RN</option>
+                                <option>RS</option>
+                                <option>RO</option>
+                                <option>RR</option>
+                                <option>SC</option>
+                                <option>SP</option>
+                                <option>SE</option>
+                                <option>TO</option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                    <!-- =================================================
+                         BOTÕES
+                         ================================================= -->
+
+                    <div class="botoes">
+
+                        <button
+                            type="button"
+                            class="btn-editar" id="btnEditar">
+
+                            Editar perfil
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="btn-salvar" id="btnSalvar">
+
+                            Salvar informações
+
+                        </button>
+
+                    </div>
+
+                    <div
+                        id="mensagem"
+                        class="mensagem">
+
+                        Informações salvas com sucesso! 🐾
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <div id="ipz-footer"></div>
+    
+    <script src="../js/api.js"></script>
+    <script src="../js/layout.js"></script>
+    <script src="../js/perfil.js"></script>
+</body>
+
+</html>

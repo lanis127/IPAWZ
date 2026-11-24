@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chave Pix para doações | IPAWZ</title>
+    <link rel="stylesheet" href="../css/pix.css">
+    <link rel="stylesheet" href="../css/layout.css">
+</head>
+<body data-pagina="doacao" data-protegida="pj">
+
+    <div id="ipz-header"></div>
+
+    <main class="pagina-chave-pix">
+        <h1>Chave Pix para doações</h1>
+        <p class="introducao">Cadastre a chave Pix da conta da instituição. Quando alguém escolher fazer uma doação financeira
+            para vocês, a IPAWZ mostra um QR Code com o valor escolhido e o dinheiro cai <strong>direto nessa conta</strong>.
+            Depois é só confirmar o recebimento em <a href="doacoes-recebidas.html">Doações recebidas</a>.</p>
+
+        <div class="situacao-pix" id="situacao-pix" hidden></div>
+
+        <section class="cartao-pix" id="cartao-chave-atual" hidden>
+            <h2>Chave cadastrada</h2>
+            <div class="chave-atual">
+                <div>
+                    <div id="tipo-chave-atual"></div>
+                    <div class="valor-chave" id="valor-chave-atual"></div>
+                </div>
+                <button class="botao-pix perigo" type="button" id="remover-chave">Remover chave</button>
+            </div>
+        </section>
+
+        <section class="cartao-pix">
+            <h2 id="titulo-form-pix">Cadastrar chave Pix</h2>
+            <form id="form-pix" novalidate>
+                <div class="linha-campos">
+                    <div class="campo-pix">
+                        <label for="tipoChave">Tipo da chave*</label>
+                        <select id="tipoChave" name="tipoChave" required>
+                            <option value="cnpj">CNPJ</option>
+                            <option value="email">E-mail</option>
+                            <option value="telefone">Celular</option>
+                            <option value="aleatoria">Chave aleatória</option>
+                            <option value="cpf">CPF</option>
+                        </select>
+                    </div>
+                    <div class="campo-pix">
+                        <label for="chave">Chave Pix*</label>
+                        <input id="chave" name="chave" autocomplete="off" required>
+                        <p class="dica" id="dica-chave"></p>
+                    </div>
+                </div>
+                <p class="dica">Use uma chave de uma conta no nome da instituição. Confira com cuidado: um erro aqui manda as doações para outra pessoa.</p>
+                <div class="acoes-pix" style="margin-top: 16px">
+                    <button class="botao-pix" type="submit" id="salvar-chave">Salvar chave Pix</button>
+                </div>
+                <p class="mensagem-pix" id="mensagem-pix" role="status"></p>
+            </form>
+        </section>
+    </main>
+
+    <div id="ipz-footer"></div>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/layout.js"></script>
+    <script src="../js/chave-pix.js"></script>
+</body>
+</html>

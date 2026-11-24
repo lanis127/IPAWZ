@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redefinir senha | IPAWZ</title>
+    <link rel="stylesheet" href="../css/signInOut.css">
+</head>
+<body>
+
+    <main class="auth-container">
+
+        <section class="left-panel">
+            <a href="inicio.html" class="back-btn" aria-label="Voltar">&#10094;</a>
+            <h2>Esqueceu sua senha?<br>Recupere-a</h2>
+            <img src="../assets/icons/gato-vaso.svg" alt="Gato derrubando um vaso">
+        </section>
+
+        <section class="right-panel">
+            <div class="form-card">
+
+                <h1>Esqueceu a senha?</h1>
+
+                <p class="account-text">
+                    Insira seu e-mail e enviaremos um código para redefinir a senha.
+                </p>
+
+                <div class="info-box">
+                    <div class="info-icon">!</div>
+                    <div class="info-text">
+                        <b>Cheque seu e-mail pelo código de 6 dígitos.</b><br>
+                        Você receberá um e-mail se existir uma conta associada ao endereço. O código vale por 15 minutos.
+                    </div>
+                </div>
+
+                <form id="form-redefinir" novalidate>
+                    <input type="email" name="email" placeholder="E-mail" aria-label="E-mail" autocomplete="email" required>
+                    <p class="cod">Código</p>
+                    <input type="text" name="codigo" placeholder="Código de 6 dígitos" aria-label="Código" inputmode="numeric" maxlength="6" autocomplete="one-time-code" required>
+                    <div class="password-field">
+                        <input type="password" name="novaSenha" placeholder="Nova senha" aria-label="Nova senha" autocomplete="new-password" minlength="6" required>
+                        <button type="button" class="ver-senha" aria-label="Mostrar senha">&#128065;</button>
+                    </div>
+                    <div class="password-field">
+                        <input type="password" name="confirmarSenha" placeholder="Confirmar nova senha" aria-label="Confirmar nova senha" autocomplete="new-password" minlength="6" required>
+                        <button type="button" class="ver-senha" aria-label="Mostrar senha">&#128065;</button>
+                    </div>
+                    <p class="mensagem-form" role="alert"></p>
+                    <button type="submit" class="btn-primary">Redefinir senha</button>
+                </form>
+
+                <p class="account-text"><a href="recuperar-senha.html" id="link-reenviar">Não recebeu? Confira o spam ou envie outro código</a></p>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/auth.js"></script>
+</body>
+</html>

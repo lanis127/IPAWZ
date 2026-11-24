@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de pet | IPAWZ</title>
+    <link rel="stylesheet" href="../css/cadastro-pet.css">
+    <link rel="stylesheet" href="../css/layout.css">
+</head>
+<body data-pagina="adocao" data-protegida="true">
+
+    <div id="ipz-header"></div>
+
+    <section class="titulo-cadastro">
+        <p id="titulo-cadastro">Chegou a hora de cadastrar seu pet, é simples! Preencha os campos a seguir:</p>
+    </section>
+
+    <main>
+        <form id="form-pet" class="form-pet" novalidate>
+
+            <div class="grade-principal">
+                <div class="campos-basicos">
+                    <div class="campo-linha">
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" placeholder="Escreva aqui" required>
+                    </div>
+                    <div class="campo-linha">
+                        <label for="porte">Porte:</label>
+                        <select id="porte" name="porte" required>
+                            <option value="">Selecione</option>
+                            <option value="pequeno">Pequeno</option>
+                            <option value="medio">Médio</option>
+                            <option value="grande">Grande</option>
+                        </select>
+                    </div>
+                    <div class="campo-linha">
+                        <label for="sexo">Sexo:</label>
+                        <select id="sexo" name="sexo" required>
+                            <option value="">Selecione</option>
+                            <option value="macho">Macho</option>
+                            <option value="femea">Fêmea</option>
+                        </select>
+                    </div>
+                    <div class="campo-linha">
+                        <label for="idade">Idade:</label>
+                        <input type="text" id="idade" name="idade" placeholder="Ex.: 2 anos, 4 meses" required>
+                    </div>
+                    <div class="campo-linha">
+                        <label for="faixaEtaria">Fase:</label>
+                        <select id="faixaEtaria" name="faixaEtaria" required>
+                            <option value="">Selecione</option>
+                            <option value="filhote">Filhote</option>
+                            <option value="jovem">Jovem</option>
+                            <option value="adulto">Adulto</option>
+                            <option value="idoso">Idoso</option>
+                        </select>
+                    </div>
+                    <div class="campo-linha">
+                        <label for="especie">Espécie:</label>
+                        <select id="especie" name="especie" required>
+                            <option value="">Selecione</option>
+                            <option value="cachorro">Cachorro</option>
+                            <option value="gato">Gato</option>
+                            <option value="passaro">Pássaro</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
+                </div>
+
+                <label class="foto-area" for="fotoPet">
+                    <input type="file" id="fotoPet" name="foto" accept="image/png, image/jpeg, image/webp">
+                    <img id="preview" alt="Pré-visualização da foto do pet" hidden>
+                    <span class="foto-texto" id="textoFoto">CLIQUE AQUI PARA ANEXAR FOTO DO PET</span>
+                </label>
+            </div>
+
+            <div class="grade-perguntas">
+                <div class="campo-coluna">
+                    <label for="vacinado">É vacinado?</label>
+                    <select id="vacinado" name="vacinado" required>
+                            <option value="">Selecione</option>
+                            <option value="sim">Sim</option>
+                            <option value="nao">Não</option>
+                        </select>
+                </div>
+                <div class="campo-coluna">
+                    <label for="temperamento">Temperamento do pet?</label>
+                    <select id="temperamento" name="temperamento" required>
+                            <option value="">Selecione</option>
+                            <option value="calmo">Calmo</option>
+                            <option value="brincalhao">Brincalhão</option>
+                            <option value="agitado">Agitado</option>
+                            <option value="sociavel">Sociável</option>
+                            <option value="independente">Independente</option>
+                        </select>
+                </div>
+                <div class="campo-coluna">
+                    <label for="castrado">É castrado?</label>
+                    <select id="castrado" name="castrado" required>
+                            <option value="">Selecione</option>
+                            <option value="sim">Sim</option>
+                            <option value="nao">Não</option>
+                        </select>
+                </div>
+                <div class="campo-coluna">
+                    <label for="sociavelPets">Sociável com outros pets?</label>
+                    <select id="sociavelPets" name="sociavelPets" required>
+                            <option value="">Selecione</option>
+                            <option value="sim">Sim</option>
+                            <option value="nao">Não</option>
+                        </select>
+                </div>
+                <div class="campo-coluna">
+                    <label for="doenca">Possui alguma doença?</label>
+                    <input type="text" id="doenca" name="doenca" placeholder="Escreva aqui o nome da doença; caso não tenha, escreva &quot;não&quot;">
+                </div>
+                <div class="campo-coluna">
+                    <label for="sociavelPessoas">Sociável com pessoas?</label>
+                    <select id="sociavelPessoas" name="sociavelPessoas" required>
+                            <option value="">Selecione</option>
+                            <option value="sim">Sim</option>
+                            <option value="nao">Não</option>
+                        </select>
+                </div>
+                <div class="campo-coluna campo-largo">
+                    <label for="descricao">Conte um pouco sobre o pet:</label>
+                    <textarea id="descricao" name="descricao" rows="3" placeholder="História, cuidados especiais, o que ele gosta..."></textarea>
+                </div>
+            </div>
+
+            <section class="informacoes">
+                <h2>Por último, precisamos de algumas informações suas:</h2>
+                <p class="informacoes-nota">Nome, e-mail e telefone vêm do seu perfil. Cidade e UF indicam onde o pet está.</p>
+
+                <div class="informacoes-grade">
+                    <div class="info-campo info-nome">
+                        <label for="nomeResponsavel">Nome:</label>
+                        <input type="text" id="nomeResponsavel" readonly>
+                    </div>
+                    <div class="info-campo info-email">
+                        <label for="emailResponsavel">E-mail:</label>
+                        <input type="email" id="emailResponsavel" readonly>
+                    </div>
+                    <div class="info-campo info-tel">
+                        <label for="telefoneResponsavel">TEL:</label>
+                        <input type="tel" id="telefoneResponsavel" readonly>
+                    </div>
+                    <div class="info-campo info-cidade">
+                        <label for="cidade">Cidade:</label>
+                        <input type="text" id="cidade" name="cidade" placeholder="Escreva aqui" required>
+                    </div>
+                    <div class="info-campo info-uf">
+                        <label for="uf">UF:</label>
+                        <select id="uf" name="uf" required>
+                            <option value=""></option>
+                            <option value="AC">AC</option>
+                            <option value="AL">AL</option>
+                            <option value="AP">AP</option>
+                            <option value="AM">AM</option>
+                            <option value="BA">BA</option>
+                            <option value="CE">CE</option>
+                            <option value="DF">DF</option>
+                            <option value="ES">ES</option>
+                            <option value="GO">GO</option>
+                            <option value="MA">MA</option>
+                            <option value="MT">MT</option>
+                            <option value="MS">MS</option>
+                            <option value="MG">MG</option>
+                            <option value="PA">PA</option>
+                            <option value="PB">PB</option>
+                            <option value="PR">PR</option>
+                            <option value="PE">PE</option>
+                            <option value="PI">PI</option>
+                            <option value="RJ">RJ</option>
+                            <option value="RN">RN</option>
+                            <option value="RS">RS</option>
+                            <option value="RO">RO</option>
+                            <option value="RR">RR</option>
+                            <option value="SC">SC</option>
+                            <option value="SP">SP</option>
+                            <option value="SE">SE</option>
+                            <option value="TO">TO</option>
+                        </select>
+                    </div>
+                </div>
+
+                <p class="mensagem-form" id="mensagem-form" role="alert"></p>
+
+                <div class="area-cadastro">
+                    <button type="submit" class="botao-cadastro" id="botao-cadastro">Cadastrar pet.</button>
+                </div>
+            </section>
+        </form>
+    </main>
+
+    <div id="ipz-footer"></div>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/layout.js"></script>
+    <script src="../js/cadastro-pet.js"></script>
+</body>
+</html>

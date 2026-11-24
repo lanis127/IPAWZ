@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IPAWZ</title>
+    <link rel="stylesheet" href="../css/inicio.css">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/listagem-pets.css">
+    <link rel="stylesheet" href="../css/acompanhar-adocao.css">
+    <link rel="stylesheet" href="../css/layout.css">
+</head>
+
+<body data-pagina="adocao" data-protegida="pf">
+
+    <div id="ipz-header"></div>
+
+<main class="principal">
+
+    <div class="titulo-area">
+        <h1>Minhas solicitações de adoção</h1>
+
+        <button class="botao-filtro" id="botaoFiltro"
+            aria-label="Filtrar solicitações"
+            aria-expanded="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 4h18l-7 9v6l-4 2v-8L3 4z"/>
+            </svg>
+        </button>
+    </div>
+
+    <div class="filtros" id="filtros">
+        <label for="filtroStatus">Status da solicitação:</label>
+
+        <select id="filtroStatus">
+            <option value="todos">Todos os status</option>
+            <option value="enviada">Solicitação enviada</option>
+            <option value="recebida">Solicitação recebida</option>
+            <option value="analise">Formulário em análise</option>
+            <option value="aprovada">Adoção aprovada</option>
+            <option value="recusada">Não aprovada</option>
+        </select>
+
+        <button class="botao-limpar" id="limparFiltro">
+            Limpar filtro
+        </button>
+    </div>
+
+    <div class="lista-solicitacoes" id="listaSolicitacoes" aria-live="polite">
+            <p class="ipz-estado">Carregando suas solicitações...</p>
+        </div>
+
+</main>
+
+<div class="fundo-modal" id="fundoModal">
+        <section class="modal" role="dialog" aria-modal="true" aria-labelledby="tituloModal">
+            <button class="fechar-modal" id="fecharModal" aria-label="Fechar" type="button">×</button>
+            <h2 id="tituloModal">Detalhes da solicitação</h2>
+            <div id="conteudoModal"></div>
+            <button class="botao-modal" id="botaoFecharModal" type="button">Fechar detalhes</button>
+        </section>
+    </div>
+
+    <div id="ipz-footer"></div>
+    
+    <script src="../js/api.js"></script>
+    <script src="../js/layout.js"></script>
+    <script src="../js/acompanhar-adocao.js"></script>
+</body>
+</html>
+

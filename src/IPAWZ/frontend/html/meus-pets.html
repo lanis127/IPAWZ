@@ -1,0 +1,39 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="../css/gestao-ipawz.css"><title>Meus pets cadastrados | IPAWZ</title>    <link rel="stylesheet" href="../css/layout.css">
+</head><body data-pagina="perfil" data-protegida="true">
+
+    <div id="ipz-header"></div>
+<main class="gestao-page">
+        <div class="titulo-pagina">
+            <div>
+                <p class="sobretitulo">MINHA CONTA</p>
+                <h1>Meus pets cadastrados</h1>
+                <p class="descricao-pagina">Acompanhe e gerencie os animais que você disponibilizou para adoção.</p>
+            </div>
+            <a class="btn-principal" href="cadastro-pet.html">＋ Cadastrar pet</a>
+        </div>
+
+        <div class="resumo-cards" id="resumoPets"></div>
+
+        <div class="barra-ferramentas">
+            <label class="campo-busca">
+                <span>⌕</span>
+                <input id="buscaPet" type="search" placeholder="Buscar pet pelo nome..." aria-label="Buscar pet pelo nome">
+            </label>
+            <select id="filtroPet" aria-label="Filtrar por situação">
+                <option value="todos">Todos os anúncios</option>
+                <option value="disponivel">Disponíveis</option>
+                <option value="inativo">Inativos</option>
+                <option value="adotado">Adotados</option>
+            </select>
+        </div>
+
+        <section class="grade-cards" id="listaPets" aria-live="polite"></section>
+    </main>
+
+    <div id="ipz-footer"></div>
+    
+    <script src="../js/api.js"></script>
+    <script src="../js/layout.js"></script>
+    <script src="../js/meus-pets.js"></script>
+</body></html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPAWZ</title>
+    <link rel="stylesheet" href="../css/inicio.css">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/listagem-pets.css">
+    <link rel="stylesheet" href="../css/layout.css">
+</head>
+
+<body data-pagina="home">
+
+    <div id="ipz-header"></div>
+
+    <!-- Conteúdo da página -->
+    <main class="content">
+
+        <!-- ================= HERO ================= -->
+        <section class="hero">
+
+            <div class="hero-image">
+                <img src="../assets/img/tela-inicio-ft.png" alt="Pessoa com cachorro">
+            </div>
+
+            <div class="hero-content">
+
+                <h1 class="logo-titulo">
+                    IPAWZ
+                    <img src="../assets/logo/foot-print.png" alt="Pegada">
+                </h1>
+
+                <h2>
+                    Conectando pessoas a causas que transformam vidas animais
+                </h2>
+
+                <p>
+                    Adoção, doação e voluntariado em um único lugar
+                </p>
+
+                <a href="listagem.html" class="btn-cadastro">
+                    <strong>Conheça os pets para adoção</strong>
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- ================= COMO DOAR =============== -->
+
+        <section class="como-doar">
+
+            <div class="container-home">
+
+                <div class="conteudo-doacao">
+
+                    <div class="texto-doacao">
+
+                        <h2>Faça uma doação e transforme vidas!</h2>
+
+                        <div class="passos-doacao">
+
+                            <h3>Como doar:</h3>
+
+                            <ul>
+
+                                <li>
+                                    - Escolha a instituição que você queira ajudar
+                                </li>
+
+                                <li>
+                                    - Selecione o tipo de doação que deseja realizar
+                                </li>
+
+                                <li>
+                                    - Confirme a doação e mude vidas
+                                </li>
+
+                            </ul>
+                            <a href="tipos-doacao.html" class="btn-doar">Quero doar</a>
+
+                        </div>
+
+                    </div>
+
+                    <div class="imagem-doacao">
+
+                        <img src="../assets/img/caridade2.png" alt="Ilustração de doação">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ===================== TIPOS DE DOAÇÃO ===================== -->
+
+        <section class="tipos-doacao">
+
+            <div class="container-home">
+
+                <div class="conteudo-tipos">
+
+                    <div class="imagem-tipos">
+
+                        <img src="../assets/img/caridade.png" alt="Tipos de doação">
+
+                    </div>
+
+                    <div class="texto-tipos">
+
+                        <h2>Tipos de doação</h2>
+
+                        <ol>
+
+                            <li>Doações financeiras;</li>
+
+                            <li>Doações de alimentos;</li>
+
+                            <li>Doações de medicamentos;</li>
+
+                            <li>Doações de itens e acessórios;</li>
+
+                            <li>Doações de itens de higiene e limpeza.</li>
+
+                        </ol>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ================== ONGS PARCEIRAS ======================= -->
+
+        <section class="ongs-parceiras" id="instituicoes">
+
+            <div class="container-home">
+
+                <h2>Instituições e ONGs parceiras</h2>
+
+                <div class="carrossel-wrapper">
+
+                    <button class="seta-carrossel seta-esquerda" aria-label="Anterior">
+
+                        &#10094;
+
+                    </button>
+
+                    <div class="janela-carrossel">
+
+                        <div class="trilha-carrossel">
+                            <p class="ipz-estado">Carregando instituições...</p>
+                        </div>
+
+                    </div>
+
+                    <button class="seta-carrossel seta-direita" aria-label="Próximo">
+
+                        &#10095;
+
+                    </button>
+
+                </div>
+
+                <!-- Indicadores criados pelo JavaScript -->
+                <div class="indicadores-carrossel"></div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <div id="ipz-footer"></div>
+    
+    <script src="../js/api.js"></script>
+    <script src="../js/layout.js"></script>
+    <script src="../js/home.js"></script>
+    <script src="../js/carrossel-ongs.js"></script>
+</body>
+
+</html>

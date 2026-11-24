@@ -1,0 +1,102 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="../css/gestao-ipawz.css"><title>Administrar vagas de voluntariado | IPAWZ</title>    <link rel="stylesheet" href="../css/layout.css">
+</head><body data-pagina="voluntarios" data-protegida="pj">
+
+    <div id="ipz-header"></div>
+<main class="gestao-page">
+        <div class="titulo-pagina">
+            <div>
+                <p class="sobretitulo">ÁREA DA INSTITUIÇÃO</p>
+                <h1>Administrar vagas de voluntariado</h1>
+                <p class="descricao-pagina">Cadastre oportunidades, acompanhe candidaturas e gerencie suas vagas.</p>
+            </div>
+            <button class="btn-principal" id="novaVaga" type="button">＋ Cadastrar nova vaga</button>
+        </div>
+
+        <div class="resumo-cards" id="resumoVagas"></div>
+
+        <div class="barra-ferramentas">
+            <label class="campo-busca">
+                <span>⌕</span>
+                <input id="buscaVaga" type="search" placeholder="Buscar vaga pelo tipo de serviço..." aria-label="Buscar vaga">
+            </label>
+            <select id="filtroVaga" aria-label="Filtrar vagas">
+                <option value="todas">Todas as vagas</option>
+                <option value="ativa">Ativas</option>
+                <option value="inativa">Inativas</option>
+            </select>
+        </div>
+
+        <section class="lista-gerenciavel" id="listaVagas" aria-live="polite"></section>
+    </main>
+
+    <!-- Modal: cadastrar / editar vaga -->
+    <div class="modal-backdrop" id="modalVaga" hidden>
+        <section class="modal-conteudo modal-largo" role="dialog" aria-modal="true" aria-labelledby="tituloModalVaga">
+            <button class="fechar-modal" data-fechar="modalVaga" aria-label="Fechar" type="button">×</button>
+            <h2 id="tituloModalVaga">Cadastrar nova vaga</h2>
+
+            <form id="formVaga">
+                <input type="hidden" id="vagaId">
+
+                <label>Tipo de voluntariado / serviço
+                    <select id="tipoServico" name="tipoServico" required>
+                        <option value="">Selecione o tipo de serviço</option>
+                            <option>Passeio com pets</option>
+                            <option>Cuidados com os animais (alimentação, higiene e bem-estar)</option>
+                            <option>Apoio veterinário</option>
+                            <option>Limpeza e organização do ambiente</option>
+                            <option>Serviços administrativos</option>
+                            <option>Divulgação e redes sociais</option>
+                            <option>Organização de eventos e campanhas</option>
+                            <option>Arrecadação de doações</option>
+                            <option>Transporte de animais</option>
+                        <option value="outro">Outro</option>
+                    </select>
+                </label>
+
+                <label id="campoOutroWrap" hidden>Descreva o tipo de serviço oferecido
+                    <input id="tipoServicoOutro" name="tipoOutro" placeholder="Ex.: apoio em feiras de adoção">
+                </label>
+
+                <div class="campos-duplos">
+                    <label>Localização
+                        <input id="vagaLocal" name="local" placeholder="Cidade - UF / endereço" required>
+                    </label>
+                    <label>Data da atividade
+                        <input id="vagaData" name="data" type="date" required>
+                    </label>
+                </div>
+
+                <label>Descrição da vaga
+                    <textarea id="vagaDescricao" name="descricao" rows="5" placeholder="Descreva as atividades, horários, requisitos e orientações para os voluntários..." required></textarea>
+                </label>
+
+                <label>Foto do local (opcional)
+                    <input id="vagaImagem" name="imagem" type="file" accept="image/png, image/jpeg, image/webp">
+                </label>
+
+                <div class="acoes-form">
+                    <button class="btn-secundario" type="button" data-fechar="modalVaga">Cancelar</button>
+                    <button class="btn-principal" type="submit" id="salvarVaga">Salvar vaga</button>
+                </div>
+            </form>
+        </section>
+    </div>
+
+    <!-- Modal: candidatos da vaga -->
+    <div class="modal-backdrop" id="modalCandidatos" hidden>
+        <section class="modal-conteudo modal-largo" role="dialog" aria-modal="true" aria-labelledby="tituloCandidatos">
+            <button class="fechar-modal" data-fechar="modalCandidatos" aria-label="Fechar" type="button">×</button>
+            <h2 id="tituloCandidatos">Candidatos inscritos</h2>
+            <p class="descricao-pagina" id="subtituloCandidatos"></p>
+            <div id="listaCandidatos" class="lista-candidatos"></div>
+        </section>
+    </div>
+
+    <div id="ipz-footer"></div>
+    
+    <script src="../js/api.js"></script>
+    <script src="../js/layout.js"></script>
+    <script src="../js/administrar-vagas.js"></script>
+</body></html>

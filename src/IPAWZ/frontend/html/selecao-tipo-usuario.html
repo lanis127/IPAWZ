@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleção de perfil | IPAWZ</title>
+    <link rel="stylesheet" href="../css/selecao-tipo-usuario.css">
+    <link rel="stylesheet" href="../css/layout.css">
+</head>
+<body data-pagina="perfil" data-protegida="pf">
+
+    <div id="ipz-header"></div>
+
+    <main class="selecao-page">
+        <section class="selecao-conteudo">
+            <h1>Seleção de perfil</h1>
+            <p class="selecao-texto">
+                Cada usuário tem permissões diferentes, se algum for do seu interesse, apenas clique em
+                “confirmar” para completar a ação.
+                <span class="destaque-azul">Todos são gratuitos e você pode mudar isso mais tarde.</span>
+            </p>
+            <p class="selecao-aviso" id="aviso-precisa" hidden></p>
+
+            <div class="cartoes-perfil" id="cartoes-perfil">
+                <!-- Os 4 cartões são montados por js/selecao-tipo-usuario.js -->
+            </div>
+            <p class="selecao-mensagem" id="mensagem" role="alert"></p>
+        </section>
+
+        <aside class="selecao-lateral" aria-hidden="true">
+            <p>Escolha seu tipo de perfil e comece hoje a fazer a diferença!</p>
+            <span class="linha"></span>
+            <img src="../assets/img/cachorro-patas.png" alt="">
+        </aside>
+    </main>
+
+    <div id="ipz-footer"></div>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/layout.js"></script>
+    <script src="../js/selecao-tipo-usuario.js"></script>
+</body>
+</html>

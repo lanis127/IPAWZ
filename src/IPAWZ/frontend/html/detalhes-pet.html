@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>IPAWZ - Conheça a Nazinha</title>
+    <link rel="stylesheet" href="../css/inicio.css">
+    <link rel="stylesheet" href="../css/home.css">
+
+    <link rel="stylesheet" href="../css/detalhes-pet.css">
+    <link rel="stylesheet" href="../css/layout.css">
+</head>
+
+<body data-pagina="adocao">
+
+    <div id="ipz-header"></div>
+
+    <div class="titulo-principal" id="titulo-pet">Conheça nosso pet</div>
+
+    <main>
+
+        <section class="informacoes-pet">
+            <div class="area-foto">
+                <img src="../assets/img/cao-azul.png" alt="" class="foto-pet" id="foto-pet">
+            </div>
+
+            <div class="dados-pet" id="dados-pet">
+                <p class="ipz-estado">Carregando informações...</p>
+            </div>
+        </section>
+
+        <section class="descricao-area">
+            <div class="descricao-titulo">Descrição:</div>
+            <div class="descricao" id="descricao-pet"></div>
+        </section>
+
+        <section class="descricao-area" id="area-responsavel" hidden>
+            <div class="descricao-titulo">Responsável:</div>
+            <div class="descricao" id="responsavel-pet"></div>
+        </section>
+
+        <div class="area-botao">
+            <a class="botao-adocao" id="botao-adocao" href="#">Solicitar adoção</a>
+        </div>
+
+    </main>
+
+    <div id="ipz-footer"></div>
+    
+    <script src="../js/api.js"></script>
+    <script src="../js/layout.js"></script>
+    <script src="../js/detalhes-pet.js"></script>
+</body>
+
+</html>

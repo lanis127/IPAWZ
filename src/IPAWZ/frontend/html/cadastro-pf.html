@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro pessoa física | IPAWZ</title>
+    <link rel="stylesheet" href="../css/signInOut.css">
+</head>
+<body>
+
+    <main class="auth-container">
+
+        <section class="left-panel">
+            <a href="inicio.html" class="back-btn" aria-label="Voltar">&#10094;</a>
+            <h2>Crie sua conta e faça a diferença na vida de um animal!</h2>
+            <img src="../assets/icons/pessoas-animais-cadastro.svg" alt="Pessoas com animais">
+        </section>
+
+        <section class="right-panel">
+            <div class="form-card">
+
+                <h1>Cadastro</h1>
+
+                <form id="form-cadastro" data-tipo="pf" novalidate>
+                    <input type="text" name="nome" placeholder="Nome Completo" aria-label="Nome completo" autocomplete="name" required>
+                    <input type="date" name="dataNascimento" aria-label="Data de nascimento" title="Data de nascimento" required>
+                    <input type="tel" name="telefone" placeholder="Telefone" aria-label="Telefone" autocomplete="tel" required>
+                    <select name="estado" aria-label="Estado (UF)" required>
+                        <option value="" selected disabled>Estado (UF)</option>
+                        <option value="AC">AC</option>
+                        <option value="AL">AL</option>
+                        <option value="AP">AP</option>
+                        <option value="AM">AM</option>
+                        <option value="BA">BA</option>
+                        <option value="CE">CE</option>
+                        <option value="DF">DF</option>
+                        <option value="ES">ES</option>
+                        <option value="GO">GO</option>
+                        <option value="MA">MA</option>
+                        <option value="MT">MT</option>
+                        <option value="MS">MS</option>
+                        <option value="MG">MG</option>
+                        <option value="PA">PA</option>
+                        <option value="PB">PB</option>
+                        <option value="PR">PR</option>
+                        <option value="PE">PE</option>
+                        <option value="PI">PI</option>
+                        <option value="RJ">RJ</option>
+                        <option value="RN">RN</option>
+                        <option value="RS">RS</option>
+                        <option value="RO">RO</option>
+                        <option value="RR">RR</option>
+                        <option value="SC">SC</option>
+                        <option value="SP">SP</option>
+                        <option value="SE">SE</option>
+                        <option value="TO">TO</option>
+                    </select>
+                    <input type="email" name="email" placeholder="E-mail" aria-label="E-mail" autocomplete="email" required>
+                    <div class="password-field">
+                        <input type="password" name="senha" placeholder="Senha" aria-label="Senha" autocomplete="new-password" minlength="6" required>
+                        <button type="button" class="ver-senha" aria-label="Mostrar senha">&#128065;</button>
+                    </div>
+                    <div class="password-field">
+                        <input type="password" name="confirmarSenha" placeholder="Confirmar senha" aria-label="Confirmar senha" autocomplete="new-password" minlength="6" required>
+                        <button type="button" class="ver-senha" aria-label="Mostrar senha">&#128065;</button>
+                    </div>
+
+                    <p class="mensagem-form" role="alert"></p>
+                    <p class="account-text">Já tenho uma conta? Faça <a href="login.html">Login</a></p>
+                    <button type="submit" class="btn-primary">Cadastre-se</button>
+                    <p class="termos">Ao se cadastrar você aceita nossos <a href="../assets/docs/TERMOS-E-CONDIÇÕES-IPAWZ.pdf" target="_blank" rel="noopener">termos de uso</a> e <a href="../assets/docs/POLÍTICA-DE-PRIVACIDADE-IPAWZ.pdf" target="_blank" rel="noopener">política de privacidade</a></p>
+                </form>
+
+                <div class="separator"><span>ou cadastre-se com</span></div>
+
+                <button type="button" class="google-btn" id="login-google" data-tipo="pf" aria-label="Cadastrar com Google">
+                    <img src="../assets/icons/google-icon.svg" alt="">
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/auth.js"></script>
+</body>
+</html>

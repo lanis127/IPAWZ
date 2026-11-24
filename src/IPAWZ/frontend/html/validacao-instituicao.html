@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validação da instituição | IPAWZ</title>
+    <link rel="stylesheet" href="../css/validacao.css">
+    <link rel="stylesheet" href="../css/layout.css">
+</head>
+<body data-pagina="perfil" data-protegida="pj">
+
+    <div id="ipz-header"></div>
+
+    <section class="titulo-validacao">
+        <h1>Validação da instituição</h1>
+        <p>Para proteger os animais e quem quer ajudar, toda instituição envia alguns documentos antes de anunciar pets e vagas. Leva só alguns minutos.</p>
+    </section>
+
+    <main class="validacao-page">
+        <ol class="etapas" aria-label="Etapas do cadastro">
+            <li class="feita"><span class="numero">✓</span> Cadastro</li>
+            <li class="atual"><span class="numero">2</span> Documentos</li>
+            <li><span class="numero">3</span> Análise da equipe IPAWZ</li>
+        </ol>
+
+        <div class="situacao" id="situacao" hidden></div>
+
+        <form id="form-validacao" novalidate>
+            <section class="cartao">
+                <h2>Representante legal</h2>
+                <p class="ajuda">Pessoa responsável pela instituição (presidente, diretor ou sócio).</p>
+                <div class="campos">
+                    <div class="campo c4">
+                        <label for="representanteNome">Nome completo*</label>
+                        <input id="representanteNome" name="representanteNome" autocomplete="name" required>
+                    </div>
+                    <div class="campo c2">
+                        <label for="representanteCpf">CPF*</label>
+                        <input id="representanteCpf" name="representanteCpf" inputmode="numeric" placeholder="000.000.000-00" required>
+                    </div>
+                </div>
+            </section>
+
+            <h2 class="sr-only">Documentos</h2>
+            <div class="grade-arquivos" style="margin-top: 24px">
+                <section class="cartao">
+                    <h2>Comprovante do CNPJ</h2>
+                    <p class="ajuda">Comprovante de Inscrição e Situação Cadastral (Cartão CNPJ), emitido no site da Receita Federal.</p>
+                    <label class="campo-arquivo" data-tipos="documento" data-max-mb="8" data-campo="cartaoCnpj">
+                        <input type="file" name="cartaoCnpj">
+                        <span class="arquivo-icone"></span>
+                        <span class="arquivo-texto">
+                            <strong>Cartão CNPJ*</strong>
+                            <span>PDF ou imagem, até 8 MB</span>
+                            <span class="arquivo-status">Clique ou arraste o arquivo aqui</span>
+                        </span>
+                    </label>
+                </section>
+                <section class="cartao">
+                    <h2>Comprovante de endereço</h2>
+                    <p class="ajuda">Da sede ou do abrigo: conta de água, luz, internet ou contrato de locação.</p>
+                    <label class="campo-arquivo" data-tipos="documento" data-max-mb="8" data-campo="comprovanteEndereco">
+                        <input type="file" name="comprovanteEndereco">
+                        <span class="arquivo-icone"></span>
+                        <span class="arquivo-texto">
+                            <strong>Comprovante de endereço*</strong>
+                            <span>PDF ou imagem, até 8 MB</span>
+                            <span class="arquivo-status">Clique ou arraste o arquivo aqui</span>
+                        </span>
+                    </label>
+                </section>
+                <section class="cartao">
+                    <h2>Documento do representante</h2>
+                    <p class="ajuda">RG ou CNH com foto, frente e verso legíveis (pode ser um PDF com as duas páginas).</p>
+                    <label class="campo-arquivo" data-tipos="documento" data-max-mb="8" data-campo="documentoRepresentante">
+                        <input type="file" name="documentoRepresentante">
+                        <span class="arquivo-icone"></span>
+                        <span class="arquivo-texto">
+                            <strong>RG ou CNH*</strong>
+                            <span>PDF ou imagem, até 8 MB</span>
+                            <span class="arquivo-status">Clique ou arraste o arquivo aqui</span>
+                        </span>
+                    </label>
+                </section>
+                <section class="cartao">
+                    <h2>Selfie do representante</h2>
+                    <p class="ajuda">Foto do representante segurando o mesmo documento, com rosto e documento visíveis.</p>
+                    <label class="campo-arquivo" data-tipos="imagem" data-max-mb="8" data-campo="selfieRepresentante">
+                        <input type="file" name="selfieRepresentante">
+                        <span class="arquivo-icone"></span>
+                        <span class="arquivo-texto">
+                            <strong>Selfie com documento*</strong>
+                            <span>JPG, PNG ou WEBP, até 8 MB</span>
+                            <span class="arquivo-status">Clique ou arraste o arquivo aqui</span>
+                        </span>
+                    </label>
+                </section>
+            </div>
+
+            <p class="privacidade"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7FC9B8" stroke-width="2" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span>Os documentos ficam em uma área privada, acessível só pela equipe IPAWZ, e são usados apenas para validar a instituição.</span></p>
+            <p class="mensagem-form" id="mensagem" role="alert"></p>
+
+            <div class="acoes-validacao">
+                <button class="botao-enviar-validacao" type="submit" id="botao-enviar">Enviar documentos</button>
+            </div>
+        </form>
+    </main>
+
+    <div id="ipz-footer"></div>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/layout.js"></script>
+    <script src="../js/campo-arquivo.js"></script>
+    <script src="../js/validacao-comum.js"></script>
+    <script src="../js/validacao-instituicao.js"></script>
+</body>
+</html>

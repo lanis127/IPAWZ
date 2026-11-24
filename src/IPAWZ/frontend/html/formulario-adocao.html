@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>iPawz - Formulário de Adoção</title>
+
+    <link rel="stylesheet" href="../css/formulario-adocao.css">
+    <link rel="stylesheet" href="../css/layout.css">
+</head>
+
+<body data-pagina="adocao" data-protegida="pf">
+
+    <div id="ipz-header"></div>
+
+    <!-- =====================================================
+         CONTEÚDO
+         ===================================================== -->
+
+    <main>
+
+        <!-- VOLTAR -->
+
+        <a href="listagem.html" class="voltar" id="link-voltar">
+
+            <span class="seta">
+                ‹
+            </span>
+
+            Voltar
+
+        </a>
+
+        <!-- FORMULÁRIO -->
+
+        <form
+            id="formularioAdocao"
+            class="formulario-container">
+
+            <h1 class="titulo">
+
+                FORMULÁRIO DE ADOÇÃO
+
+            </h1>
+
+            <p class="pet-escolhido" id="pet-escolhido"></p>
+
+            <!-- =================================================
+                 INFORMAÇÕES DE MORADIA
+                 ================================================= -->
+
+            <section class="secao">
+
+                <h2 class="secao-titulo">
+
+                    Informações de moradia
+
+                </h2>
+
+                <!-- 1 -->
+
+                <div class="pergunta">
+
+                    <span class="pergunta-texto">
+
+                        1 - Você mora em:
+
+                    </span>
+
+                    <div class="opcoes">
+
+                        <label class="opcao">
+
+                            <input
+                                type="radio"
+                                name="moradia"
+                                value="Casa"
+                                required
+                            >
+
+                            Casa
+
+                        </label>
+
+                        <label class="opcao">
+
+                            <input
+                                type="radio"
+                                name="moradia"
+                                value="Apartamento"
+                            >
+
+                            Apartamento
+
+                        </label>
+
+                        <label class="opcao">
+
+                            <input
+                                type="radio"
+                                name="moradia"
+                                value="Condomínio"
+                            >
+
+                            Condomínio
+
+                        </label>
+
+                        <label class="opcao">
+
+                            <input
+                                type="radio"
+                                name="moradia"
+                                value="Outro"
+                            >
+
+                            Outro
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+                <!-- 2 -->
+
+                <div class="pergunta">
+
+                    <span class="pergunta-texto">
+
+                        2 - O imóvel é:
+
+                    </span>
+
+                    <div class="opcoes">
+
+                        <label class="opcao">
+
+                            <input
+                                type="radio"
+                                name="imovel"
+                                value="Alugado"
+                                required
+                            >
+
+                            Alugado
+
+                        </label>
+
+                        <label class="opcao">
+
+                            <input
+                                type="radio"
+                                name="imovel"
+                                value="Próprio"
+                            >
+
+                            Próprio
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+                <!-- 3 -->
+
+                <div class="pergunta">
+
+                    <span class="pergunta-texto">
+
+                        3 - O local permite animais?
+
+                    </span>
+
+                    <div class="opcoes">
+
+                        <label class="opcao">
+
+                            <input
+                                type="radio"
+                                name="permiteAnimais"
+                                value="Sim"
+                                required
+                            >
+
+                            Sim
+
+                        </label>
+
+                        <label class="opcao">
+
+                            <input
+                                type="radio"
+                                name="permiteAnimais"
+                                value="Não"
+                            >
+
+                            Não
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+                <!-- 4 -->
+
+                <div class="pergunta">
+
+                    <span class="pergunta-texto">
+
+                        4 - A residência possui área externa?
+
+                    </span>
+
+                    <div class="opcoes">
+
+                        <label class="opcao">
+
+                            <input
+                                type="radio"
+                                name="areaExterna"
+                                value="Sim"
+                                required
+                            >
+
+                            Sim
+
+                        </label>
+
+                        <label class="opcao">
+
+                            <input
+                                type="radio"
+                                name="areaExterna"
+                                value="Não"
+                            >
+
+                            Não
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+                <!-- 5 -->
+
+                <div class="pergunta">
+
+                    <span class="pergunta-texto">
+
+                        5 - O espaço é telado ou possui proteção
+                        (muros, grades, telas)?
+
+                    </span>
+
+                    <div class="opcoes">
+
+                        <label class="opcao">
+
+                            <input
+                                type="radio"
+                                name="protecao"
+                                value="Sim"
+                                required
+                            >
+
+                            Sim
+
+                        </label>
+
+                        <label class="opcao">
+
+                            <input
+                                type="radio"
+                                name="protecao"
+                                value="Não"
+                            >
+
+                            Não
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <div class="divisoria"></div>
+
+            <!-- =================================================
+                 ROTINA E DISPONIBILIDADE
+                 ================================================= -->
+
+            <section class="secao">
+
+                <h2 class="secao-titulo">
+
+                    Rotina e disponibilidade
+
+                </h2>
+
+                <!-- HORAS SOZINHO -->
+
+                <div class="pergunta">
+
+                    <label
+                        class="pergunta-texto"
+                        for="horasSozinho">
+
+                        Quantas horas por dia o pet ficará sozinho?
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="horasSozinho"
+                        name="horasSozinho"
+                        class="campo-texto"
+                        placeholder="Digite sua resposta"
+                        required
+                    >
+
+                </div>
+
+                <!-- RESPONSÁVEL -->
+
+                <div class="pergunta">
+
+                    <label
+                        class="pergunta-texto"
+                        for="responsavel">
+
+                        Quem será o principal responsável pelos
+                        cuidados do animal?
+
+                    </label>
+
+                    <textarea
+                        id="responsavel"
+                        name="responsavel"
+                        class="campo-texto"
+                        placeholder="Digite sua resposta"
+                        required
+                    ></textarea>
+
+                </div>
+
+                <!-- TRABALHA / ESTUDA -->
+
+                <div class="pergunta">
+
+                    <span class="pergunta-texto">
+
+                        Você trabalha ou estuda fora?
+
+                    </span>
+
+                    <div class="opcoes">
+
+                        <label class="opcao">
+
+                            <input
+                                type="radio"
+                                name="trabalhaEstuda"
+                                value="Sim"
+                                required
+                            >
+
+                            Sim
+
+                        </label>
+
+                        <label class="opcao">
+
+                            <input
+                                type="radio"
+                                name="trabalhaEstuda"
+                                value="Não"
+                            >
+
+                            Não
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+                <!-- PASSEIO -->
+
+                <div class="pergunta">
+
+                    <span class="pergunta-texto">
+
+                        Com que frequência poderá passear/brincar
+                        com o pet?
+
+                    </span>
+
+                    <div class="opcoes">
+
+                        <label class="opcao">
+
+                            <input
+                                type="radio"
+                                name="passeio"
+                                value="Diariamente"
+                                required
+                            >
+
+                            Diariamente
+
+                        </label>
+
+                        <label class="opcao">
+
+                            <input
+                                type="radio"
+                                name="passeio"
+                                value="Algumas vezes por semana"
+                            >
+
+                            Algumas vezes por semana
+
+                        </label>
+
+                        <label class="opcao">
+
+                            <input
+                                type="radio"
+                                name="passeio"
+                                value="Raramente"
+                            >
+
+                            Raramente
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+                <!-- VETERINÁRIO -->
+
+                <div class="pergunta">
+
+                    <span class="pergunta-texto">
+
+                        Você tem disponibilidade para levar o pet
+                        ao veterinário quando necessário?
+
+                    </span>
+
+                    <div class="opcoes">
+
+                        <label class="opcao">
+
+                            <input
+                                type="radio"
+                                name="veterinario"
+                                value="Sim"
+                                required
+                            >
+
+                            Sim
+
+                        </label>
+
+                        <label class="opcao">
+
+                            <input
+                                type="radio"
+                                name="veterinario"
+                                value="Não"
+                            >
+
+                            Não
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <div class="divisoria"></div>
+
+            <!-- =================================================
+                 EXPERIÊNCIA COM ANIMAIS
+                 ================================================= -->
+
+            <section class="secao">
+
+                <h2 class="secao-titulo">
+
+                    Experiência com animais
+
+                </h2>
+
+                <!-- PETS ANTERIORES -->
+
+                <div class="pergunta">
+
+                    <span class="pergunta-texto">
+
+                        Você já teve pets antes?
+
+                    </span>
+
+                    <div class="opcoes">
+
+                        <label class="opcao">
+
+                            <input
+                                type="radio"
+                                name="tevePets"
+                                value="Sim"
+                                required
+                            >
+
+                            Sim
+
+                        </label>
+
+                        <label class="opcao">
+
+                            <input
+                                type="radio"
+                                name="tevePets"
+                                value="Não"
+                            >
+
+                            Não
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+                <!-- OUTROS ANIMAIS -->
+
+                <div class="pergunta">
+
+                    <span class="pergunta-texto">
+
+                        Atualmente possui outros animais?
+
+                    </span>
+
+                    <div class="opcoes">
+
+                        <label class="opcao">
+
+                            <input
+                                type="radio"
+                                name="outrosAnimais"
+                                value="Sim"
+                                id="outrosAnimaisSim"
+                                required
+                            >
+
+                            Sim
+
+                        </label>
+
+                        <label class="opcao">
+
+                            <input
+                                type="radio"
+                                name="outrosAnimais"
+                                value="Não"
+                                id="outrosAnimaisNao"
+                            >
+
+                            Não
+
+                        </label>
+
+                    </div>
+
+                    <!-- SUBPERGUNTAS -->
+
+                    <div
+                        id="dadosOutrosAnimais"
+                        class="subperguntas">
+
+                        <div class="pergunta">
+
+                            <label
+                                class="pergunta-texto"
+                                for="quantos">
+
+                                Quantos?
+
+                            </label>
+
+                            <input
+                                type="number"
+                                id="quantos"
+                        name="quantos"
+                                class="campo-texto"
+                                min="0"
+                                placeholder="Digite a quantidade"
+                            >
+
+                        </div>
+
+                        <div class="pergunta">
+
+                            <label
+                                class="pergunta-texto"
+                                for="especies">
+
+                                Quais espécies?
+
+                            </label>
+
+                            <input
+                                type="text"
+                                id="especies"
+                        name="especies"
+                                class="campo-texto"
+                                placeholder="Ex.: cães, gatos, aves..."
+                            >
+
+                        </div>
+
+                        <div class="pergunta">
+
+                            <span class="pergunta-texto">
+
+                                São castrados?
+
+                            </span>
+
+                            <div class="opcoes">
+
+                                <label class="opcao">
+
+                                    <input
+                                        type="radio"
+                                        name="castrados"
+                                        value="Sim"
+                                    >
+
+                                    Sim
+
+                                </label>
+
+                                <label class="opcao">
+
+                                    <input
+                                        type="radio"
+                                        name="castrados"
+                                        value="Não"
+                                    >
+
+                                    Não
+
+                                </label>
+
+                            </div>
+
+                        </div>
+
+                        <div class="pergunta">
+
+                            <span class="pergunta-texto">
+
+                                São vacinados?
+
+                            </span>
+
+                            <div class="opcoes">
+
+                                <label class="opcao">
+
+                                    <input
+                                        type="radio"
+                                        name="vacinados"
+                                        value="Sim"
+                                    >
+
+                                    Sim
+
+                                </label>
+
+                                <label class="opcao">
+
+                                    <input
+                                        type="radio"
+                                        name="vacinados"
+                                        value="Não"
+                                    >
+
+                                    Não
+
+                                </label>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- ADOÇÃO ANTERIOR -->
+
+                <div class="pergunta">
+
+                    <span class="pergunta-texto">
+
+                        Já realizou alguma adoção anteriormente?
+
+                    </span>
+
+                    <div class="opcoes">
+
+                        <label class="opcao">
+
+                            <input
+                                type="radio"
+                                name="adocaoAnterior"
+                                value="Sim"
+                                required
+                            >
+
+                            Sim
+
+                        </label>
+
+                        <label class="opcao">
+
+                            <input
+                                type="radio"
+                                name="adocaoAnterior"
+                                value="Não"
+                            >
+
+                            Não
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+                <!-- O QUE ACONTECEU -->
+
+                <div class="pergunta">
+
+                    <label
+                        class="pergunta-texto"
+                        for="petsAnteriores">
+
+                        O que aconteceu com os pets anteriores?
+
+                    </label>
+
+                    <textarea
+                        id="petsAnteriores"
+                        name="petsAnteriores"
+                        class="campo-texto"
+                        placeholder="Digite sua resposta"
+                    ></textarea>
+
+                </div>
+
+            </section>
+
+            <div class="divisoria"></div>
+
+            <!-- =================================================
+                 CONDIÇÕES DE CUIDADO
+                 ================================================= -->
+
+            <section class="secao">
+
+                <h2 class="secao-titulo">
+
+                    Condições de cuidado
+
+                </h2>
+
+                <!-- 1 -->
+
+                <div class="pergunta">
+
+                    <span class="pergunta-texto">
+
+                        Você possui condições financeiras para
+                        alimentação, vacinas, higiene e consultas
+                        veterinárias?
+
+                    </span>
+
+                    <div class="opcoes">
+
+                        <label class="opcao">
+
+                            <input
+                                type="radio"
+                                name="condicoesFinanceiras"
+                                value="Sim"
+                                required
+                            >
+
+                            Sim
+
+                        </label>
+
+                        <label class="opcao">
+
+                            <input
+                                type="radio"
+                                name="condicoesFinanceiras"
+                                value="Não"
+                            >
+
+                            Não
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+                <!-- 2 -->
+
+                <div class="pergunta">
+
+                    <span class="pergunta-texto">
+
+                        Está ciente de que um pet pode gerar custos
+                        mensais?
+
+                    </span>
+
+                    <div class="opcoes">
+
+                        <label class="opcao">
+
+                            <input
+                                type="radio"
+                                name="custosMensais"
+                                value="Sim"
+                                required
+                            >
+
+                            Sim
+
+                        </label>
+
+                        <label class="opcao">
+
+                            <input
+                                type="radio"
+                                name="custosMensais"
+                                value="Não"
+                            >
+
+                            Não
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+                <!-- 3 -->
+
+                <div class="pergunta">
+
+                    <span class="pergunta-texto">
+
+                        Em caso de emergência veterinária,
+                        conseguiria arcar com os custos?
+
+                    </span>
+
+                    <div class="opcoes">
+
+                        <label class="opcao">
+
+                            <input
+                                type="radio"
+                                name="emergencia"
+                                value="Sim"
+                                required
+                            >
+
+                            Sim
+
+                        </label>
+
+                        <label class="opcao">
+
+                            <input
+                                type="radio"
+                                name="emergencia"
+                                value="Não"
+                            >
+
+                            Não
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <div class="divisoria"></div>
+
+            <!-- =================================================
+                 MOTIVAÇÃO PARA ADOÇÃO
+                 ================================================= -->
+
+            <section class="secao">
+
+                <h2 class="secao-titulo">
+
+                    Motivação para adoção
+
+                </h2>
+
+                <!-- POR QUE -->
+
+                <div class="pergunta">
+
+                    <label
+                        class="pergunta-texto"
+                        for="motivo">
+
+                        Por que deseja adotar um pet?
+
+                    </label>
+
+                    <textarea
+                        id="motivo"
+                        name="motivo"
+                        class="campo-texto"
+                        placeholder="Digite sua resposta"
+                        required
+                    ></textarea>
+
+                </div>
+
+                <!-- VIDA TODA -->
+
+                <div class="pergunta">
+
+                    <span class="pergunta-texto">
+
+                        Você está preparado para cuidar do pet
+                        durante toda a vida dele?
+
+                    </span>
+
+                    <div class="opcoes">
+
+                        <label class="opcao">
+
+                            <input
+                                type="radio"
+                                name="vidaToda"
+                                value="Sim"
+                                required
+                            >
+
+                            Sim
+
+                        </label>
+
+                        <label class="opcao">
+
+                            <input
+                                type="radio"
+                                name="vidaToda"
+                                value="Não"
+                            >
+
+                            Não
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+                <!-- MUDANÇA -->
+
+                <div class="pergunta">
+
+                    <label
+                        class="pergunta-texto"
+                        for="mudanca">
+
+                        O que faria caso precisasse se mudar?
+
+                    </label>
+
+                    <textarea
+                        id="mudanca"
+                        name="mudanca"
+                        class="campo-texto"
+                        placeholder="Digite sua resposta"
+                        required
+                    ></textarea>
+
+                </div>
+
+                <!-- COMPORTAMENTO -->
+
+                <div class="pergunta">
+
+                    <label
+                        class="pergunta-texto"
+                        for="comportamento">
+
+                        O que faria caso o pet apresentasse
+                        problemas de comportamento?
+
+                    </label>
+
+                    <textarea
+                        id="comportamento"
+                        name="comportamento"
+                        class="campo-texto"
+                        placeholder="Digite sua resposta"
+                        required
+                    ></textarea>
+
+                </div>
+
+            </section>
+
+            <div class="divisoria"></div>
+
+            <!-- =================================================
+                 TERMO DE RESPONSABILIDADE
+                 ================================================= -->
+
+            <section class="secao termo">
+
+                <h2 class="secao-titulo">
+
+                    Termo de responsabilidade
+
+                </h2>
+
+                <!-- COMPROMISSO -->
+
+                <div class="pergunta">
+
+                    <span class="pergunta-texto">
+
+                        Você se compromete a oferecer alimentação,
+                        cuidados veterinários, carinho e segurança
+                        ao animal?
+
+                    </span>
+
+                    <div class="opcoes">
+
+                        <label class="opcao">
+
+                            <input
+                                type="radio"
+                                name="compromisso"
+                                value="Sim"
+                                required
+                            >
+
+                            Sim
+
+                        </label>
+
+                        <label class="opcao">
+
+                            <input
+                                type="radio"
+                                name="compromisso"
+                                value="Não"
+                            >
+
+                            Não
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+                <!-- ACOMPANHAMENTO -->
+
+                <div class="pergunta">
+
+                    <span class="pergunta-texto">
+
+                        Autoriza contato para acompanhamento
+                        pós-adoção?
+
+                    </span>
+
+                    <div class="opcoes">
+
+                        <label class="opcao">
+
+                            <input
+                                type="radio"
+                                name="acompanhamento"
+                                value="Sim"
+                                required
+                            >
+
+                            Sim
+
+                        </label>
+
+                        <label class="opcao">
+
+                            <input
+                                type="radio"
+                                name="acompanhamento"
+                                value="Não"
+                            >
+
+                            Não
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+                <!-- DECLARAÇÃO -->
+
+                <div class="pergunta">
+
+                    <span class="pergunta-texto">
+
+                        Declaro que as informações fornecidas
+                        são verdadeiras.
+
+                    </span>
+
+                    <label class="checkbox-opcao">
+
+                        <input
+                            type="checkbox"
+                            id="concordo"
+                            required
+                        >
+
+                        Concordo
+
+                    </label>
+
+                </div>
+
+            </section>
+
+            <!-- =================================================
+                 BOTÃO ENVIAR
+                 ================================================= -->
+
+            <div class="area-botao">
+
+                <button
+                    type="submit"
+                    class="botao-enviar">
+
+                    Enviar formulário
+
+                </button>
+
+            </div>
+
+            <!-- MENSAGEM -->
+
+            <div
+                id="mensagemSucesso"
+                class="mensagem-sucesso">
+
+                Formulário de adoção enviado com sucesso! 🐾
+
+            </div>
+
+        </form>
+
+    </main>
+
+    <div id="ipz-footer"></div>
+    
+    <script src="../js/api.js"></script>
+    <script src="../js/layout.js"></script>
+    <script src="../js/formulario-adocao.js"></script>
+</body>
+
+</html>

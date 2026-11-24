@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitações de adoção | IPAWZ</title>
+    <link rel="stylesheet" href="../css/solicitacoes-adocao.css">
+    <link rel="stylesheet" href="../css/layout.css">
+</head>
+<body data-pagina="adocao" data-protegida="true">
+
+    <div id="ipz-header"></div>
+
+    <main class="solicitacoes-page">
+        <h1>Solicitações de Adoção</h1>
+        <p class="subtitulo">Gerencie as solicitações de adoção recebidas para os pets que você cadastrou</p>
+
+        <div class="filtros" role="group" aria-label="Filtrar por status">
+            <button class="filtro ativo" type="button" data-filtro="todas">Todas</button>
+            <button class="filtro filtro-analise" type="button" data-filtro="pendentes">Em análise</button>
+            <button class="filtro filtro-aprovadas" type="button" data-filtro="aprovada">Aprovadas</button>
+        </div>
+
+        <div class="tabela-borda">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Solicitações</th>
+                        <th>Pet</th>
+                        <th>Data</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="linhas"></tbody>
+            </table>
+            <p class="ipz-estado" id="estado">Carregando solicitações...</p>
+        </div>
+
+        <section class="detalhes" id="detalhes" hidden aria-live="polite">
+            <div class="detalhes-pet">
+                <img id="det-foto" src="../assets/img/cao-azul.png" alt="">
+                <strong id="det-pet"></strong>
+            </div>
+            <div class="detalhes-solicitante">
+                <h2>Detalhes do Solicitante</h2>
+                <p id="det-solicitante"></p>
+                <label class="observacao">
+                    Recado para o solicitante (opcional)
+                    <textarea id="det-observacao" rows="2" maxlength="500"></textarea>
+                </label>
+            </div>
+            <div class="detalhes-acoes">
+                <button class="link-formulario" type="button" id="ver-formulario">&#128196; Formulário respondido</button>
+                <div class="botoes-status" id="botoes-status">
+                    <button class="btn-analise" type="button" data-status="analise">Em análise</button>
+                    <button class="btn-rejeitar" type="button" data-status="recusada">Rejeitar</button>
+                    <button class="btn-aprovar" type="button" data-status="aprovada">Aprovar</button>
+                </div>
+            </div>
+            <div class="respostas" id="respostas" hidden></div>
+        </section>
+    </main>
+
+    <div id="ipz-footer"></div>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/layout.js"></script>
+    <script src="../js/solicitacoes-adocao.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="../css/gestao-ipawz.css"><title>Doações recebidas | IPAWZ</title>    <link rel="stylesheet" href="../css/pix.css">
+    <link rel="stylesheet" href="../css/layout.css">
+</head><body data-pagina="doacao" data-protegida="pj" data-modo="recebidas">
+
+    <div id="ipz-header"></div>
+<main class="gestao-page">
+        <div class="titulo-pagina">
+            <div>
+                <p class="sobretitulo">ÁREA DA INSTITUIÇÃO</p>
+                <h1 id="titulo-historico">Doações recebidas</h1>
+                <p class="descricao-pagina" id="descricao-historico">Veja as doações que sua instituição recebeu pela IPAWZ e confirme o recebimento.</p>
+            </div>
+        </div>
+
+        <p class="aviso-sem-pix" id="aviso-sem-pix" hidden>Sua instituição ainda não tem chave Pix, então não aparece para doações financeiras.
+            <a href="chave-pix.html">Cadastrar chave Pix</a></p>
+
+        <div class="resumo-cards" id="resumoDoacoes"></div>
+
+        <div class="barra-ferramentas filtros-doacao">
+            <label class="campo-busca">
+                <span>⌕</span>
+                <input id="buscaDoacao" type="search" placeholder="Buscar pelo doador..." aria-label="Buscar">
+            </label>
+            <select id="filtroTipo" aria-label="Tipo de doação">
+                <option value="todos">Todos os tipos</option>
+                <option value="financeira">Financeira</option>
+                <option value="alimentos">Alimentos</option>
+                <option value="medicamentos">Medicamentos</option>
+                <option value="acessorios">Itens e acessórios</option>
+                <option value="higiene">Higiene e limpeza</option>
+            </select>
+            <select id="filtroPeriodo" aria-label="Período">
+                <option value="todos">Todo o período</option>
+                <option value="30">Últimos 30 dias</option>
+                <option value="90">Últimos 90 dias</option>
+                <option value="365">Último ano</option>
+            </select>
+        </div>
+
+        <section class="tabela-container">
+            <div class="cabecalho-lista">
+                <h2 id="titulo-lista">Doações recebidas</h2>
+                <span id="quantidadeDoacoes"></span>
+            </div>
+            <div class="tabela-responsiva">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tipo de doação</th>
+                            <th id="coluna-parte">Doador</th>
+                            <th>Data</th>
+                            <th>Valor / descrição</th>
+                            <th>Status</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="listaDoacoes"></tbody>
+                </table>
+            </div>
+            <p class="estado-vazio" id="vazioDoacoes" hidden>Nenhuma doação encontrada para os filtros selecionados.</p>
+        </section>
+    </main>
+
+    <div id="ipz-footer"></div>
+    
+    <script src="../js/api.js"></script>
+    <script src="../js/layout.js"></script>
+    <script src="../js/historico-doacoes.js"></script>
+</body></html>

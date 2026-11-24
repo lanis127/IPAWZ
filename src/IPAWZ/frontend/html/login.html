@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | IPAWZ</title>
+    <link rel="stylesheet" href="../css/signInOut.css">
+</head>
+<body>
+
+    <main class="auth-container">
+
+        <section class="left-panel">
+            <a href="inicio.html" class="back-btn" aria-label="Voltar">&#10094;</a>
+            <h2>Seja bem-vindo(a) de volta.<br>Entre e continue fazendo a diferença!</h2>
+            <img src="../assets/icons/cao-e-gato-login.svg" alt="Cachorro e gato">
+        </section>
+
+        <section class="right-panel">
+            <div class="form-card">
+
+                <h1>Login</h1>
+
+                <form id="form-login" novalidate>
+                    <input type="email" name="email" placeholder="E-mail" aria-label="E-mail" autocomplete="email" required>
+                    <div class="password-field">
+                        <input type="password" name="senha" placeholder="Senha" aria-label="Senha" autocomplete="current-password" minlength="6" required>
+                        <button type="button" class="ver-senha" aria-label="Mostrar senha">&#128065;</button>
+                    </div>
+
+                    <a href="recuperar-senha.html" class="link-small">Esqueceu a senha?</a>
+
+                    <p class="mensagem-form" role="alert"></p>
+                    <button type="submit" class="btn-primary">Login</button>
+                </form>
+
+                <p class="account-text">
+                    Não tem uma conta?
+                    <a href="selecao-perfil.html">Cadastre-se</a>
+                </p>
+
+                <div class="separator"><span>ou entre com</span></div>
+
+                <button type="button" class="google-btn" id="login-google" aria-label="Entrar com Google">
+                    <img src="../assets/icons/google-icon.svg" alt="">
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar senha | IPAWZ</title>
+    <link rel="stylesheet" href="../css/signInOut.css">
+</head>
+<body>
+
+    <main class="auth-container">
+
+        <section class="left-panel">
+            <a href="inicio.html" class="back-btn" aria-label="Voltar">&#10094;</a>
+            <h2>Esqueceu sua senha?<br>Recupere-a</h2>
+            <img src="../assets/icons/gato-vaso.svg" alt="Gato derrubando um vaso">
+        </section>
+
+        <section class="right-panel">
+            <div class="form-card">
+
+                <h1>Esqueceu a senha?</h1>
+
+                <p class="account-text">
+                    Insira seu e-mail e enviaremos um código para redefinir a senha.
+                </p>
+
+                <form id="form-recuperar" novalidate>
+                    <input type="email" name="email" placeholder="E-mail" aria-label="E-mail" autocomplete="email" required>
+                    <p class="mensagem-form" role="alert"></p>
+                    <button type="submit" class="btn-primary">Enviar código</button>
+                </form>
+
+                <p class="account-text"><a href="login.html">Voltar para o login</a></p>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/auth.js"></script>
+</body>
+</html>

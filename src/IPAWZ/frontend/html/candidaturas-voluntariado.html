@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Candidaturas Voluntariado | IPAWZ</title>
+  <link rel="stylesheet" href="../css/listagem-pets.css">
+  <link rel="stylesheet" href="../css/candidaturas-voluntariado.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/candidaturas-voluntariado.css">
+
+    <link rel="stylesheet" href="../css/layout.css">
+</head>
+<body data-pagina="voluntarios" data-protegida="pf">
+
+    <div id="ipz-header"></div>
+
+  <main class="candidaturas-page">
+    <div class="page-heading">
+      <h1>Candidaturas Voluntariado</h1>
+      <button class="open-filter-button" id="openFilter" type="button"
+              aria-label="Abrir filtros" aria-controls="filterPanel" aria-expanded="false">
+        <!-- Ícone de filtro em SVG para não depender de bibliotecas externas -->
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M3 4h18l-7.2 8.2V20l-3.6-1.9v-5.9L3 4z"></path>
+        </svg>
+      </button>
+    </div>
+
+    <p class="results-message" id="resultsMessage" aria-live="polite"></p>
+    <section class="applications-list" id="applicationsList" aria-label="Lista de candidaturas">
+      <!-- Os cartões são criados pelo JavaScript a partir da lista de candidaturas. -->
+    </section>
+  </main>
+
+  <!-- PAINEL DE FILTRO SOBREPOSTO À LISTAGEM -->
+  <div class="filter-backdrop" id="filterBackdrop" hidden></div>
+  <aside class="filter-panel" id="filterPanel" aria-label="Filtrar candidaturas" aria-hidden="true">
+    <button class="close-filter-button" id="closeFilter" type="button" aria-label="Fechar filtros">×</button>
+
+    <h2>
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M3 4h18l-7.2 8.2V20l-3.6-1.9v-5.9L3 4z"></path>
+      </svg>
+      FILTRAR POR STATUS
+    </h2>
+
+    <form id="filterForm">
+      <label class="status-option">
+        <input type="radio" name="status" value="aceita">
+        <span class="status-icon accepted-icon" aria-hidden="true">✓</span>
+        <span>Aceitas</span>
+      </label>
+
+      <label class="status-option">
+        <input type="radio" name="status" value="aguardando">
+        <span class="status-icon waiting-icon" aria-hidden="true">◌</span>
+        <span>Aguardando<br>resposta</span>
+      </label>
+
+      <label class="status-option">
+        <input type="radio" name="status" value="negada">
+        <span class="status-icon rejected-icon" aria-hidden="true">×</span>
+        <span>Negadas</span>
+      </label>
+
+      <button class="apply-filter-button" type="submit">Filtrar Candidaturas</button>
+      <button class="clear-filter-button" id="clearFilters" type="button">Remover filtros</button>
+    </form>
+  </aside>
+
+    <div id="ipz-footer"></div>
+    
+    <script src="../js/api.js"></script>
+    <script src="../js/layout.js"></script>
+    <script src="../js/candidaturas-voluntariado.js"></script>
+</body>
+</html>
