@@ -1,0 +1,217 @@
+/* =========================================================
+   SELEÇÃO DE PERFIL (pessoa física) - Figma "SELEÇÃO DE PERFIL DE USUÁRIO"
+   ========================================================= */
+
+.selecao-page {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 470px;
+    min-height: calc(100vh - var(--ipz-altura-header));
+}
+
+.selecao-conteudo {
+    padding: 40px 48px 56px 40px;
+    color: #111;
+}
+
+.selecao-conteudo h1 {
+    color: var(--ipz-marrom);
+    font-size: 2.1rem;
+    font-weight: 700;
+    margin-bottom: 14px;
+}
+
+.selecao-texto {
+    max-width: 600px;
+    line-height: 1.5;
+}
+
+.destaque-azul {
+    display: block;
+    color: var(--ipz-azul);
+}
+
+.selecao-aviso {
+    margin-top: 16px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    background: #fff4c2;
+    border: 1px solid #e6d27a;
+    color: #5c4a00;
+    max-width: 720px;
+}
+
+.cartoes-perfil {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 345px));
+    gap: 72px 96px;
+    margin: 64px 0 0 40px;
+}
+
+.cartao-perfil {
+    position: relative;
+    background: var(--ipz-azul);
+    color: #fff;
+    border-radius: 18px;
+    padding: 26px 32px 30px;
+    min-height: 358px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 6px 14px rgba(28, 95, 157, 0.18);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cartao-perfil:hover {
+    transform: translateY(-3px);
+}
+
+.cartao-perfil.atual {
+    outline: 4px solid var(--ipz-verde);
+    outline-offset: 4px;
+}
+
+.cartao-perfil.sugerido {
+    box-shadow: 0 0 0 4px #f4c542, 0 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+.cartao-perfil h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.selo-atual {
+    position: absolute;
+    top: -14px;
+    right: 18px;
+    background: var(--ipz-verde);
+    color: var(--ipz-marrom);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 999px;
+}
+
+.cartao-perfil ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 1.05rem;
+}
+
+.cartao-perfil li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.cartao-perfil li svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.cartao-perfil li.nao {
+    opacity: 0.85;
+}
+
+.botao-confirmar {
+    margin-top: auto;
+    align-self: center;
+    width: 100%;
+    max-width: 260px;
+    padding: 10px 0;
+    border: none;
+    border-radius: 8px;
+    background: var(--ipz-verde);
+    color: #fff;
+    font: 500 1.35rem var(--ipz-fonte);
+    cursor: pointer;
+    transition: filter 0.2s;
+}
+
+.botao-confirmar:hover {
+    filter: brightness(0.94);
+}
+
+.botao-confirmar[disabled] {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+.selecao-mensagem {
+    margin: 24px 0 0 40px;
+    color: #b3261e;
+    font-weight: 600;
+}
+
+.selecao-mensagem:empty {
+    display: none;
+}
+
+/* ----- painel marrom ----- */
+
+.selecao-lateral {
+    background: var(--ipz-marrom);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 220px 32px 0;
+    text-align: center;
+    overflow: hidden;
+}
+
+.selecao-lateral p {
+    font-size: 1.75rem;
+    line-height: 1.6;
+    max-width: 360px;
+}
+
+.selecao-lateral .linha {
+    display: block;
+    width: 340px;
+    max-width: 100%;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.7);
+    margin: 18px 0 auto;
+}
+
+.selecao-lateral img {
+    width: 445px;
+    max-width: 110%;
+    margin-top: 40px;
+    margin-bottom: -6px;
+}
+
+/* ----- responsivo ----- */
+
+@media (max-width: 1180px) {
+    .selecao-page {
+        grid-template-columns: 1fr;
+    }
+
+    .selecao-lateral {
+        display: none;
+    }
+
+    .cartoes-perfil {
+        margin-left: 0;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 760px) {
+    .selecao-conteudo {
+        padding: 32px 20px 48px;
+    }
+
+    .cartoes-perfil {
+        grid-template-columns: 1fr;
+    }
+
+    .selecao-mensagem {
+        margin-left: 0;
+    }
+}

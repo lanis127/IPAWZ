@@ -1,0 +1,341 @@
+:root {
+    --azul: #1C5F9D;
+    --verde: #7FC9B8;
+    --creme: #FDFBD4;
+    --marrom: #7A2E1C;
+    --branco: #FFFFFF;
+    --cinza: #D9D9D9;
+    --cinza-texto: #777777;
+    --preto: #000000;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--creme);
+    color: var(--marrom);
+    min-height: 100vh;
+}
+
+.menu-icon {
+    font-size: 23px;
+    color: var(--marrom);
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+main {
+    width: 100%;
+    min-height: calc(100vh - 43px);
+    padding: 36px 5.5% 45px;
+}
+
+.perfil-container {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 42% 58%;
+    column-gap: 30px;
+}
+
+.coluna-esquerda {
+    padding-top: 0;
+}
+
+.foto-container {
+    width: 118px;
+    height: 118px;
+    border-radius: 50%;
+    background-color: var(--azul);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.icone-cabeca {
+    width: 42px;
+    height: 42px;
+    background-color: var(--creme);
+    border-radius: 50%;
+    position: absolute;
+    top: 28px;
+}
+
+.icone-corpo {
+    width: 75px;
+    height: 39px;
+    background-color: var(--creme);
+    border-radius: 50% 50% 45% 45%;
+    position: absolute;
+    bottom: 10px;
+}
+
+.nome-sobrenome {
+    text-align: center;
+    font-size: 10px;
+    margin-top: 9px;
+    color: var(--marrom);
+}
+
+.dados-pessoais {
+    margin-top: 25px;
+    padding-left: 0;
+}
+
+.titulo-secao {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 17px;
+    color: var(--marrom);
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+}
+
+.campo label {
+    font-size: 11px;
+    color: var(--marrom);
+    margin-bottom: 4px;
+}
+
+.campo input, .campo select {
+    width: 100%;
+    height: 25px;
+    background-color: var(--creme);
+    border: 1px solid #dfd7a7;
+    border-radius: 3px;
+    padding: 4px 7px;
+    color: var(--marrom);
+    font-size: 10px;
+    outline: none;
+}
+
+.campo input:focus, .campo select:focus {
+    border: 1.5px solid var(--azul);
+}
+
+.campo-nome {
+    width: 205px;
+    margin-bottom: 12px;
+}
+
+.linha-pessoal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    width: 205px;
+}
+
+.historico {
+    margin-top: 26px;
+}
+
+.historico a {
+    color: var(--marrom);
+    font-size: 10px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.coluna-direita {
+    padding-top: 2px;
+}
+
+.linha-interesse {
+    display: grid;
+    grid-template-columns: 1fr 140px;
+    gap: 7px;
+    width: 100%;
+    max-width: 292px;
+}
+
+.campo-email {
+    width: 205px;
+    margin-top: 5px;
+}
+
+.endereco {
+    margin-top: 62px;
+}
+
+.endereco-titulo {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.linha-endereco-1 {
+    display: grid;
+    grid-template-columns: 1fr 72px;
+    gap: 7px;
+    width: 100%;
+    max-width: 292px;
+    margin-bottom: 10px;
+}
+
+.linha-endereco-2 {
+    display: grid;
+    grid-template-columns: 1fr 115px;
+    gap: 7px;
+    width: 100%;
+    max-width: 292px;
+    margin-bottom: 10px;
+}
+
+.linha-endereco-3 {
+    display: grid;
+    grid-template-columns: 1fr 72px 45px;
+    gap: 7px;
+    width: 100%;
+}
+
+.botoes {
+    display: flex;
+    justify-content: flex-end;
+    gap: 18px;
+    margin-top: 50px;
+    padding-right: 42px;
+}
+
+button {
+    border: none;
+    border-radius: 3px;
+    height: 28px;
+    padding: 0 17px;
+    font-size: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    color: var(--branco);
+}
+
+.btn-editar {
+    background-color: var(--azul);
+}
+
+.btn-editar:hover {
+    background-color: #154d80;
+}
+
+.btn-salvar {
+    background-color: var(--verde);
+}
+
+.btn-salvar:hover {
+    background-color: #65b6a4;
+}
+
+.mensagem {
+    text-align: center;
+    font-size: 11px;
+    margin-top: 10px;
+    color: var(--marrom);
+    display: none;
+}
+
+@media (max-width: 800px) {
+    .perfil-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .coluna-esquerda {
+        max-width: 350px;
+        margin: 0 auto;
+    }
+
+    .coluna-direita {
+        max-width: 400px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .endereco {
+        margin-top: 40px;
+    }
+
+    .botoes {
+        justify-content: center;
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 500px) {
+    .menu-icon {
+        display: block;
+    }
+
+    main {
+        padding: 25px 20px 40px;
+    }
+
+    .linha-interesse, .linha-endereco-1, .linha-endereco-2 {
+        max-width: 100%;
+    }
+
+    .linha-endereco-3 {
+        grid-template-columns: 1fr 75px 50px;
+    }
+
+    .campo-email {
+        width: 100%;
+    }
+}
+
+/* ===== foto do perfil e estados de edição ===== */
+.foto-container {
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.foto-container img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+input:disabled,
+select:disabled {
+    opacity: 0.75;
+    cursor: not-allowed;
+}
+
+.mensagem.erro {
+    background: #fde8e6;
+    color: #b3261e;
+}
+
+/* ===== tipo de perfil e validação ===== */
+.tipo-perfil-linha {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tipo-perfil-linha input {
+    flex: 1;
+}
+
+.link-alterar {
+    color: var(--azul);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.status-validacao {
+    display: block;
+    margin-top: 6px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.status-validacao.pendente { color: #9a7b00; }
+.status-validacao.aprovado { color: #1d7a5f; }
+.status-validacao.rejeitado,
+.status-validacao.falta,
+.status-validacao.falta a { color: #b3261e; }

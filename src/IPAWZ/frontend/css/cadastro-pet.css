@@ -1,0 +1,303 @@
+/* =========================================================
+   CADASTRO DE PET (pessoa física e instituição usam a mesma tela)
+   Medidas baseadas no Figma "TELA CADASTRO DE PETS".
+   ========================================================= */
+
+.titulo-cadastro {
+    background: var(--ipz-verde);
+    color: var(--ipz-marrom);
+    padding: 22px 56px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-top: 40px;
+}
+
+.titulo-cadastro p {
+    max-width: 760px;
+    margin: 0;
+}
+
+main {
+    padding: 48px 56px 0;
+}
+
+.form-pet {
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
+.form-pet input,
+.form-pet select,
+.form-pet textarea {
+    width: 100%;
+    font: 400 0.9rem var(--ipz-fonte);
+    color: var(--ipz-marrom);
+    background: #fffef0;
+    border: 1px solid #b7e0d3;
+    border-radius: 4px;
+    padding: 10px 12px;
+    outline: none;
+}
+
+.form-pet input:focus,
+.form-pet select:focus,
+.form-pet textarea:focus {
+    border-color: var(--ipz-verde);
+    box-shadow: 0 0 0 2px rgba(127, 201, 184, 0.35);
+}
+
+.form-pet ::placeholder {
+    color: #9bc7b9;
+}
+
+.form-pet .campo-invalido {
+    border-color: #b3261e;
+}
+
+/* ----- nome, porte, sexo... + foto ----- */
+
+.grade-principal {
+    display: grid;
+    grid-template-columns: minmax(0, 720px) 460px;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.campos-basicos {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.campo-linha {
+    display: grid;
+    grid-template-columns: 110px minmax(0, 520px);
+    align-items: center;
+}
+
+.campo-linha label,
+.campo-coluna label {
+    color: var(--ipz-marrom);
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.foto-area {
+    position: relative;
+    border: 1px solid #c49a8c;
+    border-radius: 4px;
+    min-height: 440px;
+    cursor: pointer;
+    overflow: hidden;
+    background: #fffef0;
+}
+
+.foto-area input[type="file"] {
+    display: none;
+}
+
+.foto-area img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    inset: 0;
+}
+
+.foto-texto {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -28px;
+    text-align: center;
+    font-size: 0.75rem;
+    color: #8fbfb1;
+}
+
+.foto-area {
+    margin-bottom: 28px;
+    overflow: visible;
+}
+
+.foto-area img {
+    border-radius: 4px;
+}
+
+/* ----- perguntas em duas colunas ----- */
+
+.grade-perguntas {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 560px));
+    justify-content: space-between;
+    gap: 28px 80px;
+    margin-top: 32px;
+}
+
+.campo-coluna {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.campo-coluna label {
+    font-size: 1.35rem;
+}
+
+.campo-largo {
+    grid-column: 1 / -1;
+}
+
+/* ----- faixa verde com dados do responsável ----- */
+
+.informacoes {
+    background: var(--ipz-verde);
+    color: #fff;
+    margin: 48px -56px 0;
+    padding: 32px 56px 40px;
+}
+
+.informacoes h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.informacoes-nota {
+    margin: 6px 0 20px;
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+
+.informacoes-grade {
+    display: grid;
+    grid-template-columns: 1.6fr 1.4fr 0.6fr;
+    gap: 18px 40px;
+    align-items: center;
+}
+
+.info-nome { grid-column: 1; }
+.info-email { grid-column: 2 / 4; }
+.info-tel { grid-column: 1; }
+.info-cidade { grid-column: 2; }
+.info-uf { grid-column: 3; }
+
+.info-campo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.info-campo label {
+    font-size: 1.35rem;
+    white-space: nowrap;
+}
+
+.informacoes input,
+.informacoes select {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.55);
+    color: #fff;
+}
+
+.informacoes input[readonly] {
+    opacity: 0.85;
+}
+
+.informacoes ::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.informacoes select option {
+    color: #222;
+}
+
+.mensagem-form {
+    margin: 18px 0 0;
+    text-align: center;
+    font-weight: 600;
+    color: #7a1010;
+}
+
+.mensagem-form:empty {
+    display: none;
+}
+
+.area-cadastro {
+    display: flex;
+    justify-content: center;
+    margin-top: 28px;
+}
+
+.botao-cadastro {
+    min-width: 220px;
+    padding: 12px 28px;
+    background: var(--ipz-creme);
+    color: var(--ipz-marrom);
+    border: 1px solid #c5ad7c;
+    border-radius: 8px;
+    font: 700 1rem var(--ipz-fonte);
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.18);
+}
+
+.botao-cadastro:hover {
+    background: #fff;
+}
+
+.botao-cadastro[disabled] {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+/* ----- responsivo ----- */
+
+@media (max-width: 1100px) {
+    .grade-principal {
+        grid-template-columns: 1fr;
+    }
+
+    .foto-area {
+        min-height: 300px;
+        max-width: 460px;
+    }
+}
+
+@media (max-width: 760px) {
+    main {
+        padding: 32px 20px 0;
+    }
+
+    .titulo-cadastro {
+        padding: 18px 20px;
+        font-size: 1.15rem;
+    }
+
+    .campo-linha {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    .campo-linha label,
+    .campo-coluna label,
+    .info-campo label {
+        font-size: 1.1rem;
+    }
+
+    .grade-perguntas,
+    .informacoes-grade {
+        grid-template-columns: 1fr;
+    }
+
+    .info-nome,
+    .info-email,
+    .info-tel,
+    .info-cidade,
+    .info-uf {
+        grid-column: 1;
+    }
+
+    .informacoes {
+        margin: 40px -20px 0;
+        padding: 28px 20px 32px;
+    }
+}

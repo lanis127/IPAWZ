@@ -1,0 +1,330 @@
+/* =========================================================
+   IPAWZ - PIX
+   Painel do QR Code (tela de doação e histórico) e tela
+   "Chave Pix" da instituição.
+   ========================================================= */
+
+.painel-pix {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 28px;
+    align-items: start;
+    padding: 24px;
+    border: 2px solid var(--ipz-verde, #7FC9B8);
+    border-radius: 12px;
+    background: #fff;
+    color: #4A3028;
+    font-family: var(--ipz-fonte, Arial, sans-serif);
+}
+
+.painel-pix .qr-pix {
+    padding: 10px;
+    border: 1px solid #e3dfc0;
+    border-radius: 10px;
+    background: #fff;
+    line-height: 0;
+}
+
+.painel-pix .qr-pix svg {
+    width: 220px;
+    height: 220px;
+}
+
+.painel-pix .etiqueta-pix {
+    margin: 0 0 4px;
+    color: var(--ipz-azul, #1C5F9D);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.painel-pix h3 {
+    margin: 0 0 4px;
+    color: var(--ipz-marrom, #7A2E1C);
+    font-size: 1.9rem;
+    font-weight: 800;
+}
+
+.painel-pix .dados-pix {
+    margin: 12px 0 16px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 4px 14px;
+    font-size: 0.92rem;
+}
+
+.painel-pix .dados-pix dt {
+    font-weight: 700;
+}
+
+.painel-pix .dados-pix dd {
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+.painel-pix label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.painel-pix .copia-e-cola {
+    width: 100%;
+    min-height: 74px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #d9d6b8;
+    border-radius: 8px;
+    background: #fbfaf0;
+    color: #333;
+    font: 0.78rem/1.4 ui-monospace, Consolas, monospace;
+    resize: none;
+    word-break: break-all;
+}
+
+.painel-pix .acoes-pix {
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.botao-pix {
+    padding: 11px 20px;
+    border: 0;
+    border-radius: 8px;
+    background: var(--ipz-marrom, #7A2E1C);
+    color: #fff;
+    font: 700 0.95rem var(--ipz-fonte, Arial, sans-serif);
+    cursor: pointer;
+}
+
+.botao-pix:hover { filter: brightness(1.1); }
+.botao-pix:disabled { opacity: 0.6; cursor: default; }
+
+.botao-pix.secundario {
+    background: transparent;
+    border: 2px solid var(--ipz-marrom, #7A2E1C);
+    color: var(--ipz-marrom, #7A2E1C);
+}
+
+.botao-pix.perigo {
+    background: transparent;
+    border: 2px solid #b3261e;
+    color: #b3261e;
+}
+
+.passos-pix {
+    grid-column: 1 / -1;
+    margin: 0;
+    padding: 14px 18px 14px 36px;
+    border-radius: 8px;
+    background: #f4f1d6;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.nota-pix {
+    grid-column: 1 / -1;
+    margin: 0;
+    font-size: 0.85rem;
+    color: #6b5a52;
+}
+
+@media (max-width: 680px) {
+    .painel-pix {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+    }
+    .painel-pix .dados-pix { text-align: left; }
+    .painel-pix .acoes-pix { justify-content: center; }
+}
+
+/* ---------- tela de doação ---------- */
+.valores-rapidos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.valores-rapidos button {
+    padding: 7px 14px;
+    border: 2px solid var(--verde-agua, #7CC7BE);
+    border-radius: 999px;
+    background: #fff;
+    color: #4A3028;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.valores-rapidos button.ativo,
+.valores-rapidos button:hover {
+    background: var(--verde-agua, #7CC7BE);
+    color: #fff;
+}
+
+.forma-pix {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    border-radius: 8px;
+    background: #e3f4ee;
+    color: #1d5c4c;
+    font-size: 0.92rem;
+}
+
+.forma-pix strong { font-size: 1rem; }
+
+.area-pix {
+    margin-top: 32px;
+}
+
+.area-pix .cabecalho-pix {
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.area-pix .cabecalho-pix h2 {
+    margin: 0 0 6px;
+    color: var(--ipz-marrom, #7A2E1C);
+}
+
+.area-pix .rodape-pix {
+    margin-top: 18px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* ---------- tela "Chave Pix" da instituição ---------- */
+.pagina-chave-pix {
+    width: min(100% - 32px, 760px);
+    margin: 0 auto;
+    padding: 40px 0 60px;
+    font-family: var(--ipz-fonte, Arial, sans-serif);
+    color: #4A3028;
+}
+
+.pagina-chave-pix h1 {
+    margin: 0 0 8px;
+    color: var(--ipz-marrom, #7A2E1C);
+    font-size: clamp(1.6rem, 3vw, 2.1rem);
+}
+
+.pagina-chave-pix .introducao {
+    margin: 0 0 24px;
+    line-height: 1.55;
+}
+
+.pagina-chave-pix .introducao a {
+    color: var(--ipz-marrom, #7A2E1C);
+    font-weight: 700;
+}
+
+.cartao-pix {
+    padding: 24px;
+    margin-bottom: 20px;
+    border: 1px solid #e3dfc0;
+    border-radius: 12px;
+    background: #fff;
+}
+
+.cartao-pix h2 {
+    margin: 0 0 12px;
+    font-size: 1.15rem;
+    color: var(--ipz-marrom, #7A2E1C);
+}
+
+.cartao-pix .linha-campos {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 16px;
+}
+
+.cartao-pix .campo-pix label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.cartao-pix .campo-pix input,
+.cartao-pix .campo-pix select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 11px 12px;
+    border: 1px solid #cfcab0;
+    border-radius: 8px;
+    font: inherit;
+    background: #fff;
+}
+
+.cartao-pix .dica {
+    margin: 6px 0 0;
+    font-size: 0.82rem;
+    color: #6b5a52;
+}
+
+.chave-atual {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.chave-atual .valor-chave {
+    font-size: 1.05rem;
+    font-weight: 700;
+    word-break: break-all;
+}
+
+.situacao-pix {
+    margin-bottom: 20px;
+    padding: 14px 16px;
+    border-radius: 10px;
+    border: 1px solid;
+    line-height: 1.5;
+}
+
+.situacao-pix.ok { background: #e3f4ee; border-color: #7FC9B8; color: #1d5c4c; }
+.situacao-pix.alerta { background: #fff4c2; border-color: #e6d27a; color: #5c4a00; }
+.situacao-pix[hidden] { display: none; }
+
+.mensagem-pix {
+    margin: 12px 0 0;
+    font-weight: 700;
+}
+
+.mensagem-pix.erro { color: #b3261e; }
+.mensagem-pix.ok { color: #1d5c4c; }
+
+@media (max-width: 600px) {
+    .cartao-pix .linha-campos { grid-template-columns: 1fr; }
+}
+
+/* aviso no topo de "Doações recebidas" quando falta a chave */
+.aviso-sem-pix {
+    margin: 0 0 20px;
+    padding: 14px 16px;
+    border-radius: 10px;
+    background: #fff4c2;
+    border: 1px solid #e6d27a;
+    color: #5c4a00;
+}
+
+.aviso-sem-pix a { color: inherit; font-weight: 700; }
+
+a.botao-pix { display: inline-block; text-decoration: none; }
+.botao-pix[hidden] { display: none; }
+
+.campo .rotulo-campo {
+    color: var(--marrom, #803522);
+    font-size: 0.92rem;
+    font-weight: 700;
+}

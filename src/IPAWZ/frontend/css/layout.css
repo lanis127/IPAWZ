@@ -1,0 +1,458 @@
+/* =========================================================
+   IPAWZ - LAYOUT COMPARTILHADO
+   Header, menu lateral e footer usados em TODAS as telas.
+   O HTML deles é gerado por js/layout.js, então qualquer
+   mudança feita aqui vale para o site inteiro.
+   Cores e fonte seguem o guia do Figma ("CORES DO SITE").
+   ========================================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+    --ipz-creme: #FDFBD4;
+    --ipz-marrom: #7A2E1C;
+    --ipz-verde: #7FC9B8;
+    --ipz-azul: #1C5F9D;
+    --ipz-preto: #000000;
+    --ipz-cinza-linha: #d9d6b8;
+    --ipz-fonte: "Poppins", Arial, Helvetica, sans-serif;
+    --ipz-altura-header: 84px;
+}
+
+/* Reset básico (antes repetido em cada CSS) */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: var(--ipz-fonte);
+    background: var(--ipz-creme);
+    color: #222;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* O conteúdo da página ocupa o espaço livre e empurra o footer para baixo */
+body > main,
+body > .ipz-conteudo {
+    flex: 1 0 auto;
+}
+
+/* ================= HEADER ================= */
+
+.ipz-header {
+    position: sticky;
+    top: 0;
+    z-index: 900;
+    height: var(--ipz-altura-header);
+    background: var(--ipz-creme);
+    border-bottom: 2px solid var(--ipz-cinza-linha);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    font-family: var(--ipz-fonte);
+}
+
+.ipz-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--ipz-marrom);
+    font-size: 2.1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.ipz-logo img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.ipz-nav {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+}
+
+.ipz-nav a {
+    color: var(--ipz-marrom);
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 4px 0;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s;
+}
+
+.ipz-nav a:hover {
+    border-bottom-color: rgba(122, 46, 28, 0.4);
+}
+
+.ipz-nav a.ativo {
+    font-weight: 600;
+    border-bottom-color: var(--ipz-marrom);
+}
+
+.ipz-acoes {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.ipz-btn-entrar {
+    background: var(--ipz-verde);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 18px;
+    border-radius: 8px;
+    white-space: nowrap;
+    transition: filter 0.2s;
+}
+
+.ipz-btn-entrar:hover {
+    filter: brightness(0.93);
+}
+
+.ipz-btn-menu {
+    width: 48px;
+    height: 48px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+}
+
+.ipz-btn-menu span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    border-radius: 2px;
+    background: var(--ipz-marrom);
+    opacity: 0.75;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+/* Hambúrguer vira "X" quando o menu está aberto (igual ao Figma) */
+.ipz-btn-menu[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.ipz-btn-menu[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+}
+
+.ipz-btn-menu[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* ================= MENU LATERAL ================= */
+
+.ipz-sidebar {
+    position: fixed;
+    top: var(--ipz-altura-header);
+    right: 0;
+    width: 380px;
+    max-width: 100%;
+    height: calc(100vh - var(--ipz-altura-header));
+    background: var(--ipz-creme);
+    border-left: 1px solid #555;
+    transform: translateX(100%);
+    transition: transform 0.35s ease;
+    z-index: 950;
+    overflow-y: auto;
+    font-family: var(--ipz-fonte);
+}
+
+.ipz-sidebar.aberto {
+    transform: translateX(0);
+}
+
+.ipz-sidebar ul {
+    list-style: none;
+    margin: 0;
+    padding: 24px 0;
+}
+
+.ipz-sidebar a,
+.ipz-sidebar button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 18px 24px;
+    background: none;
+    border: none;
+    color: var(--ipz-marrom);
+    font: 600 1rem var(--ipz-fonte);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.ipz-sidebar a:hover,
+.ipz-sidebar button:hover,
+.ipz-sidebar a.ativo {
+    background: #ececec;
+}
+
+.ipz-overlay {
+    position: fixed;
+    inset: var(--ipz-altura-header) 0 0 0;
+    background: rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+    z-index: 940;
+}
+
+.ipz-overlay.aberto {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ================= FOOTER ================= */
+
+.ipz-footer {
+    background: var(--ipz-preto);
+    color: #fff;
+    font-family: var(--ipz-fonte);
+    padding: 36px 56px 24px;
+    margin-top: 0;
+}
+
+.ipz-footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+    gap: 32px;
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
+.ipz-footer-marca .ipz-logo {
+    color: #fff;
+    font-size: 2rem;
+}
+
+.ipz-footer-marca p {
+    margin: 16px 0 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.45;
+    max-width: 260px;
+}
+
+.ipz-footer h3 {
+    margin: 0 0 12px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.ipz-footer ul {
+    margin: 0;
+    padding-left: 16px;
+    font-size: 0.85rem;
+    line-height: 1.75;
+}
+
+.ipz-footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.ipz-footer a:hover {
+    text-decoration: underline;
+}
+
+.ipz-contato {
+    list-style: none;
+    padding-left: 0 !important;
+}
+
+.ipz-contato li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+}
+
+.ipz-contato svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+.ipz-footer-base {
+    max-width: 1320px;
+    margin: 12px auto 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 24px;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.ipz-voltar-topo {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: none;
+    background: var(--ipz-creme);
+    color: #000;
+    font-size: 1.2rem;
+    cursor: pointer;
+    position: relative;
+    top: -60px;
+}
+
+/* Aviso rápido usado pelas telas (sucesso / erro) */
+.ipz-aviso {
+    position: fixed;
+    left: 50%;
+    bottom: 32px;
+    transform: translateX(-50%) translateY(20px);
+    background: var(--ipz-marrom);
+    color: #fff;
+    font-family: var(--ipz-fonte);
+    padding: 12px 22px;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.25s, transform 0.25s;
+    z-index: 2000;
+    pointer-events: none;
+    max-width: 90vw;
+}
+
+.ipz-aviso.visivel {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.ipz-aviso.erro {
+    background: #b3261e;
+}
+
+.ipz-aviso.sucesso {
+    background: var(--ipz-azul);
+}
+
+/* Estados de carregamento / vazio usados nas listas vindas da API */
+.ipz-estado {
+    text-align: center;
+    color: var(--ipz-marrom);
+    padding: 32px 16px;
+    font-family: var(--ipz-fonte);
+}
+
+/* ================= RESPONSIVO ================= */
+
+@media (max-width: 1100px) {
+    .ipz-nav {
+        gap: 32px;
+    }
+}
+
+@media (max-width: 900px) {
+    .ipz-header {
+        padding: 0 20px;
+    }
+
+    .ipz-nav {
+        display: none;
+    }
+
+    /* No celular os links do topo aparecem dentro do menu lateral */
+    .ipz-sidebar .ipz-so-celular {
+        display: block;
+    }
+
+    .ipz-footer {
+        padding: 32px 24px 20px;
+    }
+
+    .ipz-footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .ipz-footer-base {
+        justify-content: space-between;
+    }
+
+    .ipz-voltar-topo {
+        top: 0;
+    }
+}
+
+@media (min-width: 901px) {
+    .ipz-sidebar .ipz-so-celular,
+    .ipz-btn-menu.ipz-so-celular-btn {
+        display: none;
+    }
+}
+
+@media (max-width: 560px) {
+    .ipz-btn-entrar {
+        display: none;
+    }
+}
+
+@media (max-width: 560px) {
+    .ipz-footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ipz-logo {
+        font-size: 1.7rem;
+    }
+}
+
+/* ================= AVISO DA VALIDAÇÃO DA CONTA ================= */
+.ipz-aviso-conta {
+    background: #fff4c2;
+    color: #5c4a00;
+    border-bottom: 1px solid #e6d27a;
+    padding: 10px 48px;
+    font: 500 0.9rem var(--ipz-fonte);
+    text-align: center;
+}
+
+.ipz-aviso-conta.erro {
+    background: #fde8e6;
+    color: #8c1d18;
+    border-bottom-color: #f2b8b5;
+}
+
+.ipz-aviso-conta a {
+    color: inherit;
+    font-weight: 700;
+}
+
+/* texto só para leitores de tela */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}

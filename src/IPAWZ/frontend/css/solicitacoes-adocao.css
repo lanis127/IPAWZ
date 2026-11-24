@@ -1,0 +1,254 @@
+/* =========================================================
+   SOLICITAÇÕES DE ADOÇÃO RECEBIDAS (instituição / dono do pet)
+   Baseado no Figma "TELA DE SOLICITAÇÃO ADOÇÃO".
+   ========================================================= */
+
+.solicitacoes-page {
+    width: min(1300px, 100% - 48px);
+    margin: 40px auto 64px;
+    color: var(--ipz-marrom);
+}
+
+.solicitacoes-page h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.subtitulo {
+    margin: 8px 0 24px;
+    color: #222;
+}
+
+.filtros {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 24px;
+}
+
+.filtro {
+    min-width: 120px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font: 600 0.95rem var(--ipz-fonte);
+    cursor: pointer;
+    background: var(--ipz-marrom);
+    opacity: 0.75;
+}
+
+.filtro-analise { background: var(--ipz-verde); }
+.filtro-aprovadas { background: var(--ipz-azul); }
+
+.filtro.ativo {
+    opacity: 1;
+    box-shadow: 0 0 0 3px rgba(122, 46, 28, 0.25);
+}
+
+.tabela-borda {
+    border: 1px solid var(--ipz-marrom);
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 640px;
+}
+
+th {
+    background: var(--ipz-marrom);
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding: 10px;
+}
+
+td {
+    padding: 18px 10px;
+    text-align: center;
+    font-weight: 600;
+    color: #111;
+    border-top: 1px solid rgba(122, 46, 28, 0.4);
+}
+
+tr.selecionada td {
+    background: rgba(127, 201, 184, 0.18);
+}
+
+.celula-pessoa,
+.celula-pet {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    justify-content: center;
+}
+
+.avatar {
+    width: 48px;
+    height: 36px;
+    border: 1px solid #c0857a;
+    display: grid;
+    place-items: center;
+    color: var(--ipz-verde);
+}
+
+.celula-pet img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.status-analise { color: #c9a400; }
+.status-aprovada { color: #2e9e2e; }
+.status-recusada { color: #e00000; }
+.status-nova { color: var(--ipz-azul); }
+
+.botao-ver {
+    background: none;
+    border: none;
+    font: 600 1rem var(--ipz-fonte);
+    cursor: pointer;
+}
+
+.tabela-borda .ipz-estado:empty {
+    display: none;
+}
+
+/* ----- faixa de detalhes ----- */
+
+.detalhes {
+    margin-top: 32px;
+    border-radius: 16px;
+    background: linear-gradient(90deg, var(--ipz-azul), var(--ipz-verde));
+    color: #fff;
+    padding: 24px 40px;
+    display: grid;
+    grid-template-columns: 120px 1fr auto;
+    gap: 32px;
+    align-items: center;
+}
+
+.detalhes[hidden] {
+    display: none;
+}
+
+.detalhes-pet {
+    text-align: center;
+    font-family: Georgia, serif;
+}
+
+.detalhes-pet img {
+    width: 64px;
+    height: 64px;
+    border-radius: 12px;
+    object-fit: cover;
+    background: #fff;
+    display: block;
+    margin: 0 auto 8px;
+}
+
+.detalhes-solicitante h2 {
+    margin: 0 0 10px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.7);
+    display: inline-block;
+    padding-bottom: 2px;
+}
+
+.detalhes-solicitante p {
+    margin: 0;
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+.observacao {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 10px;
+    font-size: 0.8rem;
+}
+
+.observacao textarea {
+    font: 400 0.85rem var(--ipz-fonte);
+    border-radius: 6px;
+    border: none;
+    padding: 8px;
+    resize: vertical;
+}
+
+.detalhes-acoes {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+}
+
+.link-formulario {
+    background: none;
+    border: none;
+    color: #fff;
+    font: 600 1.1rem var(--ipz-fonte);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.botoes-status {
+    display: flex;
+    gap: 16px;
+}
+
+.botoes-status button {
+    border: none;
+    border-radius: 4px;
+    padding: 6px 18px;
+    color: #fff;
+    font: 600 0.8rem var(--ipz-fonte);
+    cursor: pointer;
+}
+
+.btn-analise { background: #c9a400; }
+.btn-rejeitar { background: #d16b6b; }
+.btn-aprovar { background: #4c9a2a; }
+
+.botoes-status button[disabled] {
+    opacity: 0.5;
+    cursor: default;
+}
+
+.respostas {
+    grid-column: 1 / -1;
+    background: rgba(255, 255, 255, 0.95);
+    color: #222;
+    border-radius: 10px;
+    padding: 20px 24px;
+    max-height: 420px;
+    overflow-y: auto;
+}
+
+.respostas dt {
+    font-weight: 600;
+    color: var(--ipz-marrom);
+    margin-top: 10px;
+}
+
+.respostas dd {
+    margin: 2px 0 0;
+}
+
+@media (max-width: 800px) {
+    .filtros {
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .detalhes {
+        grid-template-columns: 1fr;
+        padding: 24px;
+        text-align: center;
+    }
+}
